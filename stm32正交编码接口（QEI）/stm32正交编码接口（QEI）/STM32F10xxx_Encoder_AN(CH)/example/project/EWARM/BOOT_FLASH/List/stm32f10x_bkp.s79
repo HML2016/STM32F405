@@ -1,0 +1,382 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:30 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\FWLib\src\stm32f10x_bkp.c           /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\FWLib\src\stm32f10x_bkp.c" -D       /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_bkp.s79                                        /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_bkp
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable11 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable8 EQU 0
+        MULTWEAK ??RCC_BackupResetCmd??rT
+        MULTWEAK ??assert_failed??rT
+        PUBLIC BKP_ClearFlag
+        PUBLIC BKP_ClearITPendingBit
+        PUBLIC BKP_DeInit
+        PUBLIC BKP_GetFlagStatus
+        PUBLIC BKP_GetITStatus
+        PUBLIC BKP_ITConfig
+        PUBLIC BKP_RTCCalibrationClockOutputCmd
+        PUBLIC BKP_ReadBackupRegister
+        PUBLIC BKP_SetRTCCalibrationValue
+        PUBLIC BKP_TamperPinCmd
+        PUBLIC BKP_TamperPinLevelConfig
+        PUBLIC BKP_WriteBackupRegister
+
+RCC_BackupResetCmd  SYMBOL "RCC_BackupResetCmd"
+assert_failed       SYMBOL "assert_failed"
+??RCC_BackupResetCmd??rT SYMBOL "??rT", RCC_BackupResetCmd
+??assert_failed??rT SYMBOL "??rT", assert_failed
+
+        EXTERN BKP
+        EXTERN RCC_BackupResetCmd
+        EXTERN assert_failed
+
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_DeInit:
+        PUSH     {LR}
+        MOVS     R0,#+1
+        _BLF     RCC_BackupResetCmd,??RCC_BackupResetCmd??rT
+        MOVS     R0,#+0
+        _BLF     RCC_BackupResetCmd,??RCC_BackupResetCmd??rT
+        POP      {PC}             ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_TamperPinLevelConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??BKP_TamperPinLevelConfig_0
+        CMP      R4,#+1
+        BEQ.N    ??BKP_TamperPinLevelConfig_0
+        MOVS     R1,#+101
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??BKP_TamperPinLevelConfig_0:
+        LDR.N    R0,??BKP_TamperPinLevelConfig_1  ;; 0x420d8604
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??BKP_TamperPinLevelConfig_1:
+        DC32     0x420d8604
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_TamperPinCmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??BKP_TamperPinCmd_0
+        CMP      R4,#+1
+        BEQ.N    ??BKP_TamperPinCmd_0
+        MOVS     R1,#+117
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??BKP_TamperPinCmd_0:
+        LDR.N    R0,??BKP_TamperPinCmd_1  ;; 0x420d8600
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??BKP_TamperPinCmd_1:
+        DC32     0x420d8600
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_ITConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??BKP_ITConfig_0
+        CMP      R4,#+1
+        BEQ.N    ??BKP_ITConfig_0
+        MOVS     R1,#+133
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??BKP_ITConfig_0:
+        LDR.N    R0,??BKP_ITConfig_1  ;; 0x420d8688
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??BKP_ITConfig_1:
+        DC32     0x420d8688
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_RTCCalibrationClockOutputCmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??BKP_RTCCalibrationClockOutputCmd_0
+        CMP      R4,#+1
+        BEQ.N    ??BKP_RTCCalibrationClockOutputCmd_0
+        MOVS     R1,#+149
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??BKP_RTCCalibrationClockOutputCmd_0:
+        LDR.N    R0,??BKP_RTCCalibrationClockOutputCmd_1  ;; 0x420d859c
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??BKP_RTCCalibrationClockOutputCmd_1:
+        DC32     0x420d859c
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_SetRTCCalibrationValue:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+128
+        BCC.N    ??BKP_SetRTCCalibrationValue_0
+        MOVS     R1,#+167
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??BKP_SetRTCCalibrationValue_0:
+        LDR.N    R0,??DataTable14  ;; BKP
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+44]
+        MOVS     R1,R0
+        LDR.N    R0,??BKP_SetRTCCalibrationValue_1  ;; 0xff80
+        ANDS     R0,R0,R1
+        ORRS     R4,R4,R0
+        MOVS     R0,R4
+        LDR.N    R1,??DataTable14  ;; BKP
+        LDR      R1,[R1, #+0]
+        STRH     R0,[R1, #+44]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??BKP_SetRTCCalibrationValue_1:
+        DC32     0xff80
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_WriteBackupRegister:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R4,#+4
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+8
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+12
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+16
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+20
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+24
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+28
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+32
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+36
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        CMP      R4,#+40
+        BEQ.N    ??BKP_WriteBackupRegister_0
+        MOVS     R1,#+193
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??BKP_WriteBackupRegister_0:
+        LDR.N    R0,??DataTable10  ;; 0x40006c00
+        STRH     R5,[R4, R0]
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_ReadBackupRegister:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+4
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+8
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+12
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+16
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+20
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+24
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+28
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+32
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+36
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        CMP      R4,#+40
+        BEQ.N    ??BKP_ReadBackupRegister_0
+        MOVS     R1,#+209
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??BKP_ReadBackupRegister_0:
+        LDR.N    R0,??DataTable10  ;; 0x40006c00
+        LDRH     R0,[R4, R0]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable10:
+        DC32     0x40006c00
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_GetFlagStatus:
+        LDR.N    R0,??BKP_GetFlagStatus_0  ;; 0x420d86a0
+        LDR      R0,[R0, #+0]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        BX       LR               ;; return
+        Nop      
+        DATA
+??BKP_GetFlagStatus_0:
+        DC32     0x420d86a0
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_ClearFlag:
+        LDR.N    R0,??DataTable14  ;; BKP
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable14  ;; BKP
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+52]
+        ORRS     R1,R1,#0x1
+        STRH     R1,[R0, #+52]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_GetITStatus:
+        LDR.N    R0,??BKP_GetITStatus_0  ;; 0x420d86a4
+        LDR      R0,[R0, #+0]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        BX       LR               ;; return
+        Nop      
+        DATA
+??BKP_GetITStatus_0:
+        DC32     0x420d86a4
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BKP_ClearITPendingBit:
+        LDR.N    R0,??DataTable14  ;; BKP
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable14  ;; BKP
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+52]
+        ORRS     R1,R1,#0x2
+        STRH     R1,[R0, #+52]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable14:
+        DC32     BKP
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_BackupResetCmd??rT:
+        LDR.N    R3,??Subroutine0_0  ;; RCC_BackupResetCmd
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     RCC_BackupResetCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??assert_failed??rT:
+        LDR.N    R3,??Subroutine1_0  ;; assert_failed
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     assert_failed
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "C:\\\\David JIANG\\\\ST MCU...">`:
+        DATA
+        DC8 43H, 3AH, 5CH, 44H, 61H, 76H, 69H, 64H
+        DC8 20H, 4AH, 49H, 41H, 4EH, 47H, 5CH, 53H
+        DC8 54H, 20H, 4DH, 43H, 55H, 5CH, 44H, 6FH
+        DC8 63H, 73H, 5CH, 53H, 54H, 4DH, 33H, 32H
+        DC8 5CH, 41H, 4EH, 5FH, 4AH, 49H, 41H, 4EH
+        DC8 47H, 5CH, 54H, 49H, 4DH, 20H, 45H, 6EH
+        DC8 63H, 6FH, 64H, 65H, 72H, 5CH, 65H, 78H
+        DC8 61H, 6DH, 70H, 6CH, 65H, 5CH, 46H, 57H
+        DC8 4CH, 69H, 62H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 73H, 74H, 6DH, 33H, 32H, 66H, 31H, 30H
+        DC8 78H, 5FH, 62H, 6BH, 70H, 2EH, 63H, 0
+
+        END
+// 
+// 410 bytes in segment CODE
+//  88 bytes in segment DATA_C
+// 
+// 394 bytes of CODE  memory (+ 16 bytes shared)
+//  88 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

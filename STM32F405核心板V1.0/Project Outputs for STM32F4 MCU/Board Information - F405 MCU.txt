@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : E:\兴趣&工作\硬件板子\STM32F405核心板\F405 MCU.PcbDoc
+Date         : 2017/3/5
+Time         : 15:30:24
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 160
+    Connections routed, 160
+    Connections remaining, 0
+count : 4

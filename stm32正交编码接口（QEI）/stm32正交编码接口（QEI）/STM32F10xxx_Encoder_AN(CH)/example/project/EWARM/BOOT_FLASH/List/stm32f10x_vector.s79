@@ -1,0 +1,132 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:34 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\stm32f10x_vector.c    /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\stm32f10x_vector.c"   /
+//                       -D VECT_TAB_FLASH -lcN "C:\David JIANG\ST           /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_vector.s79                                     /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_vector
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBLIC __vector_table
+
+        EXTERN ADC_IRQHandler
+        EXTERN BusFaultException
+        EXTERN CAN_RX1_IRQHandler
+        EXTERN CAN_SCE_IRQHandler
+        EXTERN DMAChannel1_IRQHandler
+        EXTERN DMAChannel2_IRQHandler
+        EXTERN DMAChannel3_IRQHandler
+        EXTERN DMAChannel4_IRQHandler
+        EXTERN DMAChannel5_IRQHandler
+        EXTERN DMAChannel6_IRQHandler
+        EXTERN DMAChannel7_IRQHandler
+        EXTERN DebugMonitor
+        EXTERN EXTI0_IRQHandler
+        EXTERN EXTI15_10_IRQHandler
+        EXTERN EXTI1_IRQHandler
+        EXTERN EXTI2_IRQHandler
+        EXTERN EXTI3_IRQHandler
+        EXTERN EXTI4_IRQHandler
+        EXTERN EXTI9_5_IRQHandler
+        EXTERN FLASH_IRQHandler
+        EXTERN HardFaultException
+        EXTERN I2C1_ER_IRQHandler
+        EXTERN I2C1_EV_IRQHandler
+        EXTERN I2C2_ER_IRQHandler
+        EXTERN I2C2_EV_IRQHandler
+        EXTERN MemManageException
+        EXTERN NMIException
+        EXTERN PVD_IRQHandler
+        EXTERN PendSVC
+        EXTERN RCC_IRQHandler
+        EXTERN RTCAlarm_IRQHandler
+        EXTERN RTC_IRQHandler
+        EXTERN SPI1_IRQHandler
+        EXTERN SPI2_IRQHandler
+        EXTERN SVCHandler
+        EXTERN SysTickHandler
+        EXTERN TAMPER_IRQHandler
+        EXTERN TIM1_BRK_IRQHandler
+        EXTERN TIM1_CC_IRQHandler
+        EXTERN TIM1_TRG_COM_IRQHandler
+        EXTERN TIM1_UP_IRQHandler
+        EXTERN TIM2_IRQHandler
+        EXTERN TIM3_IRQHandler
+        EXTERN TIM4_IRQHandler
+        EXTERN USART1_IRQHandler
+        EXTERN USART2_IRQHandler
+        EXTERN USART3_IRQHandler
+        EXTERN USBWakeUp_IRQHandler
+        EXTERN USB_HP_CAN_TX_IRQHandler
+        EXTERN USB_LP_CAN_RX0_IRQHandler
+        EXTERN UsageFaultException
+        EXTERN WWDG_IRQHandler
+        EXTERN __program_start
+
+
+        RSEG INTVEC:CONST:SORT:NOROOT(2)
+__vector_table:
+        DATA
+        DC32 SFE(CSTACK), __program_start, NMIException, HardFaultException
+        DC32 MemManageException, BusFaultException, UsageFaultException, 0H, 0H
+        DC32 0H, 0H, SVCHandler, DebugMonitor, 0H, PendSVC, SysTickHandler
+        DC32 WWDG_IRQHandler, PVD_IRQHandler, TAMPER_IRQHandler, RTC_IRQHandler
+        DC32 FLASH_IRQHandler, RCC_IRQHandler, EXTI0_IRQHandler
+        DC32 EXTI1_IRQHandler, EXTI2_IRQHandler, EXTI3_IRQHandler
+        DC32 EXTI4_IRQHandler, DMAChannel1_IRQHandler, DMAChannel2_IRQHandler
+        DC32 DMAChannel3_IRQHandler, DMAChannel4_IRQHandler
+        DC32 DMAChannel5_IRQHandler, DMAChannel6_IRQHandler
+        DC32 DMAChannel7_IRQHandler, ADC_IRQHandler, USB_HP_CAN_TX_IRQHandler
+        DC32 USB_LP_CAN_RX0_IRQHandler, CAN_RX1_IRQHandler, CAN_SCE_IRQHandler
+        DC32 EXTI9_5_IRQHandler, TIM1_BRK_IRQHandler, TIM1_UP_IRQHandler
+        DC32 TIM1_TRG_COM_IRQHandler, TIM1_CC_IRQHandler, TIM2_IRQHandler
+        DC32 TIM3_IRQHandler, TIM4_IRQHandler, I2C1_EV_IRQHandler
+        DC32 I2C1_ER_IRQHandler, I2C2_EV_IRQHandler, I2C2_ER_IRQHandler
+        DC32 SPI1_IRQHandler, SPI2_IRQHandler, USART1_IRQHandler
+        DC32 USART2_IRQHandler, USART3_IRQHandler, EXTI15_10_IRQHandler
+        DC32 RTCAlarm_IRQHandler, USBWakeUp_IRQHandler
+
+        END
+// 
+// 236 bytes in segment INTVEC
+// 
+// 236 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

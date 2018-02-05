@@ -1,0 +1,5 @@
+Change Component DesignItemId : Designator=U1 Old DesignItemId=STM32F405RG New DesignItemId=STM32F405RGT6
+Change Component Comment : Designator=U1 Old Comment=STM32F405RG New Comment=STM32F405RGT6
+Change Component Description : Designator=U1 Old Description=STM32F405RG New Description=
+Change Component Library : Designator=U1 Old Library=STM32F405RG.IntLib New Library=My Integrated_Library.IntLib
+Added Room: Name=F405 MCU

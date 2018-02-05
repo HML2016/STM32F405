@@ -1,0 +1,1643 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:31 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\FWLib\src\stm32f10x_i2c.c           /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\FWLib\src\stm32f10x_i2c.c" -D       /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_i2c.s79                                        /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_i2c
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable2 EQU 0
+??DataTable20 EQU 0
+??DataTable21 EQU 0
+??DataTable22 EQU 0
+??DataTable23 EQU 0
+??DataTable24 EQU 0
+??DataTable25 EQU 0
+??DataTable26 EQU 0
+??DataTable27 EQU 0
+??DataTable3 EQU 0
+??DataTable30 EQU 0
+??DataTable31 EQU 0
+??DataTable32 EQU 0
+??DataTable33 EQU 0
+??DataTable34 EQU 0
+??DataTable35 EQU 0
+??DataTable38 EQU 0
+??DataTable39 EQU 0
+??DataTable4 EQU 0
+??DataTable40 EQU 0
+??DataTable41 EQU 0
+??DataTable42 EQU 0
+??DataTable43 EQU 0
+??DataTable44 EQU 0
+??DataTable45 EQU 0
+??DataTable46 EQU 0
+??DataTable47 EQU 0
+??DataTable48 EQU 0
+??DataTable49 EQU 0
+??DataTable5 EQU 0
+??DataTable50 EQU 0
+??DataTable51 EQU 0
+??DataTable52 EQU 0
+??DataTable53 EQU 0
+??DataTable54 EQU 0
+??DataTable55 EQU 0
+??DataTable56 EQU 0
+??DataTable57 EQU 0
+??DataTable58 EQU 0
+??DataTable59 EQU 0
+??DataTable6 EQU 0
+??DataTable60 EQU 0
+??DataTable61 EQU 0
+??DataTable62 EQU 0
+??DataTable63 EQU 0
+??DataTable64 EQU 0
+??DataTable65 EQU 0
+??DataTable66 EQU 0
+??DataTable67 EQU 0
+??DataTable68 EQU 0
+??DataTable69 EQU 0
+??DataTable7 EQU 0
+??DataTable70 EQU 0
+??DataTable71 EQU 0
+??DataTable72 EQU 0
+??DataTable73 EQU 0
+??DataTable9 EQU 0
+        MULTWEAK ??RCC_APB1PeriphResetCmd??rT
+        MULTWEAK ??RCC_GetClocksFreq??rT
+        MULTWEAK ??assert_failed??rT
+        PUBLIC I2C_ARPCmd
+        PUBLIC I2C_AcknowledgeConfig
+        PUBLIC I2C_CalculatePEC
+        PUBLIC I2C_CheckEvent
+        PUBLIC I2C_ClearFlag
+        PUBLIC I2C_ClearITPendingBit
+        PUBLIC I2C_Cmd
+        PUBLIC I2C_DMACmd
+        PUBLIC I2C_DMALastTransferCmd
+        PUBLIC I2C_DeInit
+        PUBLIC I2C_DualAddressCmd
+        PUBLIC I2C_FastModeDutyCycleConfig
+        PUBLIC I2C_GeneralCallCmd
+        PUBLIC I2C_GenerateSTART
+        PUBLIC I2C_GenerateSTOP
+        PUBLIC I2C_GetFlagStatus
+        PUBLIC I2C_GetITStatus
+        PUBLIC I2C_GetLastEvent
+        PUBLIC I2C_GetPEC
+        PUBLIC I2C_ITConfig
+        PUBLIC I2C_Init
+        PUBLIC I2C_OwnAddress2Config
+        PUBLIC I2C_PECPositionConfig
+        PUBLIC I2C_ReadRegister
+        PUBLIC I2C_ReceiveData
+        PUBLIC I2C_SMBusAlertConfig
+        PUBLIC I2C_Send7bitAddress
+        PUBLIC I2C_SendData
+        PUBLIC I2C_SoftwareResetCmd
+        PUBLIC I2C_StretchClockCmd
+        PUBLIC I2C_StructInit
+        PUBLIC I2C_TransmitPEC
+
+RCC_APB1PeriphResetCmd SYMBOL "RCC_APB1PeriphResetCmd"
+RCC_GetClocksFreq   SYMBOL "RCC_GetClocksFreq"
+assert_failed       SYMBOL "assert_failed"
+??RCC_APB1PeriphResetCmd??rT SYMBOL "??rT", RCC_APB1PeriphResetCmd
+??RCC_GetClocksFreq??rT SYMBOL "??rT", RCC_GetClocksFreq
+??assert_failed??rT SYMBOL "??rT", assert_failed
+
+        EXTERN RCC_APB1PeriphResetCmd
+        EXTERN RCC_GetClocksFreq
+        EXTERN assert_failed
+
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_DeInit:
+        PUSH     {LR}
+        LDR.N    R1,??I2C_DeInit_0  ;; 0x40005400
+        CMP      R0,R1
+        BEQ.N    ??I2C_DeInit_1
+        LDR.N    R1,??I2C_DeInit_0+0x4  ;; 0x40005800
+        CMP      R0,R1
+        BEQ.N    ??I2C_DeInit_2
+        B.N      ??I2C_DeInit_3
+??I2C_DeInit_1:
+        MOVS     R1,#+1
+        MOVS     R0,#+2097152
+        _BLF     RCC_APB1PeriphResetCmd,??RCC_APB1PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+2097152
+        _BLF     RCC_APB1PeriphResetCmd,??RCC_APB1PeriphResetCmd??rT
+        B.N      ??I2C_DeInit_3
+??I2C_DeInit_2:
+        MOVS     R1,#+1
+        MOVS     R0,#+4194304
+        _BLF     RCC_APB1PeriphResetCmd,??RCC_APB1PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+4194304
+        _BLF     RCC_APB1PeriphResetCmd,??RCC_APB1PeriphResetCmd??rT
+??I2C_DeInit_3:
+        POP      {PC}             ;; return
+        DATA
+??I2C_DeInit_0:
+        DC32     0x40005400
+        DC32     0x40005800
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_Init:
+        PUSH     {R4-R8,LR}
+        SUB      SP,SP,#+20
+        MOV      R8,R0
+        MOVS     R4,R1
+        MOVS     R5,#+0
+        MOVS     R6,#+0
+        MOVS     R0,#+4
+        LDR.N    R7,??I2C_Init_0  ;; 0xb71b00
+        LDRH     R1,[R4, #+0]
+        CMP      R1,#+0
+        BEQ.N    ??I2C_Init_1
+        LDRH     R0,[R4, #+0]
+        CMP      R0,#+2
+        BEQ.N    ??I2C_Init_1
+        LDRH     R0,[R4, #+0]
+        CMP      R0,#+10
+        BEQ.N    ??I2C_Init_1
+        MOVS     R1,#+156
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_Init_1:
+        LDRH     R0,[R4, #+2]
+        MOVS     R1,#+16384
+        CMP      R0,R1
+        BEQ.N    ??I2C_Init_2
+        LDRH     R0,[R4, #+2]
+        LDR.N    R1,??DataTable8  ;; 0xbfff
+        CMP      R0,R1
+        BEQ.N    ??I2C_Init_2
+        MOVS     R1,#+157
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_Init_2:
+        LDRH     R0,[R4, #+4]
+        MOVS     R1,#+1024
+        CMP      R0,R1
+        BCC.N    ??I2C_Init_3
+        MOVS     R1,#+158
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_Init_3:
+        LDRH     R0,[R4, #+6]
+        MOVS     R1,#+1024
+        CMP      R0,R1
+        BEQ.N    ??I2C_Init_4
+        LDRH     R0,[R4, #+6]
+        CMP      R0,#+0
+        BEQ.N    ??I2C_Init_4
+        MOVS     R1,#+159
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_Init_4:
+        LDRH     R0,[R4, #+8]
+        MOVS     R1,#+16384
+        CMP      R0,R1
+        BEQ.N    ??I2C_Init_5
+        LDRH     R0,[R4, #+8]
+        MOVS     R1,#+49152
+        CMP      R0,R1
+        BEQ.N    ??I2C_Init_5
+        MOVS     R1,#+160
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_Init_5:
+        LDR      R0,[R4, #+12]
+        CMP      R0,#+0
+        BEQ.N    ??I2C_Init_6
+        LDR      R0,[R4, #+12]
+        LDR.N    R1,??I2C_Init_0+0x4  ;; 0x61a81
+        CMP      R0,R1
+        BCC.N    ??I2C_Init_7
+??I2C_Init_6:
+        MOVS     R1,#+161
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_Init_7:
+        LDRH     R5,[R8, #+4]
+        MOVS     R0,R5
+        LDR.N    R5,??I2C_Init_0+0x8  ;; 0xffc0
+        ANDS     R5,R5,R0
+        MOV      R0,SP
+        _BLF     RCC_GetClocksFreq,??RCC_GetClocksFreq??rT
+        LDR      R7,[SP, #+8]
+        LDR.N    R0,??I2C_Init_0+0xC  ;; 0xf4240
+        UDIV     R6,R7,R0
+        ORRS     R5,R5,R6
+        STRH     R5,[R8, #+4]
+        MOVS     R1,#+0
+        MOV      R0,R8
+        BL       I2C_Cmd
+        MOVS     R5,#+0
+        LDR      R0,[R4, #+12]
+        LDR.N    R1,??I2C_Init_0+0x10  ;; 0x186a1
+        CMP      R0,R1
+        BCS.N    ??I2C_Init_8
+        LDR      R0,[R4, #+12]
+        LSLS     R0,R0,#+1
+        UDIV     R0,R7,R0
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        CMP      R0,#+4
+        BCS.N    ??I2C_Init_9
+        MOVS     R0,#+4
+??I2C_Init_9:
+        MOVS     R1,R5
+        MOVS     R5,R0
+        ORRS     R5,R5,R1
+        ADDS     R6,R6,#+1
+        STRH     R6,[R8, #+32]
+        B.N      ??I2C_Init_10
+??I2C_Init_8:
+        LDRH     R0,[R4, #+2]
+        LDR.N    R1,??DataTable8  ;; 0xbfff
+        CMP      R0,R1
+        BNE.N    ??I2C_Init_11
+        LDR      R0,[R4, #+12]
+        MOVS     R1,#+3
+        MULS     R0,R1,R0
+        UDIV     R0,R7,R0
+        B.N      ??I2C_Init_12
+??I2C_Init_11:
+        LDR      R0,[R4, #+12]
+        MOVS     R1,#+25
+        MULS     R0,R1,R0
+        UDIV     R0,R7,R0
+        ORRS     R0,R0,#0x4000
+??I2C_Init_12:
+        LSLS     R1,R0,#+20
+        BNE.N    ??I2C_Init_13
+        ORRS     R0,R0,#0x1
+??I2C_Init_13:
+        MOVS     R1,R5
+        ORRS     R5,R0,#0x8000
+        ORRS     R5,R5,R1
+        LSLS     R6,R6,#+16       ;; ZeroExtS R6,R6,#+16,#+16
+        LSRS     R6,R6,#+16
+        MOVS     R0,#+300
+        MULS     R6,R0,R6
+        MOVS     R0,#+1000
+        SDIV     R0,R6,R0
+        ADDS     R0,R0,#+1
+        STRH     R0,[R8, #+32]
+??I2C_Init_10:
+        STRH     R5,[R8, #+28]
+        MOVS     R1,#+1
+        MOV      R0,R8
+        BL       I2C_Cmd
+        LDRH     R5,[R8, #+0]
+        MOVS     R0,R5
+        LDR.N    R5,??I2C_Init_0+0x14  ;; 0xfbf5
+        ANDS     R5,R5,R0
+        MOVS     R1,R5
+        LDRH     R0,[R4, #+0]
+        LDRH     R5,[R4, #+6]
+        ORRS     R5,R5,R0
+        ORRS     R5,R5,R1
+        STRH     R5,[R8, #+0]
+        LDRH     R0,[R4, #+8]
+        LDRH     R1,[R4, #+4]
+        ORRS     R1,R1,R0
+        STRH     R1,[R8, #+8]
+        ADD      SP,SP,#+20
+        POP      {R4-R8,PC}       ;; return
+        DATA
+??I2C_Init_0:
+        DC32     0xb71b00
+        DC32     0x61a81
+        DC32     0xffc0
+        DC32     0xf4240
+        DC32     0x186a1
+        DC32     0xfbf5
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_StructInit:
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+0]
+        LDR.N    R1,??DataTable8  ;; 0xbfff
+        STRH     R1,[R0, #+2]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+4]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+6]
+        MOVS     R1,#+16384
+        STRH     R1,[R0, #+8]
+        LDR.N    R1,??I2C_StructInit_0  ;; 0x1388
+        STR      R1,[R0, #+12]
+        BX       LR               ;; return
+        DATA
+??I2C_StructInit_0:
+        DC32     0x1388
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable8:
+        DC32     0xbfff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_Cmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_Cmd_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_Cmd_0
+        MOVS     R1,#+292
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_Cmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_Cmd_1
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x1
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_Cmd_2
+??I2C_Cmd_1:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??DataTable19  ;; 0xfffe
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_Cmd_2:
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_DMACmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_DMACmd_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_DMACmd_0
+        MOVS     R1,#+318
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_DMACmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_DMACmd_1
+        LDRH     R0,[R4, #+4]
+        ORRS     R0,R0,#0x800
+        STRH     R0,[R4, #+4]
+        B.N      ??I2C_DMACmd_2
+??I2C_DMACmd_1:
+        LDRH     R0,[R4, #+4]
+        LDR.N    R1,??DataTable29  ;; 0xf7ff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+4]
+??I2C_DMACmd_2:
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_DMALastTransferCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_DMALastTransferCmd_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_DMALastTransferCmd_0
+        MOVS     R1,#+344
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_DMALastTransferCmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_DMALastTransferCmd_1
+        LDRH     R0,[R4, #+4]
+        ORRS     R0,R0,#0x1000
+        STRH     R0,[R4, #+4]
+        B.N      ??I2C_DMALastTransferCmd_2
+??I2C_DMALastTransferCmd_1:
+        LDRH     R0,[R4, #+4]
+        LDR.N    R1,??DataTable28  ;; 0xefff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+4]
+??I2C_DMALastTransferCmd_2:
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_GenerateSTART:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_GenerateSTART_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_GenerateSTART_0
+        MOVS     R1,#+370
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_GenerateSTART_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_GenerateSTART_1
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x100
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_GenerateSTART_2
+??I2C_GenerateSTART_1:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??I2C_GenerateSTART_3  ;; 0xfeff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_GenerateSTART_2:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_GenerateSTART_3:
+        DC32     0xfeff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_GenerateSTOP:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_GenerateSTOP_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_GenerateSTOP_0
+        MOVS     R1,#+396
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_GenerateSTOP_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_GenerateSTOP_1
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x200
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_GenerateSTOP_2
+??I2C_GenerateSTOP_1:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??I2C_GenerateSTOP_3  ;; 0xfdff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_GenerateSTOP_2:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_GenerateSTOP_3:
+        DC32     0xfdff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_AcknowledgeConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_AcknowledgeConfig_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_AcknowledgeConfig_0
+        MOVS     R1,#+422
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_AcknowledgeConfig_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_AcknowledgeConfig_1
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x400
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_AcknowledgeConfig_2
+??I2C_AcknowledgeConfig_1:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??I2C_AcknowledgeConfig_3  ;; 0xfbff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_AcknowledgeConfig_2:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_AcknowledgeConfig_3:
+        DC32     0xfbff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_OwnAddress2Config:
+        MOVS     R2,#+0
+        LDRH     R3,[R0, #+12]
+        MOVS     R2,R3
+        MOVS     R3,R2
+        LDR.N    R2,??I2C_OwnAddress2Config_0  ;; 0xff01
+        ANDS     R2,R2,R3
+        MOVS     R3,R2
+        ANDS     R2,R1,#0xFE
+        ORRS     R2,R2,R3
+        STRH     R2,[R0, #+12]
+        BX       LR               ;; return
+        DATA
+??I2C_OwnAddress2Config_0:
+        DC32     0xff01
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_DualAddressCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_DualAddressCmd_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_DualAddressCmd_0
+        MOVS     R1,#+470
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_DualAddressCmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_DualAddressCmd_1
+        LDRH     R0,[R4, #+12]
+        ORRS     R0,R0,#0x1
+        STRH     R0,[R4, #+12]
+        B.N      ??I2C_DualAddressCmd_2
+??I2C_DualAddressCmd_1:
+        LDRH     R0,[R4, #+12]
+        LDR.N    R1,??DataTable19  ;; 0xfffe
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+12]
+??I2C_DualAddressCmd_2:
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable18:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable19:
+        DC32     0xfffe
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_GeneralCallCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_GeneralCallCmd_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_GeneralCallCmd_0
+        MOVS     R1,#+496
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_GeneralCallCmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_GeneralCallCmd_1
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x40
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_GeneralCallCmd_2
+??I2C_GeneralCallCmd_1:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??I2C_GeneralCallCmd_3  ;; 0xffbf
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_GeneralCallCmd_2:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_GeneralCallCmd_3:
+        DC32     0xffbf
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_ITConfig:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R6,R2
+        CMP      R6,#+0
+        BEQ.N    ??I2C_ITConfig_0
+        CMP      R6,#+1
+        BEQ.N    ??I2C_ITConfig_0
+        MOVS     R1,#+528
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_ITConfig_0:
+        LDR.N    R0,??I2C_ITConfig_1  ;; 0xf8ff
+        TST      R5,R0
+        BNE.N    ??I2C_ITConfig_2
+        CMP      R5,#+0
+        BNE.N    ??I2C_ITConfig_3
+??I2C_ITConfig_2:
+        LDR.N    R1,??I2C_ITConfig_1+0x4  ;; 0x211
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_ITConfig_3:
+        CMP      R6,#+0
+        BEQ.N    ??I2C_ITConfig_4
+        LDRH     R0,[R4, #+4]
+        ORRS     R5,R5,R0
+        STRH     R5,[R4, #+4]
+        B.N      ??I2C_ITConfig_5
+??I2C_ITConfig_4:
+        LDRH     R0,[R4, #+4]
+        BICS     R0,R0,R5
+        STRH     R0,[R4, #+4]
+??I2C_ITConfig_5:
+        POP      {R4-R6,PC}       ;; return
+        DATA
+??I2C_ITConfig_1:
+        DC32     0xf8ff
+        DC32     0x211
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_SendData:
+        STRH     R1,[R0, #+16]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_ReceiveData:
+        LDRH     R0,[R0, #+16]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_Send7bitAddress:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R6,R2
+        CMP      R6,#+0
+        BEQ.N    ??I2C_Send7bitAddress_0
+        CMP      R6,#+1
+        BEQ.N    ??I2C_Send7bitAddress_0
+        LDR.N    R1,??I2C_Send7bitAddress_1  ;; 0x24a
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_Send7bitAddress_0:
+        CMP      R6,#+0
+        BEQ.N    ??I2C_Send7bitAddress_2
+        ORRS     R5,R5,#0x1
+        B.N      ??I2C_Send7bitAddress_3
+??I2C_Send7bitAddress_2:
+        ANDS     R5,R5,#0xFE
+??I2C_Send7bitAddress_3:
+        LSLS     R5,R5,#+24       ;; ZeroExtS R5,R5,#+24,#+24
+        LSRS     R5,R5,#+24
+        STRH     R5,[R4, #+16]
+        POP      {R4-R6,PC}       ;; return
+        Nop      
+        DATA
+??I2C_Send7bitAddress_1:
+        DC32     0x24a
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_ReadRegister:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_ReadRegister_0
+        CMP      R5,#+4
+        BEQ.N    ??I2C_ReadRegister_0
+        CMP      R5,#+8
+        BEQ.N    ??I2C_ReadRegister_0
+        CMP      R5,#+12
+        BEQ.N    ??I2C_ReadRegister_0
+        CMP      R5,#+16
+        BEQ.N    ??I2C_ReadRegister_0
+        CMP      R5,#+20
+        BEQ.N    ??I2C_ReadRegister_0
+        CMP      R5,#+24
+        BEQ.N    ??I2C_ReadRegister_0
+        CMP      R5,#+28
+        BEQ.N    ??I2C_ReadRegister_0
+        CMP      R5,#+32
+        BEQ.N    ??I2C_ReadRegister_0
+        LDR.N    R1,??I2C_ReadRegister_1  ;; 0x26f
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_ReadRegister_0:
+        LDRH     R0,[R4, R5]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??I2C_ReadRegister_1:
+        DC32     0x26f
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_SoftwareResetCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_SoftwareResetCmd_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_SoftwareResetCmd_0
+        LDR.N    R1,??I2C_SoftwareResetCmd_1  ;; 0x281
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_SoftwareResetCmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_SoftwareResetCmd_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x8000
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_SoftwareResetCmd_3
+??I2C_SoftwareResetCmd_2:
+        LDRH     R0,[R4, #+0]
+        LSLS     R0,R0,#+17       ;; ZeroExtS R0,R0,#+17,#+17
+        LSRS     R0,R0,#+17
+        STRH     R0,[R4, #+0]
+??I2C_SoftwareResetCmd_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??I2C_SoftwareResetCmd_1:
+        DC32     0x281
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_SMBusAlertConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+8192
+        CMP      R5,R0
+        BEQ.N    ??I2C_SMBusAlertConfig_0
+        LDR.N    R0,??I2C_SMBusAlertConfig_1  ;; 0xcfff
+        CMP      R5,R0
+        BEQ.N    ??I2C_SMBusAlertConfig_0
+        LDR.N    R1,??I2C_SMBusAlertConfig_1+0x4  ;; 0x29d
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_SMBusAlertConfig_0:
+        MOVS     R0,#+8192
+        CMP      R5,R0
+        BNE.N    ??I2C_SMBusAlertConfig_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x2000
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_SMBusAlertConfig_3
+??I2C_SMBusAlertConfig_2:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??I2C_SMBusAlertConfig_1  ;; 0xcfff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_SMBusAlertConfig_3:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_SMBusAlertConfig_1:
+        DC32     0xcfff
+        DC32     0x29d
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_TransmitPEC:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_TransmitPEC_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_TransmitPEC_0
+        LDR.N    R1,??I2C_TransmitPEC_1  ;; 0x2b7
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_TransmitPEC_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_TransmitPEC_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x1000
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_TransmitPEC_3
+??I2C_TransmitPEC_2:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??DataTable28  ;; 0xefff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_TransmitPEC_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??I2C_TransmitPEC_1:
+        DC32     0x2b7
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable28:
+        DC32     0xefff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_PECPositionConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+2048
+        CMP      R5,R0
+        BEQ.N    ??I2C_PECPositionConfig_0
+        LDR.N    R0,??DataTable29  ;; 0xf7ff
+        CMP      R5,R0
+        BEQ.N    ??I2C_PECPositionConfig_0
+        LDR.N    R1,??I2C_PECPositionConfig_1  ;; 0x2d5
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_PECPositionConfig_0:
+        MOVS     R0,#+2048
+        CMP      R5,R0
+        BNE.N    ??I2C_PECPositionConfig_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x800
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_PECPositionConfig_3
+??I2C_PECPositionConfig_2:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??DataTable29  ;; 0xf7ff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_PECPositionConfig_3:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_PECPositionConfig_1:
+        DC32     0x2d5
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable29:
+        DC32     0xf7ff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_CalculatePEC:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_CalculatePEC_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_CalculatePEC_0
+        MOVS     R1,#+752
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_CalculatePEC_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_CalculatePEC_1
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x20
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_CalculatePEC_2
+??I2C_CalculatePEC_1:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??I2C_CalculatePEC_3  ;; 0xffdf
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_CalculatePEC_2:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_CalculatePEC_3:
+        DC32     0xffdf
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_GetPEC:
+        LDRH     R0,[R0, #+24]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        LSRS     R0,R0,#+8
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_ARPCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_ARPCmd_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_ARPCmd_0
+        LDR.N    R1,??I2C_ARPCmd_1  ;; 0x31b
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_ARPCmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??I2C_ARPCmd_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x10
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_ARPCmd_3
+??I2C_ARPCmd_2:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??I2C_ARPCmd_1+0x4  ;; 0xffef
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_ARPCmd_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??I2C_ARPCmd_1:
+        DC32     0x31b
+        DC32     0xffef
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_StretchClockCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_StretchClockCmd_0
+        CMP      R5,#+1
+        BEQ.N    ??I2C_StretchClockCmd_0
+        LDR.N    R1,??I2C_StretchClockCmd_1  ;; 0x335
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_StretchClockCmd_0:
+        CMP      R5,#+0
+        BNE.N    ??I2C_StretchClockCmd_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x80
+        STRH     R0,[R4, #+0]
+        B.N      ??I2C_StretchClockCmd_3
+??I2C_StretchClockCmd_2:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??I2C_StretchClockCmd_1+0x4  ;; 0xff7f
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??I2C_StretchClockCmd_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??I2C_StretchClockCmd_1:
+        DC32     0x335
+        DC32     0xff7f
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_FastModeDutyCycleConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+16384
+        CMP      R5,R0
+        BEQ.N    ??I2C_FastModeDutyCycleConfig_0
+        LDR.N    R0,??DataTable37  ;; 0xbfff
+        CMP      R5,R0
+        BEQ.N    ??I2C_FastModeDutyCycleConfig_0
+        LDR.N    R1,??I2C_FastModeDutyCycleConfig_1  ;; 0x351
+        LDR.N    R0,??DataTable36  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_FastModeDutyCycleConfig_0:
+        MOVS     R0,#+16384
+        CMP      R5,R0
+        BEQ.N    ??I2C_FastModeDutyCycleConfig_2
+        LDRH     R0,[R4, #+28]
+        LDR.N    R1,??DataTable37  ;; 0xbfff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+28]
+        B.N      ??I2C_FastModeDutyCycleConfig_3
+??I2C_FastModeDutyCycleConfig_2:
+        LDRH     R0,[R4, #+28]
+        ORRS     R0,R0,#0x4000
+        STRH     R0,[R4, #+28]
+??I2C_FastModeDutyCycleConfig_3:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_FastModeDutyCycleConfig_1:
+        DC32     0x351
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable36:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable37:
+        DC32     0xbfff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_GetLastEvent:
+        PUSH     {R4}
+        MOVS     R1,R0
+        MOVS     R0,#+0
+        MOVS     R2,#+0
+        MOVS     R3,#+0
+        LDRH     R4,[R1, #+20]
+        MOVS     R2,R4
+        LDRH     R1,[R1, #+24]
+        MOVS     R3,R1
+        LSLS     R3,R3,#+16
+        ORRS     R3,R3,R2
+        LSLS     R1,R3,#+8        ;; ZeroExtS R1,R3,#+8,#+8
+        LSRS     R1,R1,#+8
+        MOVS     R0,R1
+        POP      {R4}
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_CheckEvent:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R1,#+0
+        MOVS     R2,#+0
+        MOVS     R3,#+0
+        MOVS     R0,#+0
+        LDR.N    R6,??I2C_CheckEvent_0  ;; 0x60082
+        CMP      R5,R6
+        BEQ.N    ??I2C_CheckEvent_1
+        CMP      R5,#+131074
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x4  ;; 0x860080
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        CMP      R5,#+8519680
+        BEQ.N    ??I2C_CheckEvent_1
+        CMP      R5,#+1179648
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x8  ;; 0x20040
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0xC  ;; 0x820040
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x10  ;; 0x120040
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x14  ;; 0x60084
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x18  ;; 0x860084
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x1C  ;; 0x160084
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        CMP      R5,#+16
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x20  ;; 0x30001
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x24  ;; 0x70082
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x28  ;; 0x30002
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x2C  ;; 0x30040
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x30  ;; 0x70084
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R0,??I2C_CheckEvent_0+0x34  ;; 0x30008
+        CMP      R5,R0
+        BEQ.N    ??I2C_CheckEvent_1
+        CMP      R5,#+1024
+        BEQ.N    ??I2C_CheckEvent_1
+        LDR.N    R1,??I2C_CheckEvent_0+0x38  ;; 0x393
+        LDR.N    R0,??DataTable74  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_CheckEvent_1:
+        LDRH     R2,[R4, #+20]
+        LDRH     R3,[R4, #+24]
+        LSLS     R3,R3,#+16
+        ORRS     R3,R3,R2
+        LSLS     R1,R3,#+8        ;; ZeroExtS R1,R3,#+8,#+8
+        LSRS     R1,R1,#+8
+        CMP      R1,R5
+        BNE.N    ??I2C_CheckEvent_2
+        MOVS     R0,#+1
+        B.N      ??I2C_CheckEvent_3
+??I2C_CheckEvent_2:
+        MOVS     R0,#+0
+??I2C_CheckEvent_3:
+        POP      {R4-R6,PC}       ;; return
+        Nop      
+        DATA
+??I2C_CheckEvent_0:
+        DC32     0x60082
+        DC32     0x860080
+        DC32     0x20040
+        DC32     0x820040
+        DC32     0x120040
+        DC32     0x60084
+        DC32     0x860084
+        DC32     0x160084
+        DC32     0x30001
+        DC32     0x70082
+        DC32     0x30002
+        DC32     0x30040
+        DC32     0x70084
+        DC32     0x30008
+        DC32     0x393
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_GetFlagStatus:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        MOVS     R1,#+0
+        MOVS     R2,#+0
+        MOVS     R3,#+0
+        CMP      R5,#+8388608
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+4194304
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+2097152
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+1048576
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+262144
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+131072
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+65536
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable75  ;; 0x10008000
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable76  ;; 0x10004000
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+268439552
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable77  ;; 0x10000800
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable78  ;; 0x10000400
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable79  ;; 0x10000200
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable80  ;; 0x10000100
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+128
+        BEQ.N    ??I2C_GetFlagStatus_0
+        CMP      R5,#+64
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable81  ;; 0x60000010
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable82  ;; 0x20000008
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable83  ;; 0x60000004
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable84  ;; 0xffffffffa0000002
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R0,??DataTable85  ;; 0x20000001
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetFlagStatus_0
+        LDR.N    R1,??I2C_GetFlagStatus_1  ;; 0x3d2
+        LDR.N    R0,??DataTable74  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_GetFlagStatus_0:
+        LDRH     R2,[R4, #+20]
+        LDRH     R3,[R4, #+24]
+        LSLS     R3,R3,#+16
+        MOVS     R1,R3
+        ORRS     R1,R1,R2
+        LSLS     R5,R5,#+8        ;; ZeroExtS R5,R5,#+8,#+8
+        LSRS     R5,R5,#+8
+        ANDS     R5,R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_GetFlagStatus_2
+        MOVS     R0,#+1
+        B.N      ??I2C_GetFlagStatus_3
+??I2C_GetFlagStatus_2:
+        MOVS     R0,#+0
+??I2C_GetFlagStatus_3:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_GetFlagStatus_1:
+        DC32     0x3d2
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_ClearFlag:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        MOVS     R1,#+0
+        LDR.N    R2,??DataTable75  ;; 0x10008000
+        CMP      R5,R2
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable76  ;; 0x10004000
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        CMP      R5,#+268439552
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable77  ;; 0x10000800
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable78  ;; 0x10000400
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable79  ;; 0x10000200
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable80  ;; 0x10000100
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable81  ;; 0x60000010
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable82  ;; 0x20000008
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable83  ;; 0x60000004
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable84  ;; 0xffffffffa0000002
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R0,??DataTable85  ;; 0x20000001
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearFlag_0
+        LDR.N    R1,??I2C_ClearFlag_1  ;; 0x40a
+        LDR.N    R0,??DataTable74  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_ClearFlag_0:
+        LSLS     R0,R5,#+8        ;; ZeroExtS R0,R5,#+8,#+8
+        LSRS     R0,R0,#+8
+        MOVS     R1,R5
+        LSRS     R1,R1,#+28
+        LSLS     R1,R1,#+24       ;; ZeroExtS R1,R1,#+24,#+24
+        LSRS     R1,R1,#+24
+        CMP      R1,#+1
+        BNE.N    ??I2C_ClearFlag_2
+        LDRH     R1,[R4, #+20]
+        BICS     R1,R1,R0
+        STRH     R1,[R4, #+20]
+        B.N      ??I2C_ClearFlag_3
+??I2C_ClearFlag_2:
+        LSLS     R1,R1,#+24       ;; ZeroExtS R1,R1,#+24,#+24
+        LSRS     R1,R1,#+24
+        CMP      R1,#+2
+        BNE.N    ??I2C_ClearFlag_4
+        LDRH     R0,[R4, #+20]
+        B.N      ??I2C_ClearFlag_3
+??I2C_ClearFlag_4:
+        LSLS     R1,R1,#+24       ;; ZeroExtS R1,R1,#+24,#+24
+        LSRS     R1,R1,#+24
+        CMP      R1,#+6
+        BNE.N    ??I2C_ClearFlag_5
+        LDRH     R0,[R4, #+20]
+        LDRH     R1,[R4, #+0]
+        ORRS     R1,R1,#0x1
+        STRH     R1,[R4, #+0]
+        B.N      ??I2C_ClearFlag_3
+??I2C_ClearFlag_5:
+        LDRH     R0,[R4, #+20]
+        LDRH     R1,[R4, #+24]
+??I2C_ClearFlag_3:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_ClearFlag_1:
+        DC32     0x40a
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_GetITStatus:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        MOVS     R1,#+0
+        MOVS     R2,#+0
+        MOVS     R3,#+0
+        LDR.N    R6,??DataTable75  ;; 0x10008000
+        CMP      R5,R6
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable76  ;; 0x10004000
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        CMP      R5,#+268439552
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable77  ;; 0x10000800
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable78  ;; 0x10000400
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable79  ;; 0x10000200
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable80  ;; 0x10000100
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        CMP      R5,#+128
+        BEQ.N    ??I2C_GetITStatus_0
+        CMP      R5,#+64
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable81  ;; 0x60000010
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable82  ;; 0x20000008
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable83  ;; 0x60000004
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable84  ;; 0xffffffffa0000002
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R0,??DataTable85  ;; 0x20000001
+        CMP      R5,R0
+        BEQ.N    ??I2C_GetITStatus_0
+        LDR.N    R1,??I2C_GetITStatus_1  ;; 0x451
+        LDR.N    R0,??DataTable74  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_GetITStatus_0:
+        LDRH     R2,[R4, #+20]
+        LDRH     R3,[R4, #+24]
+        LSLS     R3,R3,#+16
+        MOVS     R1,R3
+        ORRS     R1,R1,R2
+        LSLS     R5,R5,#+8        ;; ZeroExtS R5,R5,#+8,#+8
+        LSRS     R5,R5,#+8
+        ANDS     R5,R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??I2C_GetITStatus_2
+        MOVS     R0,#+1
+        B.N      ??I2C_GetITStatus_3
+??I2C_GetITStatus_2:
+        MOVS     R0,#+0
+??I2C_GetITStatus_3:
+        POP      {R4-R6,PC}       ;; return
+        Nop      
+        DATA
+??I2C_GetITStatus_1:
+        DC32     0x451
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable74:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C_ClearITPendingBit:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        MOVS     R1,#+0
+        LDR.N    R2,??DataTable75  ;; 0x10008000
+        CMP      R5,R2
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable76  ;; 0x10004000
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        CMP      R5,#+268439552
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable77  ;; 0x10000800
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable78  ;; 0x10000400
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable79  ;; 0x10000200
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable80  ;; 0x10000100
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable81  ;; 0x60000010
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable82  ;; 0x20000008
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable83  ;; 0x60000004
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable84  ;; 0xffffffffa0000002
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R0,??DataTable85  ;; 0x20000001
+        CMP      R5,R0
+        BEQ.N    ??I2C_ClearITPendingBit_0
+        LDR.N    R1,??I2C_ClearITPendingBit_1  ;; 0x489
+        LDR.N    R0,??DataTable86  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??I2C_ClearITPendingBit_0:
+        LSLS     R0,R5,#+8        ;; ZeroExtS R0,R5,#+8,#+8
+        LSRS     R0,R0,#+8
+        MOVS     R1,R5
+        LSRS     R1,R1,#+28
+        LSLS     R1,R1,#+24       ;; ZeroExtS R1,R1,#+24,#+24
+        LSRS     R1,R1,#+24
+        CMP      R1,#+1
+        BNE.N    ??I2C_ClearITPendingBit_2
+        LDRH     R1,[R4, #+20]
+        BICS     R1,R1,R0
+        STRH     R1,[R4, #+20]
+        B.N      ??I2C_ClearITPendingBit_3
+??I2C_ClearITPendingBit_2:
+        LSLS     R1,R1,#+24       ;; ZeroExtS R1,R1,#+24,#+24
+        LSRS     R1,R1,#+24
+        CMP      R1,#+2
+        BNE.N    ??I2C_ClearITPendingBit_4
+        LDRH     R0,[R4, #+20]
+        B.N      ??I2C_ClearITPendingBit_3
+??I2C_ClearITPendingBit_4:
+        LSLS     R1,R1,#+24       ;; ZeroExtS R1,R1,#+24,#+24
+        LSRS     R1,R1,#+24
+        CMP      R1,#+6
+        BNE.N    ??I2C_ClearITPendingBit_5
+        LDRH     R0,[R4, #+20]
+        LDRH     R1,[R4, #+0]
+        ORRS     R1,R1,#0x1
+        STRH     R1,[R4, #+0]
+        B.N      ??I2C_ClearITPendingBit_3
+??I2C_ClearITPendingBit_5:
+        LDRH     R0,[R4, #+20]
+        LDRH     R1,[R4, #+24]
+??I2C_ClearITPendingBit_3:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??I2C_ClearITPendingBit_1:
+        DC32     0x489
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable75:
+        DC32     0x10008000
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable76:
+        DC32     0x10004000
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable77:
+        DC32     0x10000800
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable78:
+        DC32     0x10000400
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable79:
+        DC32     0x10000200
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable80:
+        DC32     0x10000100
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable81:
+        DC32     0x60000010
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable82:
+        DC32     0x20000008
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable83:
+        DC32     0x60000004
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable84:
+        DC32     0xffffffffa0000002
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable85:
+        DC32     0x20000001
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable86:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB1PeriphResetCmd??rT:
+        LDR.N    R3,??Subroutine0_0  ;; RCC_APB1PeriphResetCmd
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     RCC_APB1PeriphResetCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??assert_failed??rT:
+        LDR.N    R3,??Subroutine1_0  ;; assert_failed
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     assert_failed
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_GetClocksFreq??rT:
+        LDR.N    R3,??Subroutine2_0  ;; RCC_GetClocksFreq
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     RCC_GetClocksFreq
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "C:\\\\David JIANG\\\\ST MCU...">`:
+        DATA
+        DC8 43H, 3AH, 5CH, 44H, 61H, 76H, 69H, 64H
+        DC8 20H, 4AH, 49H, 41H, 4EH, 47H, 5CH, 53H
+        DC8 54H, 20H, 4DH, 43H, 55H, 5CH, 44H, 6FH
+        DC8 63H, 73H, 5CH, 53H, 54H, 4DH, 33H, 32H
+        DC8 5CH, 41H, 4EH, 5FH, 4AH, 49H, 41H, 4EH
+        DC8 47H, 5CH, 54H, 49H, 4DH, 20H, 45H, 6EH
+        DC8 63H, 6FH, 64H, 65H, 72H, 5CH, 65H, 78H
+        DC8 61H, 6DH, 70H, 6CH, 65H, 5CH, 46H, 57H
+        DC8 4CH, 69H, 62H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 73H, 74H, 6DH, 33H, 32H, 66H, 31H, 30H
+        DC8 78H, 5FH, 69H, 32H, 63H, 2EH, 63H, 0
+
+        END
+// 
+// 2 566 bytes in segment CODE
+//    88 bytes in segment DATA_C
+// 
+// 2 542 bytes of CODE  memory (+ 24 bytes shared)
+//    88 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

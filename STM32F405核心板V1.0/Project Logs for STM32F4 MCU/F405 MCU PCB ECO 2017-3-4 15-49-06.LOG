@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=U1 Old Footprint=STM32F405RG-LQFP64 New Footprint=STM32F405RGT6 - duplicate
+Added Room: Name=F405 MCU

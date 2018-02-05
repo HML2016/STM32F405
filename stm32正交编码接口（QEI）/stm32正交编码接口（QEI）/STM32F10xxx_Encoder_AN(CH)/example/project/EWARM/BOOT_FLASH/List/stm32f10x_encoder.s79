@@ -1,0 +1,828 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:30 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\source\stm32f10x_encoder.c  /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\source\stm32f10x_encoder.c" /
+//                        -D VECT_TAB_FLASH -lcN "C:\David JIANG\ST          /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_encoder.s79                                    /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_encoder
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        EXTERN ??div64_t
+        EXTERN ??llmul_t
+
+        PUBWEAK `?*?DATA_ID`
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable18 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable20 EQU 0
+??DataTable22 EQU 0
+??DataTable23 EQU 0
+??DataTable24 EQU 0
+??DataTable25 EQU 0
+??DataTable26 EQU 0
+??DataTable27 EQU 0
+??DataTable29 EQU 0
+??DataTable3 EQU 0
+??DataTable30 EQU 0
+??DataTable31 EQU 0
+??DataTable34 EQU 0
+??DataTable36 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable8 EQU 0
+??DataTable9 EQU 0
+        MULTWEAK ??GPIO_Init??rT
+        MULTWEAK ??GPIO_StructInit??rT
+        MULTWEAK ??NVIC_Init??rT
+        MULTWEAK ??RCC_APB1PeriphClockCmd??rT
+        MULTWEAK ??RCC_APB2PeriphClockCmd??rT
+        MULTWEAK ??TIM_ClearFlag??rT
+        MULTWEAK ??TIM_Cmd??rT
+        MULTWEAK ??TIM_DeInit??rT
+        MULTWEAK ??TIM_EncoderInterfaceConfig??rT
+        MULTWEAK ??TIM_GetCounter??rT
+        MULTWEAK ??TIM_ICInit??rT
+        MULTWEAK ??TIM_ICStructInit??rT
+        MULTWEAK ??TIM_ITConfig??rT
+        MULTWEAK ??TIM_TimeBaseInit??rT
+        MULTWEAK ??TIM_TimeBaseStructInit??rT
+        MULTWEAK ??int2char??rT
+        MULTWEAK ??rT??div64_t
+        MULTWEAK ??rT??llmul_t
+        MULTWEAK ??write_string??rT
+        PUBWEAK ?init?tab?DATA_I
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC ENC_Calc_Average_Speed
+        PUBLIC ENC_Calc_Rot_Speed
+        PUBLIC ENC_Clear_Speed_Buffer
+        PUBLIC ENC_Get_Electrical_Angle
+        PUBLIC ENC_Init
+        PUBLIC LCD_Display
+        PUBLIC TIM3_IRQHandler
+
+GPIO_Init           SYMBOL "GPIO_Init"
+GPIO_StructInit     SYMBOL "GPIO_StructInit"
+NVIC_Init           SYMBOL "NVIC_Init"
+RCC_APB1PeriphClockCmd SYMBOL "RCC_APB1PeriphClockCmd"
+RCC_APB2PeriphClockCmd SYMBOL "RCC_APB2PeriphClockCmd"
+TIM_ClearFlag       SYMBOL "TIM_ClearFlag"
+TIM_Cmd             SYMBOL "TIM_Cmd"
+TIM_DeInit          SYMBOL "TIM_DeInit"
+TIM_EncoderInterfaceConfig SYMBOL "TIM_EncoderInterfaceConfig"
+TIM_GetCounter      SYMBOL "TIM_GetCounter"
+TIM_ICInit          SYMBOL "TIM_ICInit"
+TIM_ICStructInit    SYMBOL "TIM_ICStructInit"
+TIM_ITConfig        SYMBOL "TIM_ITConfig"
+TIM_TimeBaseInit    SYMBOL "TIM_TimeBaseInit"
+TIM_TimeBaseStructInit SYMBOL "TIM_TimeBaseStructInit"
+int2char            SYMBOL "int2char"
+write_string        SYMBOL "write_string"
+??GPIO_Init??rT     SYMBOL "??rT", GPIO_Init
+??GPIO_StructInit??rT SYMBOL "??rT", GPIO_StructInit
+??NVIC_Init??rT     SYMBOL "??rT", NVIC_Init
+??RCC_APB1PeriphClockCmd??rT SYMBOL "??rT", RCC_APB1PeriphClockCmd
+??RCC_APB2PeriphClockCmd??rT SYMBOL "??rT", RCC_APB2PeriphClockCmd
+??TIM_ClearFlag??rT SYMBOL "??rT", TIM_ClearFlag
+??TIM_Cmd??rT       SYMBOL "??rT", TIM_Cmd
+??TIM_DeInit??rT    SYMBOL "??rT", TIM_DeInit
+??TIM_EncoderInterfaceConfig??rT SYMBOL "??rT", TIM_EncoderInterfaceConfig
+??TIM_GetCounter??rT SYMBOL "??rT", TIM_GetCounter
+??TIM_ICInit??rT    SYMBOL "??rT", TIM_ICInit
+??TIM_ICStructInit??rT SYMBOL "??rT", TIM_ICStructInit
+??TIM_ITConfig??rT  SYMBOL "??rT", TIM_ITConfig
+??TIM_TimeBaseInit??rT SYMBOL "??rT", TIM_TimeBaseInit
+??TIM_TimeBaseStructInit??rT SYMBOL "??rT", TIM_TimeBaseStructInit
+??int2char??rT      SYMBOL "??rT", int2char
+??write_string??rT  SYMBOL "??rT", write_string
+
+        EXTERN GPIOA
+        EXTERN GPIO_Init
+        EXTERN GPIO_StructInit
+        EXTERN NVIC_Init
+        EXTERN RCC_APB1PeriphClockCmd
+        EXTERN RCC_APB2PeriphClockCmd
+        EXTERN TIM2
+        EXTERN TIM3
+        EXTERN TIM_ClearFlag
+        EXTERN TIM_Cmd
+        EXTERN TIM_DeInit
+        EXTERN TIM_EncoderInterfaceConfig
+        EXTERN TIM_GetCounter
+        EXTERN TIM_ICInit
+        EXTERN TIM_ICStructInit
+        EXTERN TIM_ITConfig
+        EXTERN TIM_TimeBaseInit
+        EXTERN TIM_TimeBaseStructInit
+        EXTERN int2char
+        EXTERN write_string
+
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+hPrevious_angle:
+        DS8 2
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+hSpeed_Buffer:
+        DS8 16
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+hRot_Speed:
+        DS8 2
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+bSpeed_Buffer_Index:
+        DS8 1
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+hEncoder_Timer_Overflow:
+        DS8 2
+
+        RSEG DATA_I:DATA:SORT:NOROOT(0)
+bIs_First_Measurement:
+        DS8 1
+        REQUIRE `?<Initializer for bIs_First_Measurement>`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+ENC_Init:
+        PUSH     {LR}
+        SUB      SP,SP,#+28
+        MOVS     R1,#+1
+        MOVS     R0,#+2
+        _BLF     RCC_APB1PeriphClockCmd,??RCC_APB1PeriphClockCmd??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+4
+        _BLF     RCC_APB2PeriphClockCmd,??RCC_APB2PeriphClockCmd??rT
+        ADD      R0,SP,#+4
+        _BLF     GPIO_StructInit,??GPIO_StructInit??rT
+        MOVS     R0,#+192
+        STRH     R0,[SP, #+4]
+        MOVS     R0,#+4
+        STRB     R0,[SP, #+7]
+        ADD      R1,SP,#+4
+        LDR.N    R0,??ENC_Init_0  ;; GPIOA
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        MOVS     R0,#+29
+        STRB     R0,[SP, #+0]
+        MOVS     R0,#+1
+        STRB     R0,[SP, #+1]
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+2]
+        MOVS     R0,#+1
+        STRB     R0,[SP, #+3]
+        MOV      R0,SP
+        _BLF     NVIC_Init,??NVIC_Init??rT
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_DeInit,??TIM_DeInit??rT
+        ADD      R0,SP,#+8
+        _BLF     TIM_TimeBaseStructInit,??TIM_TimeBaseStructInit??rT
+        MOVS     R0,#+0
+        STRH     R0,[SP, #+10]
+        LDR.N    R0,??ENC_Init_0+0x4  ;; 0x63f
+        STRH     R0,[SP, #+8]
+        MOVS     R0,#+0
+        STRH     R0,[SP, #+12]
+        MOVS     R0,#+0
+        STRH     R0,[SP, #+14]
+        ADD      R1,SP,#+8
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_TimeBaseInit,??TIM_TimeBaseInit??rT
+        MOVS     R3,#+0
+        MOVS     R2,#+0
+        MOVS     R1,#+3
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_EncoderInterfaceConfig,??TIM_EncoderInterfaceConfig??rT
+        ADD      R0,SP,#+16
+        _BLF     TIM_ICStructInit,??TIM_ICStructInit??rT
+        MOVS     R0,#+6
+        STRB     R0,[SP, #+26]
+        ADD      R1,SP,#+16
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_ICInit,??TIM_ICInit??rT
+        MOVS     R1,#+1
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_ClearFlag,??TIM_ClearFlag??rT
+        MOVS     R2,#+1
+        MOVS     R1,#+1
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_ITConfig,??TIM_ITConfig??rT
+        LDR.N    R0,??ENC_Init_0+0x8  ;; TIM2
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+36]
+        BL       ENC_Clear_Speed_Buffer
+        MOVS     R1,#+1
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_Cmd,??TIM_Cmd??rT
+        ADD      SP,SP,#+28
+        POP      {PC}             ;; return
+        Nop      
+        DATA
+??ENC_Init_0:
+        DC32     GPIOA
+        DC32     0x63f
+        DC32     TIM2
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+ENC_Get_Electrical_Angle:
+        PUSH     {LR}
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_GetCounter,??TIM_GetCounter??rT
+        LDR.N    R1,??ENC_Get_Electrical_Angle_0  ;; 0x28f5c2
+        MULS     R0,R1,R0
+        MOVS     R1,#+65536
+        SDIV     R0,R0,R1
+        LSLS     R0,R0,#+16       ;; SignExtS R0,R0,#+16,#+16
+        ASRS     R0,R0,#+16
+        POP      {PC}             ;; return
+        DATA
+??ENC_Get_Electrical_Angle_0:
+        DC32     0x28f5c2
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+ENC_Clear_Speed_Buffer:
+        MOVS     R0,#+0
+        B.N      ??ENC_Clear_Speed_Buffer_0
+??ENC_Clear_Speed_Buffer_1:
+        MOVS     R1,#+2
+        MULS     R1,R0,R1
+        LDR.N    R2,??DataTable28  ;; hSpeed_Buffer
+        MOVS     R3,#+0
+        STRH     R3,[R2, R1]
+        ADDS     R0,R0,#+1
+??ENC_Clear_Speed_Buffer_0:
+        CMP      R0,#+8
+        BCC.N    ??ENC_Clear_Speed_Buffer_1
+        LDR.N    R0,??DataTable21  ;; bIs_First_Measurement
+        MOVS     R1,#+1
+        STRB     R1,[R0, #+0]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+ENC_Calc_Rot_Speed:
+        PUSH     {R4-R6,LR}
+        LDR.N    R0,??DataTable21  ;; bIs_First_Measurement
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+0
+        BNE.N    ??ENC_Calc_Rot_Speed_0
+        LDR.N    R0,??DataTable37  ;; hEncoder_Timer_Overflow
+        LDRH     R0,[R0, #+0]
+        LDR.N    R1,??DataTable33  ;; TIM3
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+36]
+        LDR.N    R2,??DataTable37  ;; hEncoder_Timer_Overflow
+        LDRH     R2,[R2, #+0]
+        LDR.N    R3,??DataTable33  ;; TIM3
+        LDR      R3,[R3, #+0]
+        LDRH     R3,[R3, #+36]
+        LDR.N    R4,??DataTable37  ;; hEncoder_Timer_Overflow
+        MOVS     R5,#+0
+        STRH     R5,[R4, #+0]
+        LDR.N    R4,??DataTable33  ;; TIM3
+        LDR      R4,[R4, #+0]
+        LDRH     R4,[R4, #+36]
+        LDR.N    R5,??DataTable37  ;; hEncoder_Timer_Overflow
+        LDRH     R5,[R5, #+0]
+        CMP      R5,#+0
+        BEQ.N    ??ENC_Calc_Rot_Speed_1
+        LDR.N    R4,??DataTable33  ;; TIM3
+        LDR      R4,[R4, #+0]
+        LDRH     R4,[R4, #+36]
+        LDR.N    R5,??DataTable37  ;; hEncoder_Timer_Overflow
+        MOVS     R6,#+0
+        STRH     R6,[R5, #+0]
+??ENC_Calc_Rot_Speed_1:
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        CMP      R0,R2
+        BEQ.N    ??ENC_Calc_Rot_Speed_2
+        MOVS     R1,R3
+        MOVS     R0,R2
+??ENC_Calc_Rot_Speed_2:
+        LDR.N    R2,??DataTable33  ;; TIM3
+        LDR      R2,[R2, #+0]
+        LDRH     R2,[R2, #+0]
+        LSLS     R2,R2,#+27
+        BPL.N    ??ENC_Calc_Rot_Speed_3
+        LSLS     R1,R1,#+16       ;; ZeroExtS R1,R1,#+16,#+16
+        LSRS     R1,R1,#+16
+        LDR.N    R2,??ENC_Calc_Rot_Speed_4  ;; hPrevious_angle
+        LDRSH    R2,[R2, #+0]
+        SUBS     R1,R1,R2
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        MOVS     R2,#+1600
+        MLS      R0,R0,R2,R1
+        B.N      ??ENC_Calc_Rot_Speed_5
+??ENC_Calc_Rot_Speed_3:
+        LSLS     R1,R1,#+16       ;; ZeroExtS R1,R1,#+16,#+16
+        LSRS     R1,R1,#+16
+        LDR.N    R2,??ENC_Calc_Rot_Speed_4  ;; hPrevious_angle
+        LDRSH    R2,[R2, #+0]
+        SUBS     R1,R1,R2
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        MOVS     R2,#+1600
+        MLA      R0,R0,R2,R1
+??ENC_Calc_Rot_Speed_5:
+        MOVS     R1,#+200
+        MULS     R0,R1,R0
+        ASRS     R1,R0,#+31
+        MOVS     R2,#+10
+        MOVS     R3,#+0
+        _BLF     ??llmul_t,??rT??llmul_t
+        MOVS     R2,#+1600
+        MOVS     R3,#+0
+        _BLF     ??div64_t,??rT??div64_t
+        MOVS     R0,R2
+        MOVS     R1,R3
+        B.N      ??ENC_Calc_Rot_Speed_6
+??ENC_Calc_Rot_Speed_0:
+        LDR.N    R0,??DataTable21  ;; bIs_First_Measurement
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        MOVS     R0,#+0
+        MOVS     R1,#+0
+        LDR.N    R2,??DataTable37  ;; hEncoder_Timer_Overflow
+        MOVS     R3,#+0
+        STRH     R3,[R2, #+0]
+        LDR.N    R2,??DataTable33  ;; TIM3
+        LDR      R2,[R2, #+0]
+        LDRH     R4,[R2, #+36]
+        LDR.N    R2,??DataTable37  ;; hEncoder_Timer_Overflow
+        LDRH     R2,[R2, #+0]
+        CMP      R2,#+0
+        BEQ.N    ??ENC_Calc_Rot_Speed_6
+        LDR.N    R2,??DataTable33  ;; TIM3
+        LDR      R2,[R2, #+0]
+        LDRH     R4,[R2, #+36]
+        LDR.N    R2,??DataTable37  ;; hEncoder_Timer_Overflow
+        MOVS     R3,#+0
+        STRH     R3,[R2, #+0]
+??ENC_Calc_Rot_Speed_6:
+        LDR.N    R2,??ENC_Calc_Rot_Speed_4  ;; hPrevious_angle
+        STRH     R4,[R2, #+0]
+        LSLS     R0,R0,#+16       ;; SignExtS R0,R0,#+16,#+16
+        ASRS     R0,R0,#+16
+        POP      {R4-R6,PC}       ;; return
+        DATA
+??ENC_Calc_Rot_Speed_4:
+        DC32     hPrevious_angle
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable21:
+        DC32     bIs_First_Measurement
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+ENC_Calc_Average_Speed:
+        PUSH     {LR}
+        BL       ENC_Calc_Rot_Speed
+        LDR.N    R1,??ENC_Calc_Average_Speed_0  ;; bSpeed_Buffer_Index
+        LDRB     R1,[R1, #+0]
+        MOVS     R2,#+2
+        MULS     R1,R2,R1
+        LDR.N    R2,??DataTable28  ;; hSpeed_Buffer
+        STRH     R0,[R2, R1]
+        LDR.N    R0,??ENC_Calc_Average_Speed_0  ;; bSpeed_Buffer_Index
+        LDR.N    R1,??ENC_Calc_Average_Speed_0  ;; bSpeed_Buffer_Index
+        LDRB     R1,[R1, #+0]
+        ADDS     R1,R1,#+1
+        STRB     R1,[R0, #+0]
+        LDR.N    R0,??ENC_Calc_Average_Speed_0  ;; bSpeed_Buffer_Index
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+8
+        BNE.N    ??ENC_Calc_Average_Speed_1
+        LDR.N    R0,??ENC_Calc_Average_Speed_0  ;; bSpeed_Buffer_Index
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+??ENC_Calc_Average_Speed_1:
+        MOVS     R0,#+0
+        MOVS     R1,#+0
+        B.N      ??ENC_Calc_Average_Speed_2
+??ENC_Calc_Average_Speed_3:
+        MOVS     R2,#+2
+        MULS     R2,R1,R2
+        LDR.N    R3,??DataTable28  ;; hSpeed_Buffer
+        LDRSH    R2,[R3, R2]
+        ADDS     R0,R0,R2
+        ADDS     R1,R1,#+1
+??ENC_Calc_Average_Speed_2:
+        CMP      R1,#+8
+        BCC.N    ??ENC_Calc_Average_Speed_3
+        MOVS     R1,#+8
+        SDIV     R0,R0,R1
+        LDR.N    R1,??DataTable32  ;; hRot_Speed
+        STRH     R0,[R1, #+0]
+        POP      {PC}             ;; return
+        DATA
+??ENC_Calc_Average_Speed_0:
+        DC32     bSpeed_Buffer_Index
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable28:
+        DC32     hSpeed_Buffer
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+LCD_Display:
+        PUSH     {R4,LR}
+        CMP      R0,#+0
+        BEQ.N    ??LCD_Display_0
+        CMP      R0,#+1
+        BEQ.N    ??LCD_Display_1
+        B.N      ??LCD_Display_2
+??LCD_Display_0:
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_GetCounter,??TIM_GetCounter??rT
+        MOVS     R4,R0
+        MOVS     R0,R4
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        _BLF     int2char,??int2char??rT
+        _BLF     write_string,??write_string??rT
+        B.N      ??LCD_Display_3
+??LCD_Display_1:
+        BL       ENC_Get_Electrical_Angle
+        MOVS     R1,#+360
+        MULS     R0,R1,R0
+        LDR.N    R1,??DataTable35  ;; 0xffff
+        SDIV     R4,R0,R1
+        LSLS     R4,R4,#+16       ;; SignExtS R4,R4,#+16,#+16
+        ASRS     R4,R4,#+16
+        CMP      R4,#+0
+        BPL.N    ??LCD_Display_4
+        LSLS     R4,R4,#+16       ;; SignExtS R4,R4,#+16,#+16
+        ASRS     R4,R4,#+16
+        MOVS     R0,R4
+        RSBS     R4,R0,#+0
+        MOVS     R0,R4
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        _BLF     int2char,??int2char??rT
+        MOVS     R1,#+45
+        STRB     R1,[R0, #+0]
+        B.N      ??LCD_Display_5
+??LCD_Display_4:
+        MOVS     R0,R4
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        _BLF     int2char,??int2char??rT
+        LSLS     R4,R4,#+16       ;; ZeroExtS R4,R4,#+16,#+16
+        LSRS     R4,R4,#+16
+        CMP      R4,#+0
+        BEQ.N    ??LCD_Display_5
+        MOVS     R1,#+43
+        STRB     R1,[R0, #+0]
+??LCD_Display_5:
+        _BLF     write_string,??write_string??rT
+        B.N      ??LCD_Display_3
+??LCD_Display_2:
+        LDR.N    R0,??DataTable32  ;; hRot_Speed
+        LDRSH    R4,[R0, #+0]
+        CMP      R4,#+0
+        BPL.N    ??LCD_Display_6
+        MOVS     R0,R4
+        RSBS     R4,R0,#+0
+        MOVS     R0,R4
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        _BLF     int2char,??int2char??rT
+        MOVS     R1,#+45
+        STRB     R1,[R0, #+0]
+        B.N      ??LCD_Display_7
+??LCD_Display_6:
+        MOVS     R0,R4
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        _BLF     int2char,??int2char??rT
+        LSLS     R4,R4,#+16       ;; ZeroExtS R4,R4,#+16,#+16
+        LSRS     R4,R4,#+16
+        CMP      R4,#+0
+        BEQ.N    ??LCD_Display_7
+        MOVS     R1,#+43
+        STRB     R1,[R0, #+0]
+??LCD_Display_7:
+        _BLF     write_string,??write_string??rT
+??LCD_Display_3:
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable32:
+        DC32     hRot_Speed
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TIM3_IRQHandler:
+        PUSH     {LR}
+        MOVS     R1,#+1
+        LDR.N    R0,??DataTable33  ;; TIM3
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_ClearFlag,??TIM_ClearFlag??rT
+        LDR.N    R0,??DataTable37  ;; hEncoder_Timer_Overflow
+        LDRH     R0,[R0, #+0]
+        LDR.N    R1,??DataTable35  ;; 0xffff
+        CMP      R0,R1
+        BEQ.N    ??TIM3_IRQHandler_0
+        LDR.N    R0,??DataTable37  ;; hEncoder_Timer_Overflow
+        LDR.N    R1,??DataTable37  ;; hEncoder_Timer_Overflow
+        LDRH     R1,[R1, #+0]
+        ADDS     R1,R1,#+1
+        STRH     R1,[R0, #+0]
+??TIM3_IRQHandler_0:
+        POP      {PC}             ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable33:
+        DC32     TIM3
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable35:
+        DC32     0xffff
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable37:
+        DC32     hEncoder_Timer_Overflow
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB1PeriphClockCmd??rT:
+        LDR.N    R3,??Subroutine0_0  ;; RCC_APB1PeriphClockCmd
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     RCC_APB1PeriphClockCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB2PeriphClockCmd??rT:
+        LDR.N    R3,??Subroutine1_0  ;; RCC_APB2PeriphClockCmd
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     RCC_APB2PeriphClockCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_StructInit??rT:
+        LDR.N    R3,??Subroutine2_0  ;; GPIO_StructInit
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     GPIO_StructInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_Init??rT:
+        LDR.N    R3,??Subroutine3_0  ;; GPIO_Init
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     GPIO_Init
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??NVIC_Init??rT:
+        LDR.N    R3,??Subroutine4_0  ;; NVIC_Init
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     NVIC_Init
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_DeInit??rT:
+        LDR.N    R3,??Subroutine5_0  ;; TIM_DeInit
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     TIM_DeInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_TimeBaseStructInit??rT:
+        LDR.N    R3,??Subroutine6_0  ;; TIM_TimeBaseStructInit
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     TIM_TimeBaseStructInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_TimeBaseInit??rT:
+        LDR.N    R3,??Subroutine7_0  ;; TIM_TimeBaseInit
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     TIM_TimeBaseInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_EncoderInterfaceConfig??rT:
+        PUSH     {R3}
+        LDR.N    R3,??Subroutine8_0  ;; TIM_EncoderInterfaceConfig
+        MOV      R12,R3
+        POP      {R3}
+        BX       R12
+        Nop      
+        DATA
+??Subroutine8_0:
+        DC32     TIM_EncoderInterfaceConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_ICStructInit??rT:
+        LDR.N    R3,??Subroutine9_0  ;; TIM_ICStructInit
+        BX       R3
+        DATA
+??Subroutine9_0:
+        DC32     TIM_ICStructInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_ICInit??rT:
+        LDR.N    R3,??Subroutine10_0  ;; TIM_ICInit
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     TIM_ICInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_ClearFlag??rT:
+        LDR.N    R3,??Subroutine11_0  ;; TIM_ClearFlag
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     TIM_ClearFlag
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_ITConfig??rT:
+        LDR.N    R3,??Subroutine12_0  ;; TIM_ITConfig
+        BX       R3
+        DATA
+??Subroutine12_0:
+        DC32     TIM_ITConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_Cmd??rT:
+        LDR.N    R3,??Subroutine13_0  ;; TIM_Cmd
+        BX       R3
+        DATA
+??Subroutine13_0:
+        DC32     TIM_Cmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_GetCounter??rT:
+        LDR.N    R3,??Subroutine14_0  ;; TIM_GetCounter
+        BX       R3
+        DATA
+??Subroutine14_0:
+        DC32     TIM_GetCounter
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??rT??llmul_t:
+        PUSH     {R3}
+        LDR.N    R3,??Subroutine15_0  ;; ??llmul_t
+        MOV      R12,R3
+        POP      {R3}
+        BX       R12
+        Nop      
+        DATA
+??Subroutine15_0:
+        DC32     ??llmul_t
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??rT??div64_t:
+        PUSH     {R3}
+        LDR.N    R3,??Subroutine16_0  ;; ??div64_t
+        MOV      R12,R3
+        POP      {R3}
+        BX       R12
+        Nop      
+        DATA
+??Subroutine16_0:
+        DC32     ??div64_t
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??int2char??rT:
+        LDR.N    R3,??Subroutine17_0  ;; int2char
+        BX       R3
+        DATA
+??Subroutine17_0:
+        DC32     int2char
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??write_string??rT:
+        LDR.N    R3,??Subroutine18_0  ;; write_string
+        BX       R3
+        DATA
+??Subroutine18_0:
+        DC32     write_string
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for bIs_First_Measurement>`:
+        DATA
+        DC8 1
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+// 
+// 990 bytes in segment CODE
+//   1 byte  in segment DATA_I
+//   1 byte  in segment DATA_ID
+//  23 bytes in segment DATA_Z
+//  24 bytes in segment INITTAB
+// 
+// 814 bytes of CODE  memory (+ 200 bytes shared)
+//   1 byte  of CONST memory
+//  24 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,263 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:29 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\source\stm32f10x_Timebase.c /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\source\stm32f10x_Timebase.c /
+//                       " -D VECT_TAB_FLASH -lcN "C:\David JIANG\ST         /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_Timebase.s79                                   /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_Timebase
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK `?*?DATA_ID`
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+        MULTWEAK ??ENC_Calc_Average_Speed??rT
+        MULTWEAK ??NVIC_SystemHandlerPriorityConfig??rT
+        MULTWEAK ??SysTick_CLKSourceConfig??rT
+        MULTWEAK ??SysTick_CounterCmd??rT
+        MULTWEAK ??SysTick_ITConfig??rT
+        MULTWEAK ??SysTick_SetReload??rT
+        PUBWEAK ?init?tab?DATA_I
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC SysTickHandler
+        PUBLIC TB_DisplayDelay_IsElapsed
+        PUBLIC TB_Init
+        PUBLIC TB_Set_DisplayDelay_500us
+
+ENC_Calc_Average_Speed SYMBOL "ENC_Calc_Average_Speed"
+NVIC_SystemHandlerPriorityConfig SYMBOL "NVIC_SystemHandlerPriorityConfig"
+SysTick_CLKSourceConfig SYMBOL "SysTick_CLKSourceConfig"
+SysTick_CounterCmd  SYMBOL "SysTick_CounterCmd"
+SysTick_ITConfig    SYMBOL "SysTick_ITConfig"
+SysTick_SetReload   SYMBOL "SysTick_SetReload"
+??ENC_Calc_Average_Speed??rT SYMBOL "??rT", ENC_Calc_Average_Speed
+??NVIC_SystemHandlerPriorityConfig??rT SYMBOL "??rT", NVIC_SystemHandlerPriorityConfig
+??SysTick_CLKSourceConfig??rT SYMBOL "??rT", SysTick_CLKSourceConfig
+??SysTick_CounterCmd??rT SYMBOL "??rT", SysTick_CounterCmd
+??SysTick_ITConfig??rT SYMBOL "??rT", SysTick_ITConfig
+??SysTick_SetReload??rT SYMBOL "??rT", SysTick_SetReload
+
+        EXTERN ENC_Calc_Average_Speed
+        EXTERN NVIC_SystemHandlerPriorityConfig
+        EXTERN SysTick_CLKSourceConfig
+        EXTERN SysTick_CounterCmd
+        EXTERN SysTick_ITConfig
+        EXTERN SysTick_SetReload
+
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+hTimebase_display_500us:
+        DS8 2
+
+        RSEG DATA_I:DATA:SORT:NOROOT(1)
+hSpeedMeas_Timebase_500us:
+        DS8 2
+        REQUIRE `?<Initializer for hSpeedMeas_Timebase_500us>`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TB_Init:
+        PUSH     {LR}
+        MOVS     R0,#+4
+        _BLF     SysTick_CLKSourceConfig,??SysTick_CLKSourceConfig??rT
+        LDR.N    R0,??TB_Init_0   ;; 0x8ca0
+        _BLF     SysTick_SetReload,??SysTick_SetReload??rT
+        MOVS     R0,#+1
+        _BLF     SysTick_CounterCmd,??SysTick_CounterCmd??rT
+        MOVS     R2,#+0
+        MOVS     R1,#+2
+        LDR.N    R0,??TB_Init_0+0x4  ;; 0x2c39a
+        _BLF     NVIC_SystemHandlerPriorityConfig,??NVIC_SystemHandlerPriorityConfig??rT
+        MOVS     R0,#+1
+        _BLF     SysTick_ITConfig,??SysTick_ITConfig??rT
+        POP      {PC}             ;; return
+        Nop      
+        DATA
+??TB_Init_0:
+        DC32     0x8ca0
+        DC32     0x2c39a
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TB_Set_DisplayDelay_500us:
+        LDR.N    R1,??DataTable4  ;; hTimebase_display_500us
+        STRH     R0,[R1, #+0]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TB_DisplayDelay_IsElapsed:
+        LDR.N    R0,??DataTable4  ;; hTimebase_display_500us
+        LDRH     R0,[R0, #+0]
+        CMP      R0,#+0
+        BNE.N    ??TB_DisplayDelay_IsElapsed_0
+        MOVS     R0,#+1
+        B.N      ??TB_DisplayDelay_IsElapsed_1
+??TB_DisplayDelay_IsElapsed_0:
+        MOVS     R0,#+0
+??TB_DisplayDelay_IsElapsed_1:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SysTickHandler:
+        PUSH     {LR}
+        LDR.N    R0,??DataTable4  ;; hTimebase_display_500us
+        LDRH     R0,[R0, #+0]
+        CMP      R0,#+0
+        BEQ.N    ??SysTickHandler_0
+        LDR.N    R0,??DataTable4  ;; hTimebase_display_500us
+        LDR.N    R1,??DataTable4  ;; hTimebase_display_500us
+        LDRH     R1,[R1, #+0]
+        SUBS     R1,R1,#+1
+        STRH     R1,[R0, #+0]
+??SysTickHandler_0:
+        LDR.N    R0,??SysTickHandler_1  ;; hSpeedMeas_Timebase_500us
+        LDRH     R0,[R0, #+0]
+        CMP      R0,#+0
+        BEQ.N    ??SysTickHandler_2
+        LDR.N    R0,??SysTickHandler_1  ;; hSpeedMeas_Timebase_500us
+        LDR.N    R1,??SysTickHandler_1  ;; hSpeedMeas_Timebase_500us
+        LDRH     R1,[R1, #+0]
+        SUBS     R1,R1,#+1
+        STRH     R1,[R0, #+0]
+        B.N      ??SysTickHandler_3
+??SysTickHandler_2:
+        LDR.N    R0,??SysTickHandler_1  ;; hSpeedMeas_Timebase_500us
+        MOVS     R1,#+9
+        STRH     R1,[R0, #+0]
+        _BLF     ENC_Calc_Average_Speed,??ENC_Calc_Average_Speed??rT
+??SysTickHandler_3:
+        POP      {PC}             ;; return
+        DATA
+??SysTickHandler_1:
+        DC32     hSpeedMeas_Timebase_500us
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable4:
+        DC32     hTimebase_display_500us
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??SysTick_CLKSourceConfig??rT:
+        LDR.N    R3,??Subroutine0_0  ;; SysTick_CLKSourceConfig
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     SysTick_CLKSourceConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??SysTick_SetReload??rT:
+        LDR.N    R3,??Subroutine1_0  ;; SysTick_SetReload
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     SysTick_SetReload
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??SysTick_CounterCmd??rT:
+        LDR.N    R3,??Subroutine2_0  ;; SysTick_CounterCmd
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     SysTick_CounterCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??NVIC_SystemHandlerPriorityConfig??rT:
+        LDR.N    R3,??Subroutine3_0  ;; NVIC_SystemHandlerPriorityConfig
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     NVIC_SystemHandlerPriorityConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??SysTick_ITConfig??rT:
+        LDR.N    R3,??Subroutine4_0  ;; SysTick_ITConfig
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     SysTick_ITConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??ENC_Calc_Average_Speed??rT:
+        LDR.N    R3,??Subroutine5_0  ;; ENC_Calc_Average_Speed
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     ENC_Calc_Average_Speed
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for hSpeedMeas_Timebase_500us>`:
+        DATA
+        DC16 9
+
+        RSEG DATA_ID:CONST:SORT:NOROOT(2)
+`?*?DATA_ID`:
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_I:
+        DCD      sfe(DATA_I) - sfb(DATA_I), sfb(DATA_I), sfb(DATA_ID)
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+// 
+// 178 bytes in segment CODE
+//   2 bytes in segment DATA_I
+//   2 bytes in segment DATA_ID
+//   2 bytes in segment DATA_Z
+//  24 bytes in segment INITTAB
+// 
+// 130 bytes of CODE  memory (+ 72 bytes shared)
+//   2 bytes of CONST memory
+//   4 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

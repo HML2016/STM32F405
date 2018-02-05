@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=D0 Pin=U1-8
+Removed Pin From Net: NetName=D1 Pin=U1-9
+Removed Pin From Net: NetName=RST Pin=U1-10
+Removed Pin From Net: NetName=DC Pin=U1-11
+Added Pin To Net: NetName=DC Pin=U1-8
+Added Pin To Net: NetName=RST Pin=U1-9
+Added Pin To Net: NetName=D1 Pin=U1-10
+Added Pin To Net: NetName=D0 Pin=U1-11
+Added Room: Name=F405 MCU

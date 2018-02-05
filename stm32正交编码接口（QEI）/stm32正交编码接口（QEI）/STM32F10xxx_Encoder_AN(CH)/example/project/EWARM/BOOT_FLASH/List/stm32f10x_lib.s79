@@ -1,0 +1,511 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:31 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\FWLib\src\stm32f10x_lib.c           /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\FWLib\src\stm32f10x_lib.c" -D       /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_lib.s79                                        /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_lib
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC ADC1
+        PUBLIC ADC2
+        PUBLIC AFIO
+        PUBLIC BKP
+        PUBLIC CAN
+        PUBLIC DMA
+        PUBLIC DMA_Channel1
+        PUBLIC DMA_Channel2
+        PUBLIC DMA_Channel3
+        PUBLIC DMA_Channel4
+        PUBLIC DMA_Channel5
+        PUBLIC DMA_Channel6
+        PUBLIC DMA_Channel7
+        PUBLIC EXTI
+        PUBLIC FLASH
+        PUBLIC GPIOA
+        PUBLIC GPIOB
+        PUBLIC GPIOC
+        PUBLIC GPIOD
+        PUBLIC GPIOE
+        PUBLIC I2C1
+        PUBLIC I2C2
+        PUBLIC IWDG
+        PUBLIC NVIC
+        PUBLIC OB
+        PUBLIC PWR
+        PUBLIC RCC
+        PUBLIC RTC
+        PUBLIC SCB
+        PUBLIC SPI1
+        PUBLIC SPI2
+        PUBLIC SysTick
+        PUBLIC TIM1
+        PUBLIC TIM2
+        PUBLIC TIM3
+        PUBLIC TIM4
+        PUBLIC USART1
+        PUBLIC USART2
+        PUBLIC USART3
+        PUBLIC WWDG
+        PUBLIC debug
+
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// TIM_TypeDef *__data TIM2
+TIM2:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// TIM_TypeDef *__data TIM3
+TIM3:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// TIM_TypeDef *__data TIM4
+TIM4:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// RTC_TypeDef *__data RTC
+RTC:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// WWDG_TypeDef *__data WWDG
+WWDG:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// IWDG_TypeDef *__data IWDG
+IWDG:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// SPI_TypeDef *__data SPI2
+SPI2:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// USART_TypeDef *__data USART2
+USART2:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// USART_TypeDef *__data USART3
+USART3:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// I2C_TypeDef *__data I2C1
+I2C1:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// I2C_TypeDef *__data I2C2
+I2C2:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// CAN_TypeDef *__data CAN
+CAN:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// BKP_TypeDef *__data BKP
+BKP:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// PWR_TypeDef *__data PWR
+PWR:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// AFIO_TypeDef *__data AFIO
+AFIO:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// EXTI_TypeDef *__data EXTI
+EXTI:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// GPIO_TypeDef *__data GPIOA
+GPIOA:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// GPIO_TypeDef *__data GPIOB
+GPIOB:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// GPIO_TypeDef *__data GPIOC
+GPIOC:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// GPIO_TypeDef *__data GPIOD
+GPIOD:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// GPIO_TypeDef *__data GPIOE
+GPIOE:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// ADC_TypeDef *__data ADC1
+ADC1:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// ADC_TypeDef *__data ADC2
+ADC2:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// TIM1_TypeDef *__data TIM1
+TIM1:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// SPI_TypeDef *__data SPI1
+SPI1:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// USART_TypeDef *__data USART1
+USART1:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// DMA_TypeDef *__data DMA
+DMA:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// struct <unnamed> *__data DMA_Channel1
+DMA_Channel1:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// struct <unnamed> *__data DMA_Channel2
+DMA_Channel2:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// struct <unnamed> *__data DMA_Channel3
+DMA_Channel3:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// struct <unnamed> *__data DMA_Channel4
+DMA_Channel4:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// struct <unnamed> *__data DMA_Channel5
+DMA_Channel5:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// struct <unnamed> *__data DMA_Channel6
+DMA_Channel6:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// struct <unnamed> *__data DMA_Channel7
+DMA_Channel7:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// FLASH_TypeDef *__data FLASH
+FLASH:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// OB_TypeDef *__data OB
+OB:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// RCC_TypeDef *__data RCC
+RCC:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// SysTick_TypeDef *__data SysTick
+SysTick:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// NVIC_TypeDef *__data NVIC
+NVIC:
+        DS8 4
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+// SCB_TypeDef *__data SCB
+SCB:
+        DS8 4
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+debug:
+        LDR.N    R0,??debug_0     ;; ADC1
+        LDR.N    R1,??debug_0+0x4  ;; 0x40012400
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x8  ;; ADC2
+        LDR.N    R1,??debug_0+0xC  ;; 0x40012800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x10  ;; BKP
+        LDR.N    R1,??debug_0+0x14  ;; 0x40006c00
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x18  ;; CAN
+        LDR.N    R1,??debug_0+0x1C  ;; 0x40006400
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x20  ;; DMA
+        LDR.N    R1,??debug_0+0x24  ;; 0x40020000
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x28  ;; DMA_Channel1
+        LDR.N    R1,??debug_0+0x2C  ;; 0x40020008
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x30  ;; DMA_Channel2
+        LDR.N    R1,??debug_0+0x34  ;; 0x4002001c
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x38  ;; DMA_Channel3
+        LDR.N    R1,??debug_0+0x3C  ;; 0x40020030
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x40  ;; DMA_Channel4
+        LDR.N    R1,??debug_0+0x44  ;; 0x40020044
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x48  ;; DMA_Channel5
+        LDR.N    R1,??debug_0+0x4C  ;; 0x40020058
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x50  ;; DMA_Channel6
+        LDR.N    R1,??debug_0+0x54  ;; 0x4002006c
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x58  ;; DMA_Channel7
+        LDR.N    R1,??debug_0+0x5C  ;; 0x40020080
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x60  ;; EXTI
+        LDR.N    R1,??debug_0+0x64  ;; 0x40010400
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x68  ;; FLASH
+        LDR.N    R1,??debug_0+0x6C  ;; 0x40022000
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x70  ;; OB
+        LDR.N    R1,??debug_0+0x74  ;; 0x1ffff800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x78  ;; GPIOA
+        LDR.N    R1,??debug_0+0x7C  ;; 0x40010800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x80  ;; GPIOB
+        LDR.N    R1,??debug_0+0x84  ;; 0x40010c00
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x88  ;; GPIOC
+        LDR.N    R1,??debug_0+0x8C  ;; 0x40011000
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x90  ;; GPIOD
+        LDR.N    R1,??debug_0+0x94  ;; 0x40011400
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x98  ;; GPIOE
+        LDR.N    R1,??debug_0+0x9C  ;; 0x40011800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xA0  ;; AFIO
+        LDR.N    R1,??debug_0+0xA4  ;; 0x40010000
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xA8  ;; I2C1
+        LDR.N    R1,??debug_0+0xAC  ;; 0x40005400
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xB0  ;; I2C2
+        LDR.N    R1,??debug_0+0xB4  ;; 0x40005800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xB8  ;; IWDG
+        LDR.N    R1,??debug_0+0xBC  ;; 0x40003000
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xC0  ;; NVIC
+        LDR.N    R1,??debug_0+0xC4  ;; 0xffffffffe000e100
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xC8  ;; SCB
+        LDR.N    R1,??debug_0+0xCC  ;; 0xffffffffe000ed00
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xD0  ;; PWR
+        LDR.N    R1,??debug_0+0xD4  ;; 0x40007000
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xD8  ;; RCC
+        LDR.N    R1,??debug_0+0xDC  ;; 0x40021000
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xE0  ;; RTC
+        LDR.N    R1,??debug_0+0xE4  ;; 0x40002800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xE8  ;; SPI1
+        LDR.N    R1,??debug_0+0xEC  ;; 0x40013000
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xF0  ;; SPI2
+        LDR.N    R1,??debug_0+0xF4  ;; 0x40003800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0xF8  ;; SysTick
+        LDR.N    R1,??debug_0+0xFC  ;; 0xffffffffe000e010
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x100  ;; TIM1
+        LDR.N    R1,??debug_0+0x104  ;; 0x40012c00
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x108  ;; TIM2
+        MOVS     R1,#+1073741824
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x10C  ;; TIM3
+        LDR.N    R1,??debug_0+0x110  ;; 0x40000400
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x114  ;; TIM4
+        LDR.N    R1,??debug_0+0x118  ;; 0x40000800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x11C  ;; USART1
+        LDR.N    R1,??debug_0+0x120  ;; 0x40013800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x124  ;; USART2
+        LDR.N    R1,??debug_0+0x128  ;; 0x40004400
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x12C  ;; USART3
+        LDR.N    R1,??debug_0+0x130  ;; 0x40004800
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??debug_0+0x134  ;; WWDG
+        LDR.N    R1,??debug_0+0x138  ;; 0x40002c00
+        STR      R1,[R0, #+0]
+        BX       LR               ;; return
+        DATA
+??debug_0:
+        DC32     ADC1
+        DC32     0x40012400
+        DC32     ADC2
+        DC32     0x40012800
+        DC32     BKP
+        DC32     0x40006c00
+        DC32     CAN
+        DC32     0x40006400
+        DC32     DMA
+        DC32     0x40020000
+        DC32     DMA_Channel1
+        DC32     0x40020008
+        DC32     DMA_Channel2
+        DC32     0x4002001c
+        DC32     DMA_Channel3
+        DC32     0x40020030
+        DC32     DMA_Channel4
+        DC32     0x40020044
+        DC32     DMA_Channel5
+        DC32     0x40020058
+        DC32     DMA_Channel6
+        DC32     0x4002006c
+        DC32     DMA_Channel7
+        DC32     0x40020080
+        DC32     EXTI
+        DC32     0x40010400
+        DC32     FLASH
+        DC32     0x40022000
+        DC32     OB
+        DC32     0x1ffff800
+        DC32     GPIOA
+        DC32     0x40010800
+        DC32     GPIOB
+        DC32     0x40010c00
+        DC32     GPIOC
+        DC32     0x40011000
+        DC32     GPIOD
+        DC32     0x40011400
+        DC32     GPIOE
+        DC32     0x40011800
+        DC32     AFIO
+        DC32     0x40010000
+        DC32     I2C1
+        DC32     0x40005400
+        DC32     I2C2
+        DC32     0x40005800
+        DC32     IWDG
+        DC32     0x40003000
+        DC32     NVIC
+        DC32     0xffffffffe000e100
+        DC32     SCB
+        DC32     0xffffffffe000ed00
+        DC32     PWR
+        DC32     0x40007000
+        DC32     RCC
+        DC32     0x40021000
+        DC32     RTC
+        DC32     0x40002800
+        DC32     SPI1
+        DC32     0x40013000
+        DC32     SPI2
+        DC32     0x40003800
+        DC32     SysTick
+        DC32     0xffffffffe000e010
+        DC32     TIM1
+        DC32     0x40012c00
+        DC32     TIM2
+        DC32     TIM3
+        DC32     0x40000400
+        DC32     TIM4
+        DC32     0x40000800
+        DC32     USART1
+        DC32     0x40013800
+        DC32     USART2
+        DC32     0x40004400
+        DC32     USART3
+        DC32     0x40004800
+        DC32     WWDG
+        DC32     0x40002c00
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+// 
+// 560 bytes in segment CODE
+// 160 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 560 bytes of CODE memory (+ 12 bytes shared)
+// 160 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none

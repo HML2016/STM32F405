@@ -1,0 +1,1036 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:31 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\FWLib\src\stm32f10x_gpio.c          /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\FWLib\src\stm32f10x_gpio.c" -D      /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_gpio.s79                                       /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_gpio
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable18 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable21 EQU 0
+??DataTable22 EQU 0
+??DataTable23 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable8 EQU 0
+        MULTWEAK ??RCC_APB2PeriphResetCmd??rT
+        MULTWEAK ??assert_failed??rT
+        PUBLIC GPIO_AFIODeInit
+        PUBLIC GPIO_DeInit
+        PUBLIC GPIO_EXTILineConfig
+        PUBLIC GPIO_EventOutputCmd
+        PUBLIC GPIO_EventOutputConfig
+        PUBLIC GPIO_Init
+        PUBLIC GPIO_PinLockConfig
+        PUBLIC GPIO_PinRemapConfig
+        PUBLIC GPIO_ReadInputData
+        PUBLIC GPIO_ReadInputDataBit
+        PUBLIC GPIO_ReadOutputData
+        PUBLIC GPIO_ReadOutputDataBit
+        PUBLIC GPIO_ResetBits
+        PUBLIC GPIO_SetBits
+        PUBLIC GPIO_StructInit
+        PUBLIC GPIO_Write
+        PUBLIC GPIO_WriteBit
+
+RCC_APB2PeriphResetCmd SYMBOL "RCC_APB2PeriphResetCmd"
+assert_failed       SYMBOL "assert_failed"
+??RCC_APB2PeriphResetCmd??rT SYMBOL "??rT", RCC_APB2PeriphResetCmd
+??assert_failed??rT SYMBOL "??rT", assert_failed
+
+        EXTERN AFIO
+        EXTERN RCC_APB2PeriphResetCmd
+        EXTERN assert_failed
+
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_DeInit:
+        PUSH     {LR}
+        LDR.N    R1,??GPIO_DeInit_0  ;; 0x40010800
+        CMP      R0,R1
+        BEQ.N    ??GPIO_DeInit_1
+        LDR.N    R1,??GPIO_DeInit_0+0x4  ;; 0x40010c00
+        CMP      R0,R1
+        BEQ.N    ??GPIO_DeInit_2
+        LDR.N    R1,??GPIO_DeInit_0+0x8  ;; 0x40011000
+        CMP      R0,R1
+        BEQ.N    ??GPIO_DeInit_3
+        LDR.N    R1,??GPIO_DeInit_0+0xC  ;; 0x40011400
+        CMP      R0,R1
+        BEQ.N    ??GPIO_DeInit_4
+        LDR.N    R1,??GPIO_DeInit_0+0x10  ;; 0x40011800
+        CMP      R0,R1
+        BEQ.N    ??GPIO_DeInit_5
+        B.N      ??GPIO_DeInit_6
+??GPIO_DeInit_1:
+        MOVS     R1,#+1
+        MOVS     R0,#+4
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+4
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        B.N      ??GPIO_DeInit_6
+??GPIO_DeInit_2:
+        MOVS     R1,#+1
+        MOVS     R0,#+8
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+8
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        B.N      ??GPIO_DeInit_6
+??GPIO_DeInit_3:
+        MOVS     R1,#+1
+        MOVS     R0,#+16
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+16
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        B.N      ??GPIO_DeInit_6
+??GPIO_DeInit_4:
+        MOVS     R1,#+1
+        MOVS     R0,#+32
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+32
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        B.N      ??GPIO_DeInit_6
+??GPIO_DeInit_5:
+        MOVS     R1,#+1
+        MOVS     R0,#+64
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+64
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+??GPIO_DeInit_6:
+        POP      {PC}             ;; return
+        DATA
+??GPIO_DeInit_0:
+        DC32     0x40010800
+        DC32     0x40010c00
+        DC32     0x40011000
+        DC32     0x40011400
+        DC32     0x40011800
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_AFIODeInit:
+        PUSH     {LR}
+        MOVS     R1,#+1
+        MOVS     R0,#+1
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+1
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        POP      {PC}             ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_Init:
+        PUSH     {R4-R7,LR}
+        SUB      SP,SP,#+4
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        STR      R0,[SP, #+0]
+        MOVS     R3,#+0
+        MOVS     R0,#+0
+        MOVS     R2,#+0
+        MOVS     R1,#+0
+        MOVS     R6,#+0
+        LDRB     R7,[R5, #+3]
+        CMP      R7,#+0
+        BEQ.N    ??GPIO_Init_0
+        LDRB     R0,[R5, #+3]
+        CMP      R0,#+4
+        BEQ.N    ??GPIO_Init_0
+        LDRB     R0,[R5, #+3]
+        CMP      R0,#+40
+        BEQ.N    ??GPIO_Init_0
+        LDRB     R0,[R5, #+3]
+        CMP      R0,#+72
+        BEQ.N    ??GPIO_Init_0
+        LDRB     R0,[R5, #+3]
+        CMP      R0,#+20
+        BEQ.N    ??GPIO_Init_0
+        LDRB     R0,[R5, #+3]
+        CMP      R0,#+16
+        BEQ.N    ??GPIO_Init_0
+        LDRB     R0,[R5, #+3]
+        CMP      R0,#+28
+        BEQ.N    ??GPIO_Init_0
+        LDRB     R0,[R5, #+3]
+        CMP      R0,#+24
+        BEQ.N    ??GPIO_Init_0
+        MOVS     R1,#+122
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_Init_0:
+        LDRH     R0,[R5, #+0]
+        CMP      R0,#+0
+        BNE.N    ??GPIO_Init_1
+        MOVS     R1,#+123
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_Init_1:
+        LDRB     R0,[R5, #+3]
+        LSLS     R0,R0,#+28       ;; ZeroExtS R0,R0,#+28,#+28
+        LSRS     R0,R0,#+28
+        STR      R0,[SP, #+0]
+        LDRB     R0,[R5, #+3]
+        LSLS     R0,R0,#+27
+        BPL.N    ??GPIO_Init_2
+        LDRB     R0,[R5, #+2]
+        CMP      R0,#+1
+        BEQ.N    ??GPIO_Init_3
+        LDRB     R0,[R5, #+2]
+        CMP      R0,#+2
+        BEQ.N    ??GPIO_Init_3
+        LDRB     R0,[R5, #+2]
+        CMP      R0,#+3
+        BEQ.N    ??GPIO_Init_3
+        MOVS     R1,#+131
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_Init_3:
+        LDR      R0,[SP, #+0]
+        LDRB     R1,[R5, #+2]
+        ORRS     R1,R1,R0
+        STR      R1,[SP, #+0]
+??GPIO_Init_2:
+        LDRH     R0,[R5, #+0]
+        LSLS     R0,R0,#+24
+        BEQ.N    ??GPIO_Init_4
+        LDR      R1,[R4, #+0]
+        MOVS     R0,#+0
+        B.N      ??GPIO_Init_5
+??GPIO_Init_6:
+        MOVS     R2,#+1
+        LSLS     R2,R2,R0
+        LDRH     R3,[R5, #+0]
+        ANDS     R3,R3,R2
+        CMP      R3,R2
+        BNE.N    ??GPIO_Init_7
+        LSLS     R2,R0,#+2
+        MOVS     R6,#+15
+        LSLS     R6,R6,R2
+        BICS     R1,R1,R6
+        MOVS     R3,R1
+        LDR      R1,[SP, #+0]
+        LSLS     R1,R1,R2
+        ORRS     R1,R1,R3
+        LDRB     R2,[R5, #+3]
+        CMP      R2,#+40
+        BNE.N    ??GPIO_Init_8
+        MOVS     R2,#+1
+        LSLS     R2,R2,R0
+        STR      R2,[R4, #+20]
+??GPIO_Init_8:
+        LDRB     R2,[R5, #+3]
+        CMP      R2,#+72
+        BNE.N    ??GPIO_Init_7
+        MOVS     R2,#+1
+        LSLS     R2,R2,R0
+        STR      R2,[R4, #+16]
+??GPIO_Init_7:
+        ADDS     R0,R0,#+1
+??GPIO_Init_5:
+        CMP      R0,#+8
+        BCC.N    ??GPIO_Init_6
+        STR      R1,[R4, #+0]
+        MOVS     R1,#+0
+??GPIO_Init_4:
+        LDRH     R0,[R5, #+0]
+        MOVS     R1,#+256
+        CMP      R0,R1
+        BCC.N    ??GPIO_Init_9
+        LDR      R1,[R4, #+4]
+        MOVS     R0,#+0
+        B.N      ??GPIO_Init_10
+??GPIO_Init_11:
+        MOVS     R2,#+1
+        MOVS     R3,R0
+        ADDS     R3,R3,#+8
+        LSLS     R2,R2,R3
+        LDRH     R3,[R5, #+0]
+        ANDS     R3,R3,R2
+        CMP      R3,R2
+        BNE.N    ??GPIO_Init_12
+        LSLS     R2,R0,#+2
+        MOVS     R6,#+15
+        LSLS     R6,R6,R2
+        BICS     R1,R1,R6
+        MOVS     R3,R1
+        LDR      R1,[SP, #+0]
+        LSLS     R1,R1,R2
+        ORRS     R1,R1,R3
+        LDRB     R2,[R5, #+3]
+        CMP      R2,#+40
+        BNE.N    ??GPIO_Init_13
+        MOVS     R2,#+1
+        MOVS     R3,R0
+        ADDS     R3,R3,#+8
+        LSLS     R2,R2,R3
+        STR      R2,[R4, #+20]
+??GPIO_Init_13:
+        LDRB     R2,[R5, #+3]
+        CMP      R2,#+72
+        BNE.N    ??GPIO_Init_12
+        MOVS     R2,#+1
+        MOVS     R3,R0
+        ADDS     R3,R3,#+8
+        LSLS     R2,R2,R3
+        STR      R2,[R4, #+16]
+??GPIO_Init_12:
+        ADDS     R0,R0,#+1
+??GPIO_Init_10:
+        CMP      R0,#+8
+        BCC.N    ??GPIO_Init_11
+        STR      R1,[R4, #+4]
+??GPIO_Init_9:
+        ADD      SP,SP,#+4
+        POP      {R4-R7,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_StructInit:
+        LDR.N    R1,??GPIO_StructInit_0  ;; 0xffff
+        STRH     R1,[R0, #+0]
+        MOVS     R1,#+2
+        STRB     R1,[R0, #+2]
+        MOVS     R1,#+4
+        STRB     R1,[R0, #+3]
+        BX       LR               ;; return
+        Nop      
+        DATA
+??GPIO_StructInit_0:
+        DC32     0xffff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_ReadInputDataBit:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        CMP      R5,#+1
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        CMP      R5,#+2
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        CMP      R5,#+4
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        CMP      R5,#+8
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        CMP      R5,#+16
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        CMP      R5,#+32
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        CMP      R5,#+64
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        CMP      R5,#+128
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R0,#+256
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R0,#+512
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R0,#+1024
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R0,#+2048
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R0,#+4096
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R0,#+8192
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R0,#+16384
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R0,#+32768
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadInputDataBit_0
+        MOVS     R1,#+240
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_ReadInputDataBit_0:
+        LDR      R0,[R4, #+8]
+        TST      R0,R5
+        BEQ.N    ??GPIO_ReadInputDataBit_1
+        MOVS     R0,#+1
+        B.N      ??GPIO_ReadInputDataBit_2
+??GPIO_ReadInputDataBit_1:
+        MOVS     R0,#+0
+??GPIO_ReadInputDataBit_2:
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_ReadInputData:
+        LDR      R0,[R0, #+8]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_ReadOutputDataBit:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        CMP      R5,#+1
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        CMP      R5,#+2
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        CMP      R5,#+4
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        CMP      R5,#+8
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        CMP      R5,#+16
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        CMP      R5,#+32
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        CMP      R5,#+64
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        CMP      R5,#+128
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        MOVS     R0,#+256
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        MOVS     R0,#+512
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        MOVS     R0,#+1024
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        MOVS     R0,#+2048
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        MOVS     R0,#+4096
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        MOVS     R0,#+8192
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        MOVS     R0,#+16384
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        MOVS     R0,#+32768
+        CMP      R5,R0
+        BEQ.N    ??GPIO_ReadOutputDataBit_0
+        LDR.N    R1,??GPIO_ReadOutputDataBit_1  ;; 0x117
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_ReadOutputDataBit_0:
+        LDR      R0,[R4, #+12]
+        TST      R0,R5
+        BEQ.N    ??GPIO_ReadOutputDataBit_2
+        MOVS     R0,#+1
+        B.N      ??GPIO_ReadOutputDataBit_3
+??GPIO_ReadOutputDataBit_2:
+        MOVS     R0,#+0
+??GPIO_ReadOutputDataBit_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??GPIO_ReadOutputDataBit_1:
+        DC32     0x117
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_ReadOutputData:
+        LDR      R0,[R0, #+12]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_SetBits:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BNE.N    ??GPIO_SetBits_0
+        LDR.N    R1,??GPIO_SetBits_1  ;; 0x13d
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_SetBits_0:
+        STR      R5,[R4, #+16]
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??GPIO_SetBits_1:
+        DC32     0x13d
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_ResetBits:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BNE.N    ??GPIO_ResetBits_0
+        MOVS     R1,#+334
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_ResetBits_0:
+        STR      R5,[R4, #+20]
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_WriteBit:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R6,R2
+        CMP      R5,#+1
+        BEQ.N    ??GPIO_WriteBit_0
+        CMP      R5,#+2
+        BEQ.N    ??GPIO_WriteBit_0
+        CMP      R5,#+4
+        BEQ.N    ??GPIO_WriteBit_0
+        CMP      R5,#+8
+        BEQ.N    ??GPIO_WriteBit_0
+        CMP      R5,#+16
+        BEQ.N    ??GPIO_WriteBit_0
+        CMP      R5,#+32
+        BEQ.N    ??GPIO_WriteBit_0
+        CMP      R5,#+64
+        BEQ.N    ??GPIO_WriteBit_0
+        CMP      R5,#+128
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R0,#+256
+        CMP      R5,R0
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R0,#+512
+        CMP      R5,R0
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R0,#+1024
+        CMP      R5,R0
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R0,#+2048
+        CMP      R5,R0
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R0,#+4096
+        CMP      R5,R0
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R0,#+8192
+        CMP      R5,R0
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R0,#+16384
+        CMP      R5,R0
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R0,#+32768
+        CMP      R5,R0
+        BEQ.N    ??GPIO_WriteBit_0
+        MOVS     R1,#+354
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_WriteBit_0:
+        CMP      R6,#+0
+        BEQ.N    ??GPIO_WriteBit_1
+        CMP      R6,#+1
+        BEQ.N    ??GPIO_WriteBit_1
+        LDR.N    R1,??GPIO_WriteBit_2  ;; 0x163
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_WriteBit_1:
+        CMP      R6,#+0
+        BEQ.N    ??GPIO_WriteBit_3
+        STR      R5,[R4, #+16]
+        B.N      ??GPIO_WriteBit_4
+??GPIO_WriteBit_3:
+        STR      R5,[R4, #+20]
+??GPIO_WriteBit_4:
+        POP      {R4-R6,PC}       ;; return
+        Nop      
+        DATA
+??GPIO_WriteBit_2:
+        DC32     0x163
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_Write:
+        STR      R1,[R0, #+12]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_PinLockConfig:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R6,#+65536
+        CMP      R5,#+0
+        BNE.N    ??GPIO_PinLockConfig_0
+        MOVS     R1,#+396
+        LDR.N    R0,??DataTable9  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_PinLockConfig_0:
+        LSLS     R5,R5,#+16       ;; ZeroExtS R5,R5,#+16,#+16
+        LSRS     R5,R5,#+16
+        ORRS     R6,R6,R5
+        STR      R6,[R4, #+24]
+        STR      R5,[R4, #+24]
+        STR      R6,[R4, #+24]
+        LDR      R6,[R4, #+24]
+        LDR      R0,[R4, #+24]
+        MOVS     R6,R0
+        POP      {R4-R6,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable9:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_EventOutputConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??GPIO_EventOutputConfig_0
+        CMP      R4,#+1
+        BEQ.N    ??GPIO_EventOutputConfig_0
+        CMP      R4,#+2
+        BEQ.N    ??GPIO_EventOutputConfig_0
+        CMP      R4,#+3
+        BEQ.N    ??GPIO_EventOutputConfig_0
+        CMP      R4,#+4
+        BEQ.N    ??GPIO_EventOutputConfig_0
+        MOVS     R1,#+428
+        LDR.N    R0,??DataTable20  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_EventOutputConfig_0:
+        CMP      R5,#+0
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+1
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+2
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+3
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+4
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+5
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+6
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+7
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+8
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+9
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+10
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+11
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+12
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+13
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+14
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        CMP      R5,#+15
+        BEQ.N    ??GPIO_EventOutputConfig_1
+        LDR.N    R1,??GPIO_EventOutputConfig_2  ;; 0x1ad
+        LDR.N    R0,??DataTable20  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_EventOutputConfig_1:
+        LDR.N    R0,??DataTable24  ;; AFIO
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+0]
+        MOVS     R1,R0
+        LDR.N    R0,??GPIO_EventOutputConfig_2+0x4  ;; 0xff80
+        ANDS     R0,R0,R1
+        ORRS     R0,R0,R4, LSL #+4
+        ORRS     R5,R5,R0
+        MOVS     R0,R5
+        LDR.N    R1,??DataTable24  ;; AFIO
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+0]
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??GPIO_EventOutputConfig_2:
+        DC32     0x1ad
+        DC32     0xff80
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_EventOutputCmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??GPIO_EventOutputCmd_0
+        CMP      R4,#+1
+        BEQ.N    ??GPIO_EventOutputCmd_0
+        LDR.N    R1,??GPIO_EventOutputCmd_1  ;; 0x1c3
+        LDR.N    R0,??DataTable20  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_EventOutputCmd_0:
+        LDR.N    R0,??GPIO_EventOutputCmd_1+0x4  ;; 0x4220001c
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??GPIO_EventOutputCmd_1:
+        DC32     0x1c3
+        DC32     0x4220001c
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_PinRemapConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R1,#+0
+        MOVS     R2,#+0
+        MOVS     R0,#+0
+        MOVS     R3,#+0
+        CMP      R4,#+1
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        CMP      R4,#+2
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        CMP      R4,#+4
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        CMP      R4,#+8
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1  ;; 0x140010
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x4  ;; 0x140030
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x8  ;; 0x160040
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0xC  ;; 0x1600c0
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x10  ;; 0x180100
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x14  ;; 0x180200
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x18  ;; 0x180300
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x1C  ;; 0x1a0800
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x20  ;; 0x1a0c00
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        CMP      R4,#+4096
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        CMP      R4,#+1908736
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        CMP      R4,#+1925120
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        CMP      R4,#+32768
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x24  ;; 0x300100
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x28  ;; 0x300200
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R0,??GPIO_PinRemapConfig_1+0x2C  ;; 0x300400
+        CMP      R4,R0
+        BEQ.N    ??GPIO_PinRemapConfig_0
+        LDR.N    R1,??GPIO_PinRemapConfig_1+0x30  ;; 0x1eb
+        LDR.N    R0,??DataTable20  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_PinRemapConfig_0:
+        CMP      R5,#+0
+        BEQ.N    ??GPIO_PinRemapConfig_2
+        CMP      R5,#+1
+        BEQ.N    ??GPIO_PinRemapConfig_2
+        MOVS     R1,#+492
+        LDR.N    R0,??DataTable20  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_PinRemapConfig_2:
+        LDR.N    R0,??DataTable24  ;; AFIO
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        ANDS     R1,R4,#0xF0000
+        MOVS     R3,R1
+        LSRS     R3,R3,#+16
+        LSLS     R1,R4,#+16       ;; ZeroExtS R1,R4,#+16,#+16
+        LSRS     R1,R1,#+16
+        LSLS     R2,R4,#+10
+        BPL.N    ??GPIO_PinRemapConfig_3
+        MOVS     R2,R0
+        MVNS     R0,#+117440512
+        ANDS     R0,R0,R2
+        B.N      ??GPIO_PinRemapConfig_4
+??GPIO_PinRemapConfig_3:
+        LSLS     R2,R4,#+11
+        BPL.N    ??GPIO_PinRemapConfig_5
+        MOVS     R2,#+3
+        LSLS     R2,R2,R3
+        BICS     R0,R0,R2
+        B.N      ??GPIO_PinRemapConfig_4
+??GPIO_PinRemapConfig_5:
+        BICS     R0,R0,R1
+??GPIO_PinRemapConfig_4:
+        CMP      R5,#+0
+        BEQ.N    ??GPIO_PinRemapConfig_6
+        LSLS     R2,R4,#+10
+        BPL.N    ??GPIO_PinRemapConfig_7
+        ORRS     R0,R0,R1, LSL #+16
+        B.N      ??GPIO_PinRemapConfig_6
+??GPIO_PinRemapConfig_7:
+        ORRS     R1,R1,R0
+        MOVS     R0,R1
+??GPIO_PinRemapConfig_6:
+        LDR.N    R1,??DataTable24  ;; AFIO
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+4]
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??GPIO_PinRemapConfig_1:
+        DC32     0x140010
+        DC32     0x140030
+        DC32     0x160040
+        DC32     0x1600c0
+        DC32     0x180100
+        DC32     0x180200
+        DC32     0x180300
+        DC32     0x1a0800
+        DC32     0x1a0c00
+        DC32     0x300100
+        DC32     0x300200
+        DC32     0x300400
+        DC32     0x1eb
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_EXTILineConfig:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??GPIO_EXTILineConfig_0
+        CMP      R4,#+1
+        BEQ.N    ??GPIO_EXTILineConfig_0
+        CMP      R4,#+2
+        BEQ.N    ??GPIO_EXTILineConfig_0
+        CMP      R4,#+3
+        BEQ.N    ??GPIO_EXTILineConfig_0
+        CMP      R4,#+4
+        BEQ.N    ??GPIO_EXTILineConfig_0
+        LDR.N    R1,??GPIO_EXTILineConfig_1  ;; 0x21e
+        LDR.N    R0,??DataTable20  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_EXTILineConfig_0:
+        CMP      R5,#+0
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+1
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+2
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+3
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+4
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+5
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+6
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+7
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+8
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+9
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+10
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+11
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+12
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+13
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+14
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        CMP      R5,#+15
+        BEQ.N    ??GPIO_EXTILineConfig_2
+        LDR.N    R1,??GPIO_EXTILineConfig_1+0x4  ;; 0x21f
+        LDR.N    R0,??DataTable20  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??GPIO_EXTILineConfig_2:
+        MOVS     R0,#+15
+        LSLS     R1,R5,#+30       ;; ZeroExtS R1,R5,#+30,#+30
+        LSRS     R1,R1,#+30
+        MOVS     R2,#+4
+        MULS     R1,R2,R1
+        LSLS     R0,R0,R1
+        LSLS     R5,R5,#+24       ;; ZeroExtS R5,R5,#+24,#+24
+        LSRS     R5,R5,#+24
+        MOVS     R1,R5
+        ASRS     R1,R1,#+2
+        MOVS     R2,#+4
+        LDR.N    R3,??DataTable24  ;; AFIO
+        LDR      R3,[R3, #+0]
+        MLA      R1,R1,R2,R3
+        LSLS     R5,R5,#+24       ;; ZeroExtS R5,R5,#+24,#+24
+        LSRS     R5,R5,#+24
+        MOVS     R2,R5
+        ASRS     R2,R2,#+2
+        MOVS     R3,#+4
+        LDR.N    R6,??DataTable24  ;; AFIO
+        LDR      R6,[R6, #+0]
+        MLA      R2,R2,R3,R6
+        LDR      R2,[R2, #+8]
+        BICS     R2,R2,R0
+        STR      R2,[R1, #+8]
+        LSLS     R5,R5,#+24       ;; ZeroExtS R5,R5,#+24,#+24
+        LSRS     R5,R5,#+24
+        MOVS     R0,R5
+        ASRS     R0,R0,#+2
+        MOVS     R1,#+4
+        LDR.N    R2,??DataTable24  ;; AFIO
+        LDR      R2,[R2, #+0]
+        MLA      R0,R0,R1,R2
+        LSLS     R5,R5,#+24       ;; ZeroExtS R5,R5,#+24,#+24
+        LSRS     R5,R5,#+24
+        MOVS     R1,R5
+        ASRS     R1,R1,#+2
+        MOVS     R2,#+4
+        LDR.N    R3,??DataTable24  ;; AFIO
+        LDR      R3,[R3, #+0]
+        MLA      R1,R1,R2,R3
+        LDR      R1,[R1, #+8]
+        LSLS     R2,R5,#+30       ;; ZeroExtS R2,R5,#+30,#+30
+        LSRS     R2,R2,#+30
+        MOVS     R3,#+4
+        MULS     R2,R3,R2
+        LSLS     R4,R4,R2
+        ORRS     R4,R4,R1
+        STR      R4,[R0, #+8]
+        POP      {R4-R6,PC}       ;; return
+        DATA
+??GPIO_EXTILineConfig_1:
+        DC32     0x21e
+        DC32     0x21f
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable20:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable24:
+        DC32     AFIO
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB2PeriphResetCmd??rT:
+        LDR.N    R3,??Subroutine0_0  ;; RCC_APB2PeriphResetCmd
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     RCC_APB2PeriphResetCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??assert_failed??rT:
+        LDR.N    R3,??Subroutine1_0  ;; assert_failed
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     assert_failed
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "C:\\\\David JIANG\\\\ST MCU...">`:
+        DATA
+        DC8 43H, 3AH, 5CH, 44H, 61H, 76H, 69H, 64H
+        DC8 20H, 4AH, 49H, 41H, 4EH, 47H, 5CH, 53H
+        DC8 54H, 20H, 4DH, 43H, 55H, 5CH, 44H, 6FH
+        DC8 63H, 73H, 5CH, 53H, 54H, 4DH, 33H, 32H
+        DC8 5CH, 41H, 4EH, 5FH, 4AH, 49H, 41H, 4EH
+        DC8 47H, 5CH, 54H, 49H, 4DH, 20H, 45H, 6EH
+        DC8 63H, 6FH, 64H, 65H, 72H, 5CH, 65H, 78H
+        DC8 61H, 6DH, 70H, 6CH, 65H, 5CH, 46H, 57H
+        DC8 4CH, 69H, 62H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 73H, 74H, 6DH, 33H, 32H, 66H, 31H, 30H
+        DC8 78H, 5FH, 67H, 70H, 69H, 6FH, 2EH, 63H
+        DC8 0
+        DC8 0, 0, 0
+
+        END
+// 
+// 1 724 bytes in segment CODE
+//    92 bytes in segment DATA_C
+// 
+// 1 708 bytes of CODE  memory (+ 16 bytes shared)
+//    92 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

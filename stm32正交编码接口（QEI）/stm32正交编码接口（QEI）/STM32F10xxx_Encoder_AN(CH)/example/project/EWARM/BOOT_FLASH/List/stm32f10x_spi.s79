@@ -1,0 +1,881 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:32 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\FWLib\src\stm32f10x_spi.c           /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\FWLib\src\stm32f10x_spi.c" -D       /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_spi.s79                                        /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_spi
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable20 EQU 0
+??DataTable21 EQU 0
+??DataTable22 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable8 EQU 0
+??DataTable9 EQU 0
+        MULTWEAK ??RCC_APB1PeriphResetCmd??rT
+        MULTWEAK ??RCC_APB2PeriphResetCmd??rT
+        MULTWEAK ??assert_failed??rT
+        PUBLIC SPI_BiDirectionalLineConfig
+        PUBLIC SPI_CalculateCRC
+        PUBLIC SPI_ClearFlag
+        PUBLIC SPI_ClearITPendingBit
+        PUBLIC SPI_Cmd
+        PUBLIC SPI_DMACmd
+        PUBLIC SPI_DataSizeConfig
+        PUBLIC SPI_DeInit
+        PUBLIC SPI_GetCRC
+        PUBLIC SPI_GetCRCPolynomial
+        PUBLIC SPI_GetFlagStatus
+        PUBLIC SPI_GetITStatus
+        PUBLIC SPI_ITConfig
+        PUBLIC SPI_Init
+        PUBLIC SPI_NSSInternalSoftwareConfig
+        PUBLIC SPI_ReceiveData
+        PUBLIC SPI_SSOutputCmd
+        PUBLIC SPI_SendData
+        PUBLIC SPI_StructInit
+        PUBLIC SPI_TransmitCRC
+
+RCC_APB1PeriphResetCmd SYMBOL "RCC_APB1PeriphResetCmd"
+RCC_APB2PeriphResetCmd SYMBOL "RCC_APB2PeriphResetCmd"
+assert_failed       SYMBOL "assert_failed"
+??RCC_APB1PeriphResetCmd??rT SYMBOL "??rT", RCC_APB1PeriphResetCmd
+??RCC_APB2PeriphResetCmd??rT SYMBOL "??rT", RCC_APB2PeriphResetCmd
+??assert_failed??rT SYMBOL "??rT", assert_failed
+
+        EXTERN RCC_APB1PeriphResetCmd
+        EXTERN RCC_APB2PeriphResetCmd
+        EXTERN assert_failed
+
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_DeInit:
+        PUSH     {LR}
+        LDR.N    R1,??SPI_DeInit_0  ;; 0x40003800
+        CMP      R0,R1
+        BEQ.N    ??SPI_DeInit_1
+        LDR.N    R1,??SPI_DeInit_0+0x4  ;; 0x40013000
+        CMP      R0,R1
+        BNE.N    ??SPI_DeInit_2
+??SPI_DeInit_3:
+        MOVS     R1,#+1
+        MOVS     R0,#+4096
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+4096
+        _BLF     RCC_APB2PeriphResetCmd,??RCC_APB2PeriphResetCmd??rT
+        B.N      ??SPI_DeInit_2
+??SPI_DeInit_1:
+        MOVS     R1,#+1
+        MOVS     R0,#+16384
+        _BLF     RCC_APB1PeriphResetCmd,??RCC_APB1PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+16384
+        _BLF     RCC_APB1PeriphResetCmd,??RCC_APB1PeriphResetCmd??rT
+??SPI_DeInit_2:
+        POP      {PC}             ;; return
+        Nop      
+        DATA
+??SPI_DeInit_0:
+        DC32     0x40003800
+        DC32     0x40013000
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_Init:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R1,#+0
+        LDRH     R0,[R5, #+0]
+        CMP      R0,#+0
+        BEQ.N    ??SPI_Init_0
+        LDRH     R0,[R5, #+0]
+        MOVS     R1,#+1024
+        CMP      R0,R1
+        BEQ.N    ??SPI_Init_0
+        LDRH     R0,[R5, #+0]
+        MOVS     R1,#+32768
+        CMP      R0,R1
+        BEQ.N    ??SPI_Init_0
+        LDRH     R0,[R5, #+0]
+        MOVS     R1,#+49152
+        CMP      R0,R1
+        BEQ.N    ??SPI_Init_0
+        MOVS     R1,#+97
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_0:
+        LDRH     R0,[R5, #+2]
+        MOVS     R1,#+260
+        CMP      R0,R1
+        BEQ.N    ??SPI_Init_1
+        LDRH     R0,[R5, #+2]
+        CMP      R0,#+0
+        BEQ.N    ??SPI_Init_1
+        MOVS     R1,#+98
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_1:
+        LDRH     R0,[R5, #+4]
+        MOVS     R1,#+2048
+        CMP      R0,R1
+        BEQ.N    ??SPI_Init_2
+        LDRH     R0,[R5, #+4]
+        CMP      R0,#+0
+        BEQ.N    ??SPI_Init_2
+        MOVS     R1,#+99
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_2:
+        LDRH     R0,[R5, #+6]
+        CMP      R0,#+0
+        BEQ.N    ??SPI_Init_3
+        LDRH     R0,[R5, #+6]
+        CMP      R0,#+2
+        BEQ.N    ??SPI_Init_3
+        MOVS     R1,#+100
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_3:
+        LDRH     R0,[R5, #+8]
+        CMP      R0,#+0
+        BEQ.N    ??SPI_Init_4
+        LDRH     R0,[R5, #+8]
+        CMP      R0,#+1
+        BEQ.N    ??SPI_Init_4
+        MOVS     R1,#+101
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_4:
+        LDRH     R0,[R5, #+10]
+        MOVS     R1,#+512
+        CMP      R0,R1
+        BEQ.N    ??SPI_Init_5
+        LDRH     R0,[R5, #+10]
+        CMP      R0,#+0
+        BEQ.N    ??SPI_Init_5
+        MOVS     R1,#+102
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_5:
+        LDRH     R0,[R5, #+12]
+        CMP      R0,#+0
+        BEQ.N    ??SPI_Init_6
+        LDRH     R0,[R5, #+12]
+        CMP      R0,#+8
+        BEQ.N    ??SPI_Init_6
+        LDRH     R0,[R5, #+12]
+        CMP      R0,#+16
+        BEQ.N    ??SPI_Init_6
+        LDRH     R0,[R5, #+12]
+        CMP      R0,#+24
+        BEQ.N    ??SPI_Init_6
+        LDRH     R0,[R5, #+12]
+        CMP      R0,#+32
+        BEQ.N    ??SPI_Init_6
+        LDRH     R0,[R5, #+12]
+        CMP      R0,#+40
+        BEQ.N    ??SPI_Init_6
+        LDRH     R0,[R5, #+12]
+        CMP      R0,#+48
+        BEQ.N    ??SPI_Init_6
+        LDRH     R0,[R5, #+12]
+        CMP      R0,#+56
+        BEQ.N    ??SPI_Init_6
+        MOVS     R1,#+103
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_6:
+        LDRH     R0,[R5, #+14]
+        CMP      R0,#+0
+        BEQ.N    ??SPI_Init_7
+        LDRH     R0,[R5, #+14]
+        CMP      R0,#+128
+        BEQ.N    ??SPI_Init_7
+        MOVS     R1,#+104
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_7:
+        LDRH     R0,[R5, #+16]
+        CMP      R0,#+1
+        BCS.N    ??SPI_Init_8
+        MOVS     R1,#+105
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Init_8:
+        LDRH     R1,[R4, #+0]
+        ANDS     R1,R1,#0x3040
+        MOVS     R0,R1
+        LDRH     R1,[R5, #+0]
+        LDRH     R2,[R5, #+2]
+        ORRS     R2,R2,R1
+        LDRH     R1,[R5, #+4]
+        ORRS     R1,R1,R2
+        LDRH     R2,[R5, #+6]
+        ORRS     R2,R2,R1
+        LDRH     R1,[R5, #+8]
+        ORRS     R1,R1,R2
+        LDRH     R2,[R5, #+10]
+        ORRS     R2,R2,R1
+        LDRH     R3,[R5, #+12]
+        ORRS     R3,R3,R2
+        LDRH     R1,[R5, #+14]
+        ORRS     R1,R1,R3
+        ORRS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+        LDRH     R0,[R5, #+16]
+        STRH     R0,[R4, #+16]
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_StructInit:
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+0]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+2]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+4]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+6]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+8]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+10]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+12]
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+14]
+        MOVS     R1,#+7
+        STRH     R1,[R0, #+16]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_Cmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??SPI_Cmd_0
+        CMP      R5,#+1
+        BEQ.N    ??SPI_Cmd_0
+        MOVS     R1,#+183
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_Cmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??SPI_Cmd_1
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x40
+        STRH     R0,[R4, #+0]
+        B.N      ??SPI_Cmd_2
+??SPI_Cmd_1:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??SPI_Cmd_3   ;; 0xffbf
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??SPI_Cmd_2:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??SPI_Cmd_3:
+        DC32     0xffbf
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_ITConfig:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R6,R2
+        MOVS     R0,#+0
+        MOVS     R1,#+0
+        CMP      R6,#+0
+        BEQ.N    ??SPI_ITConfig_0
+        CMP      R6,#+1
+        BEQ.N    ??SPI_ITConfig_0
+        MOVS     R1,#+217
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_ITConfig_0:
+        CMP      R5,#+113
+        BEQ.N    ??SPI_ITConfig_1
+        CMP      R5,#+96
+        BEQ.N    ??SPI_ITConfig_1
+        CMP      R5,#+80
+        BEQ.N    ??SPI_ITConfig_1
+        MOVS     R1,#+218
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_ITConfig_1:
+        MOVS     R0,R5
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        LSRS     R0,R0,#+4
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+1
+        LSLS     R1,R1,R0
+        CMP      R6,#+0
+        BEQ.N    ??SPI_ITConfig_2
+        LDRH     R0,[R4, #+4]
+        ORRS     R1,R1,R0
+        STRH     R1,[R4, #+4]
+        B.N      ??SPI_ITConfig_3
+??SPI_ITConfig_2:
+        LDRH     R0,[R4, #+4]
+        BICS     R0,R0,R1
+        STRH     R0,[R4, #+4]
+??SPI_ITConfig_3:
+        POP      {R4-R6,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_DMACmd:
+        PUSH     {R4-R6,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R6,R2
+        CMP      R6,#+0
+        BEQ.N    ??SPI_DMACmd_0
+        CMP      R6,#+1
+        BEQ.N    ??SPI_DMACmd_0
+        MOVS     R1,#+254
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_DMACmd_0:
+        LDR.N    R0,??SPI_DMACmd_1  ;; 0xfffc
+        TST      R5,R0
+        BNE.N    ??SPI_DMACmd_2
+        CMP      R5,#+0
+        BNE.N    ??SPI_DMACmd_3
+??SPI_DMACmd_2:
+        MOVS     R1,#+255
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_DMACmd_3:
+        CMP      R6,#+0
+        BEQ.N    ??SPI_DMACmd_4
+        LDRH     R0,[R4, #+4]
+        ORRS     R5,R5,R0
+        STRH     R5,[R4, #+4]
+        B.N      ??SPI_DMACmd_5
+??SPI_DMACmd_4:
+        LDRH     R0,[R4, #+4]
+        BICS     R0,R0,R5
+        STRH     R0,[R4, #+4]
+??SPI_DMACmd_5:
+        POP      {R4-R6,PC}       ;; return
+        Nop      
+        DATA
+??SPI_DMACmd_1:
+        DC32     0xfffc
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_SendData:
+        STRH     R1,[R0, #+12]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_ReceiveData:
+        LDRH     R0,[R0, #+12]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_NSSInternalSoftwareConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+256
+        CMP      R5,R0
+        BEQ.N    ??SPI_NSSInternalSoftwareConfig_0
+        LDR.N    R0,??SPI_NSSInternalSoftwareConfig_1  ;; 0xfeff
+        CMP      R5,R0
+        BEQ.N    ??SPI_NSSInternalSoftwareConfig_0
+        LDR.N    R1,??SPI_NSSInternalSoftwareConfig_1+0x4  ;; 0x137
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_NSSInternalSoftwareConfig_0:
+        LDR.N    R0,??SPI_NSSInternalSoftwareConfig_1  ;; 0xfeff
+        CMP      R5,R0
+        BEQ.N    ??SPI_NSSInternalSoftwareConfig_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x100
+        STRH     R0,[R4, #+0]
+        B.N      ??SPI_NSSInternalSoftwareConfig_3
+??SPI_NSSInternalSoftwareConfig_2:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??SPI_NSSInternalSoftwareConfig_1  ;; 0xfeff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??SPI_NSSInternalSoftwareConfig_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??SPI_NSSInternalSoftwareConfig_1:
+        DC32     0xfeff
+        DC32     0x137
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_SSOutputCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??SPI_SSOutputCmd_0
+        CMP      R5,#+1
+        BEQ.N    ??SPI_SSOutputCmd_0
+        LDR.N    R1,??SPI_SSOutputCmd_1  ;; 0x151
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_SSOutputCmd_0:
+        CMP      R5,#+0
+        BEQ.N    ??SPI_SSOutputCmd_2
+        LDRH     R0,[R4, #+4]
+        ORRS     R0,R0,#0x4
+        STRH     R0,[R4, #+4]
+        B.N      ??SPI_SSOutputCmd_3
+??SPI_SSOutputCmd_2:
+        LDRH     R0,[R4, #+4]
+        LDR.N    R1,??SPI_SSOutputCmd_1+0x4  ;; 0xfffb
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+4]
+??SPI_SSOutputCmd_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??SPI_SSOutputCmd_1:
+        DC32     0x151
+        DC32     0xfffb
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_DataSizeConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+2048
+        CMP      R5,R0
+        BEQ.N    ??SPI_DataSizeConfig_0
+        CMP      R5,#+0
+        BEQ.N    ??SPI_DataSizeConfig_0
+        LDR.N    R1,??SPI_DataSizeConfig_1  ;; 0x16d
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_DataSizeConfig_0:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??SPI_DataSizeConfig_1+0x4  ;; 0xf7ff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+        LDRH     R0,[R4, #+0]
+        ORRS     R5,R5,R0
+        STRH     R5,[R4, #+0]
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??SPI_DataSizeConfig_1:
+        DC32     0x16d
+        DC32     0xf7ff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_TransmitCRC:
+        LDRH     R1,[R0, #+0]
+        ORRS     R1,R1,#0x1000
+        STRH     R1,[R0, #+0]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_CalculateCRC:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R5,#+0
+        BEQ.N    ??SPI_CalculateCRC_0
+        CMP      R5,#+1
+        BEQ.N    ??SPI_CalculateCRC_0
+        LDR.N    R1,??SPI_CalculateCRC_1  ;; 0x18f
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_CalculateCRC_0:
+        CMP      R5,#+0
+        BEQ.N    ??SPI_CalculateCRC_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x2000
+        STRH     R0,[R4, #+0]
+        B.N      ??SPI_CalculateCRC_3
+??SPI_CalculateCRC_2:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??SPI_CalculateCRC_1+0x4  ;; 0xdfff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??SPI_CalculateCRC_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??SPI_CalculateCRC_1:
+        DC32     0x18f
+        DC32     0xdfff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_GetCRC:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        CMP      R5,#+0
+        BEQ.N    ??SPI_GetCRC_0
+        CMP      R5,#+1
+        BEQ.N    ??SPI_GetCRC_0
+        MOVS     R1,#+430
+        LDR.N    R0,??DataTable18  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_GetCRC_0:
+        CMP      R5,#+1
+        BEQ.N    ??SPI_GetCRC_1
+        LDRH     R0,[R4, #+24]
+        B.N      ??SPI_GetCRC_2
+??SPI_GetCRC_1:
+        LDRH     R0,[R4, #+20]
+??SPI_GetCRC_2:
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable18:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_GetCRCPolynomial:
+        LDRH     R0,[R0, #+16]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_BiDirectionalLineConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        LDR.N    R0,??SPI_BiDirectionalLineConfig_0  ;; 0xbfff
+        CMP      R5,R0
+        BEQ.N    ??SPI_BiDirectionalLineConfig_1
+        MOVS     R0,#+16384
+        CMP      R5,R0
+        BEQ.N    ??SPI_BiDirectionalLineConfig_1
+        MOVS     R1,#+476
+        LDR.N    R0,??DataTable23  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_BiDirectionalLineConfig_1:
+        MOVS     R0,#+16384
+        CMP      R5,R0
+        BNE.N    ??SPI_BiDirectionalLineConfig_2
+        LDRH     R0,[R4, #+0]
+        ORRS     R0,R0,#0x4000
+        STRH     R0,[R4, #+0]
+        B.N      ??SPI_BiDirectionalLineConfig_3
+??SPI_BiDirectionalLineConfig_2:
+        LDRH     R0,[R4, #+0]
+        LDR.N    R1,??SPI_BiDirectionalLineConfig_0  ;; 0xbfff
+        ANDS     R1,R1,R0
+        STRH     R1,[R4, #+0]
+??SPI_BiDirectionalLineConfig_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??SPI_BiDirectionalLineConfig_0:
+        DC32     0xbfff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_GetFlagStatus:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        CMP      R5,#+128
+        BEQ.N    ??SPI_GetFlagStatus_0
+        CMP      R5,#+64
+        BEQ.N    ??SPI_GetFlagStatus_0
+        CMP      R5,#+32
+        BEQ.N    ??SPI_GetFlagStatus_0
+        CMP      R5,#+16
+        BEQ.N    ??SPI_GetFlagStatus_0
+        CMP      R5,#+2
+        BEQ.N    ??SPI_GetFlagStatus_0
+        CMP      R5,#+1
+        BEQ.N    ??SPI_GetFlagStatus_0
+        MOVS     R1,#+510
+        LDR.N    R0,??DataTable23  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_GetFlagStatus_0:
+        LDRH     R0,[R4, #+8]
+        TST      R0,R5
+        BEQ.N    ??SPI_GetFlagStatus_1
+        MOVS     R0,#+1
+        B.N      ??SPI_GetFlagStatus_2
+??SPI_GetFlagStatus_1:
+        MOVS     R0,#+0
+??SPI_GetFlagStatus_2:
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_ClearFlag:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        LDR.N    R0,??SPI_ClearFlag_0  ;; 0xff8f
+        TST      R5,R0
+        BNE.N    ??SPI_ClearFlag_1
+        CMP      R5,#+0
+        BNE.N    ??SPI_ClearFlag_2
+??SPI_ClearFlag_1:
+        LDR.N    R1,??SPI_ClearFlag_0+0x4  ;; 0x21e
+        LDR.N    R0,??DataTable23  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_ClearFlag_2:
+        CMP      R5,#+32
+        BNE.N    ??SPI_ClearFlag_3
+        LDRH     R0,[R4, #+8]
+        LDRH     R1,[R4, #+0]
+        ORRS     R1,R1,#0x40
+        STRH     R1,[R4, #+0]
+        B.N      ??SPI_ClearFlag_4
+??SPI_ClearFlag_3:
+        CMP      R5,#+64
+        BNE.N    ??SPI_ClearFlag_5
+        LDRH     R0,[R4, #+8]
+        B.N      ??SPI_ClearFlag_4
+??SPI_ClearFlag_5:
+        LDRH     R0,[R4, #+8]
+        BICS     R0,R0,R5
+        STRH     R0,[R4, #+8]
+??SPI_ClearFlag_4:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??SPI_ClearFlag_0:
+        DC32     0xff8f
+        DC32     0x21e
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_GetITStatus:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        MOVS     R1,#+0
+        MOVS     R2,#+0
+        MOVS     R3,#+0
+        CMP      R5,#+113
+        BEQ.N    ??SPI_GetITStatus_0
+        CMP      R5,#+96
+        BEQ.N    ??SPI_GetITStatus_0
+        CMP      R5,#+86
+        BEQ.N    ??SPI_GetITStatus_0
+        CMP      R5,#+85
+        BEQ.N    ??SPI_GetITStatus_0
+        CMP      R5,#+84
+        BEQ.N    ??SPI_GetITStatus_0
+        LDR.N    R1,??SPI_GetITStatus_1  ;; 0x249
+        LDR.N    R0,??DataTable23  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_GetITStatus_0:
+        MOVS     R1,#+1
+        LSLS     R0,R5,#+28       ;; ZeroExtS R0,R5,#+28,#+28
+        LSRS     R0,R0,#+28
+        LSLS     R1,R1,R0
+        MOVS     R2,R5
+        LSLS     R2,R2,#+24       ;; ZeroExtS R2,R2,#+24,#+24
+        LSRS     R2,R2,#+24
+        LSRS     R2,R2,#+4
+        LSLS     R2,R2,#+24       ;; ZeroExtS R2,R2,#+24,#+24
+        LSRS     R2,R2,#+24
+        MOVS     R3,#+1
+        MOVS     R0,R2
+        MOVS     R2,R3
+        LSLS     R2,R2,R0
+        LDRH     R0,[R4, #+4]
+        ANDS     R2,R2,R0
+        MOVS     R3,R2
+        LDRH     R0,[R4, #+8]
+        TST      R0,R1
+        BEQ.N    ??SPI_GetITStatus_2
+        LSLS     R3,R3,#+16       ;; ZeroExtS R3,R3,#+16,#+16
+        LSRS     R3,R3,#+16
+        CMP      R3,#+0
+        BEQ.N    ??SPI_GetITStatus_2
+        MOVS     R0,#+1
+        B.N      ??SPI_GetITStatus_3
+??SPI_GetITStatus_2:
+        MOVS     R0,#+0
+??SPI_GetITStatus_3:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??SPI_GetITStatus_1:
+        DC32     0x249
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI_ClearITPendingBit:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        CMP      R5,#+86
+        BEQ.N    ??SPI_ClearITPendingBit_0
+        CMP      R5,#+85
+        BEQ.N    ??SPI_ClearITPendingBit_0
+        CMP      R5,#+84
+        BEQ.N    ??SPI_ClearITPendingBit_0
+        LDR.N    R1,??SPI_ClearITPendingBit_1  ;; 0x275
+        LDR.N    R0,??DataTable23  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??SPI_ClearITPendingBit_0:
+        CMP      R5,#+85
+        BNE.N    ??SPI_ClearITPendingBit_2
+        LDRH     R0,[R4, #+8]
+        LDRH     R1,[R4, #+0]
+        ORRS     R1,R1,#0x40
+        STRH     R1,[R4, #+0]
+        B.N      ??SPI_ClearITPendingBit_3
+??SPI_ClearITPendingBit_2:
+        CMP      R5,#+86
+        BNE.N    ??SPI_ClearITPendingBit_4
+        LDRH     R0,[R4, #+8]
+        B.N      ??SPI_ClearITPendingBit_3
+??SPI_ClearITPendingBit_4:
+        MOVS     R0,#+1
+        LSLS     R1,R5,#+28       ;; ZeroExtS R1,R5,#+28,#+28
+        LSRS     R1,R1,#+28
+        LSLS     R0,R0,R1
+        LDRH     R1,[R4, #+8]
+        BICS     R1,R1,R0
+        STRH     R1,[R4, #+8]
+??SPI_ClearITPendingBit_3:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??SPI_ClearITPendingBit_1:
+        DC32     0x275
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable23:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB2PeriphResetCmd??rT:
+        LDR.N    R3,??Subroutine0_0  ;; RCC_APB2PeriphResetCmd
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     RCC_APB2PeriphResetCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB1PeriphResetCmd??rT:
+        LDR.N    R3,??Subroutine1_0  ;; RCC_APB1PeriphResetCmd
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     RCC_APB1PeriphResetCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??assert_failed??rT:
+        LDR.N    R3,??Subroutine2_0  ;; assert_failed
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     assert_failed
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "C:\\\\David JIANG\\\\ST MCU...">`:
+        DATA
+        DC8 43H, 3AH, 5CH, 44H, 61H, 76H, 69H, 64H
+        DC8 20H, 4AH, 49H, 41H, 4EH, 47H, 5CH, 53H
+        DC8 54H, 20H, 4DH, 43H, 55H, 5CH, 44H, 6FH
+        DC8 63H, 73H, 5CH, 53H, 54H, 4DH, 33H, 32H
+        DC8 5CH, 41H, 4EH, 5FH, 4AH, 49H, 41H, 4EH
+        DC8 47H, 5CH, 54H, 49H, 4DH, 20H, 45H, 6EH
+        DC8 63H, 6FH, 64H, 65H, 72H, 5CH, 65H, 78H
+        DC8 61H, 6DH, 70H, 6CH, 65H, 5CH, 46H, 57H
+        DC8 4CH, 69H, 62H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 73H, 74H, 6DH, 33H, 32H, 66H, 31H, 30H
+        DC8 78H, 5FH, 73H, 70H, 69H, 2EH, 63H, 0
+
+        END
+// 
+// 1 292 bytes in segment CODE
+//    88 bytes in segment DATA_C
+// 
+// 1 268 bytes of CODE  memory (+ 24 bytes shared)
+//    88 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

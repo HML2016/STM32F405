@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=LED0 Old Footprint=2LED New Footprint=LED-2-1206
+Added Room: Name=F405 MCU

@@ -1,0 +1,1967 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:30 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\FWLib\src\stm32f10x_can.c           /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\FWLib\src\stm32f10x_can.c" -D       /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_can.s79                                        /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_can
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable100 EQU 0
+??DataTable101 EQU 0
+??DataTable102 EQU 0
+??DataTable103 EQU 0
+??DataTable104 EQU 0
+??DataTable105 EQU 0
+??DataTable107 EQU 0
+??DataTable108 EQU 0
+??DataTable109 EQU 0
+??DataTable11 EQU 0
+??DataTable110 EQU 0
+??DataTable111 EQU 0
+??DataTable112 EQU 0
+??DataTable113 EQU 0
+??DataTable114 EQU 0
+??DataTable116 EQU 0
+??DataTable117 EQU 0
+??DataTable118 EQU 0
+??DataTable119 EQU 0
+??DataTable12 EQU 0
+??DataTable120 EQU 0
+??DataTable121 EQU 0
+??DataTable122 EQU 0
+??DataTable123 EQU 0
+??DataTable124 EQU 0
+??DataTable125 EQU 0
+??DataTable126 EQU 0
+??DataTable127 EQU 0
+??DataTable128 EQU 0
+??DataTable129 EQU 0
+??DataTable13 EQU 0
+??DataTable130 EQU 0
+??DataTable131 EQU 0
+??DataTable132 EQU 0
+??DataTable133 EQU 0
+??DataTable134 EQU 0
+??DataTable135 EQU 0
+??DataTable136 EQU 0
+??DataTable137 EQU 0
+??DataTable138 EQU 0
+??DataTable139 EQU 0
+??DataTable14 EQU 0
+??DataTable140 EQU 0
+??DataTable141 EQU 0
+??DataTable143 EQU 0
+??DataTable145 EQU 0
+??DataTable146 EQU 0
+??DataTable147 EQU 0
+??DataTable148 EQU 0
+??DataTable149 EQU 0
+??DataTable15 EQU 0
+??DataTable150 EQU 0
+??DataTable151 EQU 0
+??DataTable152 EQU 0
+??DataTable153 EQU 0
+??DataTable154 EQU 0
+??DataTable155 EQU 0
+??DataTable156 EQU 0
+??DataTable157 EQU 0
+??DataTable159 EQU 0
+??DataTable16 EQU 0
+??DataTable160 EQU 0
+??DataTable161 EQU 0
+??DataTable162 EQU 0
+??DataTable163 EQU 0
+??DataTable164 EQU 0
+??DataTable165 EQU 0
+??DataTable166 EQU 0
+??DataTable167 EQU 0
+??DataTable168 EQU 0
+??DataTable169 EQU 0
+??DataTable17 EQU 0
+??DataTable170 EQU 0
+??DataTable171 EQU 0
+??DataTable172 EQU 0
+??DataTable18 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable20 EQU 0
+??DataTable21 EQU 0
+??DataTable22 EQU 0
+??DataTable23 EQU 0
+??DataTable24 EQU 0
+??DataTable25 EQU 0
+??DataTable26 EQU 0
+??DataTable27 EQU 0
+??DataTable28 EQU 0
+??DataTable29 EQU 0
+??DataTable3 EQU 0
+??DataTable30 EQU 0
+??DataTable31 EQU 0
+??DataTable32 EQU 0
+??DataTable33 EQU 0
+??DataTable34 EQU 0
+??DataTable35 EQU 0
+??DataTable36 EQU 0
+??DataTable37 EQU 0
+??DataTable38 EQU 0
+??DataTable39 EQU 0
+??DataTable4 EQU 0
+??DataTable41 EQU 0
+??DataTable42 EQU 0
+??DataTable43 EQU 0
+??DataTable44 EQU 0
+??DataTable45 EQU 0
+??DataTable46 EQU 0
+??DataTable47 EQU 0
+??DataTable48 EQU 0
+??DataTable49 EQU 0
+??DataTable5 EQU 0
+??DataTable50 EQU 0
+??DataTable51 EQU 0
+??DataTable52 EQU 0
+??DataTable53 EQU 0
+??DataTable54 EQU 0
+??DataTable55 EQU 0
+??DataTable56 EQU 0
+??DataTable57 EQU 0
+??DataTable58 EQU 0
+??DataTable59 EQU 0
+??DataTable6 EQU 0
+??DataTable60 EQU 0
+??DataTable61 EQU 0
+??DataTable62 EQU 0
+??DataTable63 EQU 0
+??DataTable64 EQU 0
+??DataTable65 EQU 0
+??DataTable66 EQU 0
+??DataTable67 EQU 0
+??DataTable68 EQU 0
+??DataTable69 EQU 0
+??DataTable7 EQU 0
+??DataTable70 EQU 0
+??DataTable72 EQU 0
+??DataTable73 EQU 0
+??DataTable74 EQU 0
+??DataTable76 EQU 0
+??DataTable77 EQU 0
+??DataTable78 EQU 0
+??DataTable79 EQU 0
+??DataTable8 EQU 0
+??DataTable80 EQU 0
+??DataTable81 EQU 0
+??DataTable82 EQU 0
+??DataTable83 EQU 0
+??DataTable84 EQU 0
+??DataTable85 EQU 0
+??DataTable86 EQU 0
+??DataTable87 EQU 0
+??DataTable88 EQU 0
+??DataTable89 EQU 0
+??DataTable9 EQU 0
+??DataTable90 EQU 0
+??DataTable91 EQU 0
+??DataTable92 EQU 0
+??DataTable93 EQU 0
+??DataTable94 EQU 0
+??DataTable95 EQU 0
+??DataTable96 EQU 0
+??DataTable97 EQU 0
+??DataTable98 EQU 0
+??DataTable99 EQU 0
+        MULTWEAK ??RCC_APB1PeriphResetCmd??rT
+        MULTWEAK ??assert_failed??rT
+        PUBLIC CAN_CancelTransmit
+        PUBLIC CAN_ClearFlag
+        PUBLIC CAN_ClearITPendingBit
+        PUBLIC CAN_DeInit
+        PUBLIC CAN_FIFORelease
+        PUBLIC CAN_FilterInit
+        PUBLIC CAN_GetFlagStatus
+        PUBLIC CAN_GetITStatus
+        PUBLIC CAN_ITConfig
+        PUBLIC CAN_Init
+        PUBLIC CAN_MessagePending
+        PUBLIC CAN_Receive
+        PUBLIC CAN_Sleep
+        PUBLIC CAN_StructInit
+        PUBLIC CAN_Transmit
+        PUBLIC CAN_TransmitStatus
+        PUBLIC CAN_WakeUp
+
+RCC_APB1PeriphResetCmd SYMBOL "RCC_APB1PeriphResetCmd"
+assert_failed       SYMBOL "assert_failed"
+??RCC_APB1PeriphResetCmd??rT SYMBOL "??rT", RCC_APB1PeriphResetCmd
+??assert_failed??rT SYMBOL "??rT", assert_failed
+
+        EXTERN CAN
+        EXTERN RCC_APB1PeriphResetCmd
+        EXTERN assert_failed
+
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_DeInit:
+        PUSH     {LR}
+        MOVS     R1,#+1
+        MOVS     R0,#+33554432
+        _BLF     RCC_APB1PeriphResetCmd,??RCC_APB1PeriphResetCmd??rT
+        MOVS     R1,#+0
+        MOVS     R0,#+33554432
+        _BLF     RCC_APB1PeriphResetCmd,??RCC_APB1PeriphResetCmd??rT
+        POP      {PC}             ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_Init:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        LDRB     R1,[R4, #+0]
+        CMP      R1,#+0
+        BEQ.N    ??CAN_Init_0
+        LDRB     R0,[R4, #+0]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_Init_0
+        MOVS     R1,#+116
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_0:
+        LDRB     R0,[R4, #+1]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Init_1
+        LDRB     R0,[R4, #+1]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_Init_1
+        MOVS     R1,#+117
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_1:
+        LDRB     R0,[R4, #+2]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Init_2
+        LDRB     R0,[R4, #+2]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_Init_2
+        MOVS     R1,#+118
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_2:
+        LDRB     R0,[R4, #+3]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Init_3
+        LDRB     R0,[R4, #+3]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_Init_3
+        MOVS     R1,#+119
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_3:
+        LDRB     R0,[R4, #+4]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Init_4
+        LDRB     R0,[R4, #+4]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_Init_4
+        MOVS     R1,#+120
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_4:
+        LDRB     R0,[R4, #+5]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Init_5
+        LDRB     R0,[R4, #+5]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_Init_5
+        MOVS     R1,#+121
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_5:
+        LDRB     R0,[R4, #+6]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Init_6
+        LDRB     R0,[R4, #+6]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_Init_6
+        LDRB     R0,[R4, #+6]
+        CMP      R0,#+2
+        BEQ.N    ??CAN_Init_6
+        LDRB     R0,[R4, #+6]
+        CMP      R0,#+3
+        BEQ.N    ??CAN_Init_6
+        MOVS     R1,#+122
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_6:
+        LDRB     R0,[R4, #+7]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Init_7
+        LDRB     R0,[R4, #+7]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_Init_7
+        LDRB     R0,[R4, #+7]
+        CMP      R0,#+2
+        BEQ.N    ??CAN_Init_7
+        LDRB     R0,[R4, #+7]
+        CMP      R0,#+3
+        BEQ.N    ??CAN_Init_7
+        MOVS     R1,#+123
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_7:
+        LDRB     R0,[R4, #+8]
+        CMP      R0,#+16
+        BCC.N    ??CAN_Init_8
+        MOVS     R1,#+124
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_8:
+        LDRB     R0,[R4, #+9]
+        CMP      R0,#+8
+        BCC.N    ??CAN_Init_9
+        MOVS     R1,#+125
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_9:
+        LDRH     R0,[R4, #+10]
+        CMP      R0,#+1
+        BCC.N    ??CAN_Init_10
+        LDRH     R0,[R4, #+10]
+        LDR.N    R1,??CAN_Init_11  ;; 0x401
+        CMP      R0,R1
+        BCC.N    ??CAN_Init_12
+??CAN_Init_10:
+        MOVS     R1,#+126
+        LDR.N    R0,??DataTable10  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Init_12:
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+1
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        LSLS     R0,R0,#+31
+        BMI.N    ??CAN_Init_13
+        MOVS     R0,#+0
+        B.N      ??CAN_Init_14
+??CAN_Init_13:
+        LDRB     R0,[R4, #+0]
+        CMP      R0,#+1
+        BNE.N    ??CAN_Init_15
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x80
+        STR      R1,[R0, #+0]
+        B.N      ??CAN_Init_16
+??CAN_Init_15:
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MOVS     R2,#+128
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+0]
+??CAN_Init_16:
+        LDRB     R0,[R4, #+1]
+        CMP      R0,#+1
+        BNE.N    ??CAN_Init_17
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x40
+        STR      R1,[R0, #+0]
+        B.N      ??CAN_Init_18
+??CAN_Init_17:
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MOVS     R2,#+64
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+0]
+??CAN_Init_18:
+        LDRB     R0,[R4, #+2]
+        CMP      R0,#+1
+        BNE.N    ??CAN_Init_19
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x20
+        STR      R1,[R0, #+0]
+        B.N      ??CAN_Init_20
+??CAN_Init_19:
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MOVS     R2,#+32
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+0]
+??CAN_Init_20:
+        LDRB     R0,[R4, #+3]
+        CMP      R0,#+1
+        BNE.N    ??CAN_Init_21
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x10
+        STR      R1,[R0, #+0]
+        B.N      ??CAN_Init_22
+??CAN_Init_21:
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MOVS     R2,#+16
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+0]
+??CAN_Init_22:
+        LDRB     R0,[R4, #+4]
+        CMP      R0,#+1
+        BNE.N    ??CAN_Init_23
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x8
+        STR      R1,[R0, #+0]
+        B.N      ??CAN_Init_24
+??CAN_Init_23:
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MOVS     R2,#+8
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+0]
+??CAN_Init_24:
+        LDRB     R0,[R4, #+5]
+        CMP      R0,#+1
+        BNE.N    ??CAN_Init_25
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x4
+        STR      R1,[R0, #+0]
+        B.N      ??CAN_Init_26
+??CAN_Init_25:
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MOVS     R2,#+4
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+0]
+??CAN_Init_26:
+        LDR.N    R0,??DataTable40  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDRB     R1,[R4, #+6]
+        LDRB     R2,[R4, #+7]
+        LSLS     R2,R2,#+24
+        ORRS     R1,R2,R1, LSL #+30
+        LDRB     R2,[R4, #+8]
+        ORRS     R1,R1,R2, LSL #+16
+        LDRB     R2,[R4, #+9]
+        ORRS     R1,R1,R2, LSL #+20
+        LDRH     R2,[R4, #+10]
+        SUBS     R2,R2,#+1
+        ORRS     R2,R2,R1
+        STR      R2,[R0, #+28]
+        MOVS     R0,#+1
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable40  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+0]
+        MOVS     R3,#+1
+        BICS     R2,R2,R3
+        STR      R2,[R1, #+0]
+        LDR.N    R1,??DataTable40  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        LSLS     R1,R1,#+31
+        BMI.N    ??CAN_Init_14
+        MOVS     R0,#+0
+??CAN_Init_14:
+        POP      {R4,PC}          ;; return
+        DATA
+??CAN_Init_11:
+        DC32     0x401
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable10:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable40:
+        DC32     CAN
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_FilterInit:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        LDRB     R1,[R4, #+0]
+        CMP      R1,#+14
+        BCC.N    ??CAN_FilterInit_0
+        MOVS     R1,#+233
+        LDR.N    R0,??DataTable71  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_FilterInit_0:
+        LDRB     R0,[R4, #+1]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_FilterInit_1
+        LDRB     R0,[R4, #+1]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_FilterInit_1
+        MOVS     R1,#+234
+        LDR.N    R0,??DataTable71  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_FilterInit_1:
+        LDRB     R0,[R4, #+2]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_FilterInit_2
+        LDRB     R0,[R4, #+2]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_FilterInit_2
+        MOVS     R1,#+235
+        LDR.N    R0,??DataTable71  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_FilterInit_2:
+        LDRH     R0,[R4, #+12]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_FilterInit_3
+        LDRH     R0,[R4, #+12]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_FilterInit_3
+        MOVS     R1,#+236
+        LDR.N    R0,??DataTable71  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_FilterInit_3:
+        LDRB     R0,[R4, #+14]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_FilterInit_4
+        LDRB     R0,[R4, #+14]
+        CMP      R0,#+1
+        BEQ.N    ??CAN_FilterInit_4
+        MOVS     R1,#+237
+        LDR.N    R0,??DataTable71  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_FilterInit_4:
+        MOVS     R0,#+1
+        LDRB     R1,[R4, #+0]
+        LSLS     R0,R0,R1
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+512]
+        ORRS     R2,R2,#0x1
+        STR      R2,[R1, #+512]
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+540]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        BICS     R2,R2,R0
+        STR      R2,[R1, #+540]
+        LDRB     R1,[R4, #+2]
+        CMP      R1,#+0
+        BNE.N    ??CAN_FilterInit_5
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+524]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        BICS     R2,R2,R0
+        STR      R2,[R1, #+524]
+        LDRB     R1,[R4, #+0]
+        MOVS     R2,#+8
+        LDR.N    R3,??DataTable75  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R1,R1,R2,R3
+        LDRH     R2,[R4, #+10]
+        LSLS     R2,R2,#+16
+        LDRH     R3,[R4, #+6]
+        ORRS     R3,R3,R2
+        STR      R3,[R1, #+576]
+        LDRB     R1,[R4, #+0]
+        MOVS     R2,#+8
+        LDR.N    R3,??DataTable75  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R1,R1,R2,R3
+        LDRH     R2,[R4, #+8]
+        LSLS     R2,R2,#+16
+        LDRH     R3,[R4, #+4]
+        ORRS     R3,R3,R2
+        STR      R3,[R1, #+580]
+??CAN_FilterInit_5:
+        LDRB     R1,[R4, #+2]
+        CMP      R1,#+1
+        BNE.N    ??CAN_FilterInit_6
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+524]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        ORRS     R2,R2,R0
+        STR      R2,[R1, #+524]
+        LDRB     R1,[R4, #+0]
+        MOVS     R2,#+8
+        LDR.N    R3,??DataTable75  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R1,R1,R2,R3
+        LDRH     R2,[R4, #+4]
+        LSLS     R2,R2,#+16
+        LDRH     R3,[R4, #+6]
+        ORRS     R3,R3,R2
+        STR      R3,[R1, #+576]
+        LDRB     R1,[R4, #+0]
+        MOVS     R2,#+8
+        LDR.N    R3,??DataTable75  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R1,R1,R2,R3
+        LDRH     R2,[R4, #+8]
+        LSLS     R2,R2,#+16
+        LDRH     R3,[R4, #+10]
+        ORRS     R3,R3,R2
+        STR      R3,[R1, #+580]
+??CAN_FilterInit_6:
+        LDRB     R1,[R4, #+1]
+        CMP      R1,#+0
+        BNE.N    ??CAN_FilterInit_7
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+516]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        BICS     R2,R2,R0
+        STR      R2,[R1, #+516]
+        B.N      ??CAN_FilterInit_8
+??CAN_FilterInit_7:
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+516]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        ORRS     R2,R2,R0
+        STR      R2,[R1, #+516]
+??CAN_FilterInit_8:
+        LDRH     R1,[R4, #+12]
+        CMP      R1,#+0
+        BNE.N    ??CAN_FilterInit_9
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+532]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        BICS     R2,R2,R0
+        STR      R2,[R1, #+532]
+??CAN_FilterInit_9:
+        LDRH     R1,[R4, #+12]
+        CMP      R1,#+1
+        BNE.N    ??CAN_FilterInit_10
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+532]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        ORRS     R2,R2,R0
+        STR      R2,[R1, #+532]
+??CAN_FilterInit_10:
+        LDRB     R1,[R4, #+14]
+        CMP      R1,#+1
+        BNE.N    ??CAN_FilterInit_11
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable75  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+540]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        ORRS     R0,R0,R2
+        STR      R0,[R1, #+540]
+??CAN_FilterInit_11:
+        LDR.N    R0,??DataTable75  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+512]
+        MOVS     R2,#+1
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+512]
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_StructInit:
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+1]
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+2]
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+3]
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+4]
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+5]
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+6]
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+7]
+        MOVS     R1,#+3
+        STRB     R1,[R0, #+8]
+        MOVS     R1,#+2
+        STRB     R1,[R0, #+9]
+        MOVS     R1,#+1
+        STRH     R1,[R0, #+10]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_ITConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R4,#+1
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+2
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+4
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+8
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+16
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+32
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+64
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+256
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+512
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+1024
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+2048
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+32768
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+65536
+        BEQ.N    ??CAN_ITConfig_0
+        CMP      R4,#+131072
+        BEQ.N    ??CAN_ITConfig_0
+        LDR.N    R1,??CAN_ITConfig_1  ;; 0x17d
+        LDR.N    R0,??DataTable71  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_ITConfig_0:
+        CMP      R5,#+0
+        BEQ.N    ??CAN_ITConfig_2
+        CMP      R5,#+1
+        BEQ.N    ??CAN_ITConfig_2
+        MOVS     R1,#+382
+        LDR.N    R0,??DataTable71  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_ITConfig_2:
+        CMP      R5,#+0
+        BEQ.N    ??CAN_ITConfig_3
+        LDR.N    R0,??DataTable75  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+20]
+        ORRS     R4,R4,R1
+        STR      R4,[R0, #+20]
+        B.N      ??CAN_ITConfig_4
+??CAN_ITConfig_3:
+        LDR.N    R0,??DataTable75  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable75  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+20]
+        BICS     R1,R1,R4
+        STR      R1,[R0, #+20]
+??CAN_ITConfig_4:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??CAN_ITConfig_1:
+        DC32     0x17d
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable71:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable75:
+        DC32     CAN
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_Transmit:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        LDR      R1,[R4, #+0]
+        CMP      R1,#+2048
+        BCC.N    ??CAN_Transmit_0
+        MOVS     R1,#+410
+        LDR.N    R0,??DataTable106  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Transmit_0:
+        LDR      R0,[R4, #+4]
+        CMP      R0,#+262144
+        BCC.N    ??CAN_Transmit_1
+        LDR.N    R1,??CAN_Transmit_2  ;; 0x19b
+        LDR.N    R0,??DataTable106  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Transmit_1:
+        LDRB     R0,[R4, #+8]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Transmit_3
+        LDRB     R0,[R4, #+8]
+        CMP      R0,#+4
+        BEQ.N    ??CAN_Transmit_3
+        MOVS     R1,#+412
+        LDR.N    R0,??DataTable106  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Transmit_3:
+        LDRB     R0,[R4, #+9]
+        CMP      R0,#+0
+        BEQ.N    ??CAN_Transmit_4
+        LDRB     R0,[R4, #+9]
+        CMP      R0,#+2
+        BEQ.N    ??CAN_Transmit_4
+        LDR.N    R1,??CAN_Transmit_2+0x4  ;; 0x19d
+        LDR.N    R0,??DataTable106  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Transmit_4:
+        LDRB     R0,[R4, #+10]
+        CMP      R0,#+9
+        BCC.N    ??CAN_Transmit_5
+        MOVS     R1,#+414
+        LDR.N    R0,??DataTable106  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Transmit_5:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        LSLS     R0,R0,#+5
+        BPL.N    ??CAN_Transmit_6
+        MOVS     R0,#+0
+        B.N      ??CAN_Transmit_7
+??CAN_Transmit_6:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        LSLS     R0,R0,#+4
+        BPL.N    ??CAN_Transmit_8
+        MOVS     R0,#+1
+        B.N      ??CAN_Transmit_7
+??CAN_Transmit_8:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        LSLS     R0,R0,#+3
+        BPL.N    ??CAN_Transmit_9
+        MOVS     R0,#+2
+        B.N      ??CAN_Transmit_7
+??CAN_Transmit_9:
+        MOVS     R0,#+4
+??CAN_Transmit_7:
+        CMP      R0,#+4
+        BEQ.W    ??CAN_Transmit_10
+        LDR      R1,[R4, #+0]
+        LSLS     R1,R1,#+21       ;; ZeroExtS R1,R1,#+21,#+21
+        LSRS     R1,R1,#+21
+        STR      R1,[R4, #+0]
+        LDR      R1,[R4, #+0]
+        LSLS     R1,R1,#+21
+        STR      R1,[R4, #+0]
+        LDR      R1,[R4, #+4]
+        LSLS     R1,R1,#+14       ;; ZeroExtS R1,R1,#+14,#+14
+        LSRS     R1,R1,#+14
+        STR      R1,[R4, #+4]
+        LDR      R1,[R4, #+4]
+        LSLS     R1,R1,#+3
+        STR      R1,[R4, #+4]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+16
+        LDR.N    R2,??DataTable115  ;; CAN
+        LDR      R2,[R2, #+0]
+        MLA      R1,R0,R1,R2
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R2,#+16
+        LDR.N    R3,??DataTable115  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R2,R0,R2,R3
+        LDR      R2,[R2, #+384]
+        MOVS     R3,#+1
+        ANDS     R3,R3,R2
+        STR      R3,[R1, #+384]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+16
+        LDR.N    R2,??DataTable115  ;; CAN
+        LDR      R2,[R2, #+0]
+        MLA      R1,R0,R1,R2
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R2,#+16
+        LDR.N    R3,??DataTable115  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R2,R0,R2,R3
+        LDR      R2,[R2, #+384]
+        LDR      R3,[R4, #+0]
+        LDR      R5,[R4, #+4]
+        ORRS     R5,R5,R3
+        LDRB     R3,[R4, #+8]
+        ORRS     R3,R3,R5
+        LDRB     R5,[R4, #+9]
+        ORRS     R5,R5,R3
+        ORRS     R5,R5,R2
+        STR      R5,[R1, #+384]
+        LDRB     R1,[R4, #+10]
+        LSLS     R1,R1,#+28       ;; ZeroExtS R1,R1,#+28,#+28
+        LSRS     R1,R1,#+28
+        STRB     R1,[R4, #+10]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+16
+        LDR.N    R2,??DataTable115  ;; CAN
+        LDR      R2,[R2, #+0]
+        MLA      R1,R0,R1,R2
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R2,#+16
+        LDR.N    R3,??DataTable115  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R2,R0,R2,R3
+        LDR      R2,[R2, #+388]
+        MOVS     R3,#+15
+        BICS     R2,R2,R3
+        STR      R2,[R1, #+388]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+16
+        LDR.N    R2,??DataTable115  ;; CAN
+        LDR      R2,[R2, #+0]
+        MLA      R1,R0,R1,R2
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R2,#+16
+        LDR.N    R3,??DataTable115  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R2,R0,R2,R3
+        LDR      R2,[R2, #+388]
+        LDRB     R3,[R4, #+10]
+        ORRS     R3,R3,R2
+        STR      R3,[R1, #+388]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+16
+        LDR.N    R2,??DataTable115  ;; CAN
+        LDR      R2,[R2, #+0]
+        MLA      R1,R0,R1,R2
+        LDRB     R2,[R4, #+14]
+        LDRB     R3,[R4, #+13]
+        LSLS     R3,R3,#+16
+        ORRS     R2,R3,R2, LSL #+24
+        LDRB     R3,[R4, #+12]
+        ORRS     R2,R2,R3, LSL #+8
+        LDRB     R3,[R4, #+11]
+        ORRS     R3,R3,R2
+        STR      R3,[R1, #+392]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+16
+        LDR.N    R2,??DataTable115  ;; CAN
+        LDR      R2,[R2, #+0]
+        MLA      R1,R0,R1,R2
+        LDRB     R2,[R4, #+18]
+        LDRB     R3,[R4, #+17]
+        LSLS     R3,R3,#+16
+        ORRS     R2,R3,R2, LSL #+24
+        LDRB     R3,[R4, #+16]
+        ORRS     R2,R2,R3, LSL #+8
+        LDRB     R3,[R4, #+15]
+        ORRS     R3,R3,R2
+        STR      R3,[R1, #+396]
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+16
+        LDR.N    R2,??DataTable115  ;; CAN
+        LDR      R2,[R2, #+0]
+        MLA      R1,R0,R1,R2
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R2,#+16
+        LDR.N    R3,??DataTable115  ;; CAN
+        LDR      R3,[R3, #+0]
+        MLA      R2,R0,R2,R3
+        LDR      R2,[R2, #+384]
+        ORRS     R2,R2,#0x1
+        STR      R2,[R1, #+384]
+??CAN_Transmit_10:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??CAN_Transmit_2:
+        DC32     0x19b
+        DC32     0x19d
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_TransmitStatus:
+        PUSH     {R4,R5,LR}
+        MOVS     R5,R0
+        MOVS     R4,#+0
+        CMP      R5,#+3
+        BCC.N    ??CAN_TransmitStatus_0
+        LDR.N    R1,??CAN_TransmitStatus_1  ;; 0x1e3
+        LDR.N    R0,??DataTable106  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_TransmitStatus_0:
+        CMP      R5,#+0
+        BEQ.N    ??CAN_TransmitStatus_2
+        CMP      R5,#+1
+        BEQ.N    ??CAN_TransmitStatus_3
+        CMP      R5,#+2
+        BEQ.N    ??CAN_TransmitStatus_4
+        B.N      ??CAN_TransmitStatus_5
+??CAN_TransmitStatus_2:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R1,#+1
+        ANDS     R1,R1,R0
+        ORRS     R4,R4,R1, LSL #+2
+        MOVS     R1,R4
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R4,#+2
+        ANDS     R4,R4,R0
+        ORRS     R4,R4,R1
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R1,#+67108864
+        ANDS     R1,R1,R0
+        ORRS     R4,R4,R1, LSR #+26
+        B.N      ??CAN_TransmitStatus_6
+??CAN_TransmitStatus_3:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R1,#+256
+        ANDS     R1,R1,R0
+        ORRS     R4,R4,R1, LSR #+6
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R1,#+512
+        ANDS     R1,R1,R0
+        ORRS     R4,R4,R1, LSR #+8
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R1,#+134217728
+        ANDS     R1,R1,R0
+        ORRS     R4,R4,R1, LSR #+27
+        B.N      ??CAN_TransmitStatus_6
+??CAN_TransmitStatus_4:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R1,#+65536
+        ANDS     R1,R1,R0
+        ORRS     R4,R4,R1, LSR #+14
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R1,#+131072
+        ANDS     R1,R1,R0
+        ORRS     R4,R4,R1, LSR #+16
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        MOVS     R1,#+268435456
+        ANDS     R1,R1,R0
+        ORRS     R4,R4,R1, LSR #+28
+        B.N      ??CAN_TransmitStatus_6
+??CAN_TransmitStatus_5:
+        MOVS     R4,#+0
+??CAN_TransmitStatus_6:
+        CMP      R4,#+0
+        BEQ.N    ??CAN_TransmitStatus_7
+        CMP      R4,#+5
+        BEQ.N    ??CAN_TransmitStatus_8
+        CMP      R4,#+7
+        BEQ.N    ??CAN_TransmitStatus_9
+        B.N      ??CAN_TransmitStatus_10
+??CAN_TransmitStatus_7:
+        MOVS     R4,#+2
+        B.N      ??CAN_TransmitStatus_11
+??CAN_TransmitStatus_8:
+        MOVS     R4,#+0
+        B.N      ??CAN_TransmitStatus_11
+??CAN_TransmitStatus_9:
+        MOVS     R4,#+1
+        B.N      ??CAN_TransmitStatus_11
+??CAN_TransmitStatus_10:
+        MOVS     R4,#+0
+??CAN_TransmitStatus_11:
+        MOVS     R0,R4
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??CAN_TransmitStatus_1:
+        DC32     0x1e3
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_CancelTransmit:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+3
+        BCC.N    ??CAN_CancelTransmit_0
+        LDR.N    R1,??CAN_CancelTransmit_1  ;; 0x215
+        LDR.N    R0,??DataTable106  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_CancelTransmit_0:
+        CMP      R4,#+0
+        BEQ.N    ??CAN_CancelTransmit_2
+        CMP      R4,#+1
+        BEQ.N    ??CAN_CancelTransmit_3
+        CMP      R4,#+2
+        BEQ.N    ??CAN_CancelTransmit_4
+        B.N      ??CAN_CancelTransmit_5
+??CAN_CancelTransmit_2:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable115  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+8]
+        ORRS     R1,R1,#0x80
+        STR      R1,[R0, #+8]
+        B.N      ??CAN_CancelTransmit_5
+??CAN_CancelTransmit_3:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable115  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+8]
+        ORRS     R1,R1,#0x8000
+        STR      R1,[R0, #+8]
+        B.N      ??CAN_CancelTransmit_5
+??CAN_CancelTransmit_4:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable115  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+8]
+        ORRS     R1,R1,#0x800000
+        STR      R1,[R0, #+8]
+??CAN_CancelTransmit_5:
+        POP      {R4,PC}          ;; return
+        DATA
+??CAN_CancelTransmit_1:
+        DC32     0x215
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable106:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_FIFORelease:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??CAN_FIFORelease_0
+        CMP      R4,#+1
+        BEQ.N    ??CAN_FIFORelease_0
+        LDR.N    R1,??CAN_FIFORelease_1  ;; 0x22f
+        LDR.N    R0,??DataTable142  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_FIFORelease_0:
+        CMP      R4,#+0
+        BNE.N    ??CAN_FIFORelease_2
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+32
+        STR      R1,[R0, #+12]
+        B.N      ??CAN_FIFORelease_3
+??CAN_FIFORelease_2:
+        LDR.N    R0,??DataTable115  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+32
+        STR      R1,[R0, #+16]
+??CAN_FIFORelease_3:
+        POP      {R4,PC}          ;; return
+        DATA
+??CAN_FIFORelease_1:
+        DC32     0x22f
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable115:
+        DC32     CAN
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_MessagePending:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??CAN_MessagePending_0
+        CMP      R4,#+1
+        BEQ.N    ??CAN_MessagePending_0
+        LDR.N    R1,??CAN_MessagePending_1  ;; 0x249
+        LDR.N    R0,??DataTable142  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_MessagePending_0:
+        CMP      R4,#+0
+        BNE.N    ??CAN_MessagePending_2
+        LDR.N    R0,??DataTable144  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+12]
+        LSLS     R0,R0,#+30       ;; ZeroExtS R0,R0,#+30,#+30
+        LSRS     R0,R0,#+30
+        B.N      ??CAN_MessagePending_3
+??CAN_MessagePending_2:
+        CMP      R4,#+1
+        BNE.N    ??CAN_MessagePending_4
+        LDR.N    R0,??DataTable144  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+16]
+        LSLS     R0,R0,#+30       ;; ZeroExtS R0,R0,#+30,#+30
+        LSRS     R0,R0,#+30
+        B.N      ??CAN_MessagePending_3
+??CAN_MessagePending_4:
+        MOVS     R0,#+0
+??CAN_MessagePending_3:
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??CAN_MessagePending_1:
+        DC32     0x249
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_Receive:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        CMP      R4,#+0
+        BEQ.N    ??CAN_Receive_0
+        CMP      R4,#+1
+        BEQ.N    ??CAN_Receive_0
+        LDR.N    R1,??CAN_Receive_1  ;; 0x265
+        LDR.N    R0,??DataTable142  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_Receive_0:
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+432]
+        LSRS     R0,R0,#+21
+        STR      R0,[R5, #+0]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+432]
+        LSRS     R0,R0,#+3
+        LSLS     R0,R0,#+14       ;; ZeroExtS R0,R0,#+14,#+14
+        LSRS     R0,R0,#+14
+        STR      R0,[R5, #+4]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+432]
+        MOVS     R1,#+4
+        ANDS     R1,R1,R0
+        STRB     R1,[R5, #+8]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+432]
+        MOVS     R1,#+2
+        ANDS     R1,R1,R0
+        STRB     R1,[R5, #+9]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+436]
+        LSLS     R0,R0,#+28       ;; ZeroExtS R0,R0,#+28,#+28
+        LSRS     R0,R0,#+28
+        STRB     R0,[R5, #+10]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+436]
+        LSRS     R0,R0,#+8
+        STRB     R0,[R5, #+19]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+440]
+        STRB     R0,[R5, #+11]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+440]
+        LSRS     R0,R0,#+8
+        STRB     R0,[R5, #+12]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+440]
+        LSRS     R0,R0,#+16
+        STRB     R0,[R5, #+13]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+440]
+        LSRS     R0,R0,#+24
+        STRB     R0,[R5, #+14]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+444]
+        STRB     R0,[R5, #+15]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+444]
+        LSRS     R0,R0,#+8
+        STRB     R0,[R5, #+16]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+444]
+        LSRS     R0,R0,#+16
+        STRB     R0,[R5, #+17]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R0,#+16
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        MLA      R0,R4,R0,R1
+        LDR      R0,[R0, #+444]
+        LSRS     R0,R0,#+24
+        STRB     R0,[R5, #+18]
+        MOVS     R0,R4
+        BL       CAN_FIFORelease
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??CAN_Receive_1:
+        DC32     0x265
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_Sleep:
+        MOVS     R0,#+0
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable144  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+0]
+        ORRS     R2,R2,#0x2
+        STR      R2,[R1, #+0]
+        MOVS     R1,#+1
+        MOVS     R0,R1
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        LSLS     R1,R1,#+30
+        BMI.N    ??CAN_Sleep_0
+        MOVS     R0,#+0
+??CAN_Sleep_0:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_WakeUp:
+        MOVS     R0,#+0
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??DataTable144  ;; CAN
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+0]
+        MOVS     R3,#+2
+        BICS     R2,R2,R3
+        STR      R2,[R1, #+0]
+        MOVS     R1,#+0
+        MOVS     R0,R1
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        LSLS     R1,R1,#+30
+        BMI.N    ??CAN_WakeUp_0
+        MOVS     R0,#+1
+??CAN_WakeUp_0:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_GetFlagStatus:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+1
+        BEQ.N    ??CAN_GetFlagStatus_0
+        CMP      R4,#+2
+        BEQ.N    ??CAN_GetFlagStatus_0
+        CMP      R4,#+4
+        BEQ.N    ??CAN_GetFlagStatus_0
+        LDR.N    R1,??CAN_GetFlagStatus_1  ;; 0x2c6
+        LDR.N    R0,??DataTable142  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_GetFlagStatus_0:
+        LDR.N    R0,??DataTable144  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+24]
+        ANDS     R4,R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??CAN_GetFlagStatus_2
+        MOVS     R0,#+1
+        B.N      ??CAN_GetFlagStatus_3
+??CAN_GetFlagStatus_2:
+        MOVS     R0,#+0
+??CAN_GetFlagStatus_3:
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??CAN_GetFlagStatus_1:
+        DC32     0x2c6
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_ClearFlag:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+1
+        BEQ.N    ??CAN_ClearFlag_0
+        CMP      R4,#+2
+        BEQ.N    ??CAN_ClearFlag_0
+        CMP      R4,#+4
+        BEQ.N    ??CAN_ClearFlag_0
+        LDR.N    R1,??CAN_ClearFlag_1  ;; 0x2e1
+        LDR.N    R0,??DataTable142  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_ClearFlag_0:
+        LDR.N    R0,??DataTable144  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable144  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+24]
+        BICS     R1,R1,R4
+        STR      R1,[R0, #+24]
+        POP      {R4,PC}          ;; return
+        DATA
+??CAN_ClearFlag_1:
+        DC32     0x2e1
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable142:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable144:
+        DC32     CAN
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_GetITStatus:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+5
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+6
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+7
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+4
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+8
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+32
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+64
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+256
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+512
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+1024
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+65536
+        BEQ.N    ??CAN_GetITStatus_0
+        CMP      R4,#+131072
+        BEQ.N    ??CAN_GetITStatus_0
+        MOVS     R1,#+760
+        LDR.N    R0,??DataTable158  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_GetITStatus_0:
+        SUBS     R4,R4,#+4
+        BEQ.N    ??CAN_GetITStatus_1
+        SUBS     R4,R4,#+1
+        BEQ.N    ??CAN_GetITStatus_2
+        SUBS     R4,R4,#+1
+        BEQ.N    ??CAN_GetITStatus_3
+        SUBS     R4,R4,#+1
+        BEQ.N    ??CAN_GetITStatus_4
+        SUBS     R4,R4,#+1
+        BEQ.N    ??CAN_GetITStatus_5
+        SUBS     R4,R4,#+24
+        BEQ.N    ??CAN_GetITStatus_6
+        SUBS     R4,R4,#+32
+        BEQ.N    ??CAN_GetITStatus_7
+        SUBS     R4,R4,#+192
+        BEQ.N    ??CAN_GetITStatus_8
+        MOVS     R0,#+256
+        SUBS     R4,R4,R0
+        BEQ.N    ??CAN_GetITStatus_9
+        MOVS     R0,#+512
+        SUBS     R4,R4,R0
+        BEQ.N    ??CAN_GetITStatus_10
+        MOVS     R0,#+64512
+        SUBS     R4,R4,R0
+        BEQ.N    ??CAN_GetITStatus_11
+        MOVS     R0,#+65536
+        SUBS     R4,R4,R0
+        BEQ.N    ??CAN_GetITStatus_12
+        B.N      ??CAN_GetITStatus_13
+??CAN_GetITStatus_2:
+        MOVS     R1,#+1
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_3:
+        MOVS     R1,#+256
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_4:
+        MOVS     R1,#+65536
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_1:
+        MOVS     R1,#+8
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+12]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_5:
+        MOVS     R1,#+16
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+12]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_6:
+        MOVS     R1,#+8
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+16]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_7:
+        MOVS     R1,#+16
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+16]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_8:
+        MOVS     R1,#+1
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+24]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_9:
+        MOVS     R1,#+2
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+24]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_10:
+        MOVS     R1,#+4
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+24]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_12:
+        MOVS     R1,#+16
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_11:
+        MOVS     R1,#+8
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        BL       CheckITStatus
+        B.N      ??CAN_GetITStatus_14
+??CAN_GetITStatus_13:
+        MOVS     R0,#+0
+??CAN_GetITStatus_14:
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_ClearITPendingBit:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+5
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+6
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+7
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+4
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+8
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+32
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+64
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+256
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+512
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+1024
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+65536
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        CMP      R4,#+131072
+        BEQ.N    ??CAN_ClearITPendingBit_0
+        MOVS     R1,#+820
+        LDR.N    R0,??DataTable158  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??CAN_ClearITPendingBit_0:
+        SUBS     R4,R4,#+4
+        BEQ.N    ??CAN_ClearITPendingBit_1
+        SUBS     R4,R4,#+1
+        BEQ.N    ??CAN_ClearITPendingBit_2
+        SUBS     R4,R4,#+1
+        BEQ.N    ??CAN_ClearITPendingBit_3
+        SUBS     R4,R4,#+1
+        BEQ.N    ??CAN_ClearITPendingBit_4
+        SUBS     R4,R4,#+1
+        BEQ.N    ??CAN_ClearITPendingBit_5
+        SUBS     R4,R4,#+24
+        BEQ.N    ??CAN_ClearITPendingBit_6
+        SUBS     R4,R4,#+32
+        BEQ.N    ??CAN_ClearITPendingBit_7
+        SUBS     R4,R4,#+192
+        BEQ.N    ??CAN_ClearITPendingBit_8
+        MOVS     R0,#+256
+        SUBS     R4,R4,R0
+        BEQ.N    ??CAN_ClearITPendingBit_9
+        MOVS     R0,#+512
+        SUBS     R4,R4,R0
+        BEQ.N    ??CAN_ClearITPendingBit_10
+        MOVS     R0,#+64512
+        SUBS     R4,R4,R0
+        BEQ.N    ??CAN_ClearITPendingBit_11
+        MOVS     R0,#+65536
+        SUBS     R4,R4,R0
+        BEQ.N    ??CAN_ClearITPendingBit_12
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_2:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+1
+        STR      R1,[R0, #+8]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_3:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+256
+        STR      R1,[R0, #+8]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_4:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+65536
+        STR      R1,[R0, #+8]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_1:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+8
+        STR      R1,[R0, #+12]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_5:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+16
+        STR      R1,[R0, #+12]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_6:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+8
+        STR      R1,[R0, #+16]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_7:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+16
+        STR      R1,[R0, #+16]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_8:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable173  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+24]
+        MOVS     R2,#+1
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+24]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_9:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable173  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+24]
+        MOVS     R2,#+2
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+24]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_10:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable173  ;; CAN
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+24]
+        MOVS     R2,#+4
+        BICS     R1,R1,R2
+        STR      R1,[R0, #+24]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_11:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+8
+        STR      R1,[R0, #+4]
+        B.N      ??CAN_ClearITPendingBit_13
+??CAN_ClearITPendingBit_12:
+        LDR.N    R0,??DataTable173  ;; CAN
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+16
+        STR      R1,[R0, #+4]
+??CAN_ClearITPendingBit_13:
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable158:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable173:
+        DC32     CAN
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CheckITStatus:
+        MOVS     R2,R0
+        MOVS     R0,#+0
+        ANDS     R1,R1,R2
+        CMP      R1,#+0
+        BEQ.N    ??CheckITStatus_0
+        MOVS     R0,#+1
+        B.N      ??CheckITStatus_1
+??CheckITStatus_0:
+        MOVS     R0,#+0
+??CheckITStatus_1:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB1PeriphResetCmd??rT:
+        LDR.N    R3,??Subroutine0_0  ;; RCC_APB1PeriphResetCmd
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     RCC_APB1PeriphResetCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??assert_failed??rT:
+        LDR.N    R3,??Subroutine1_0  ;; assert_failed
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     assert_failed
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "C:\\\\David JIANG\\\\ST MCU...">`:
+        DATA
+        DC8 43H, 3AH, 5CH, 44H, 61H, 76H, 69H, 64H
+        DC8 20H, 4AH, 49H, 41H, 4EH, 47H, 5CH, 53H
+        DC8 54H, 20H, 4DH, 43H, 55H, 5CH, 44H, 6FH
+        DC8 63H, 73H, 5CH, 53H, 54H, 4DH, 33H, 32H
+        DC8 5CH, 41H, 4EH, 5FH, 4AH, 49H, 41H, 4EH
+        DC8 47H, 5CH, 54H, 49H, 4DH, 20H, 45H, 6EH
+        DC8 63H, 6FH, 64H, 65H, 72H, 5CH, 65H, 78H
+        DC8 61H, 6DH, 70H, 6CH, 65H, 5CH, 46H, 57H
+        DC8 4CH, 69H, 62H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 73H, 74H, 6DH, 33H, 32H, 66H, 31H, 30H
+        DC8 78H, 5FH, 63H, 61H, 6EH, 2EH, 63H, 0
+
+        END
+// 
+// 3 340 bytes in segment CODE
+//    88 bytes in segment DATA_C
+// 
+// 3 324 bytes of CODE  memory (+ 16 bytes shared)
+//    88 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

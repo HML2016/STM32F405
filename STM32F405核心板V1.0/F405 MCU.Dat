@@ -1,0 +1,30 @@
+Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Quantity~Integer~Quantity~100|Field=ComponentKind~Integer~ComponentKind~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~STM32F4 MCU.PrjPcb|ReportField=ProjectFullPath~E:\兴趣&工作\硬件板子\STM32F405核心板\STM32F4 MCU.PrjPcb|ReportField=Title~Bill of Materials For PCB Document [F405 MCU.PcbDoc]|ReportField=TotalQuantity~62|ReportField=ReportTime~13:10:12|ReportField=ReportDate~2017/3/5|ReportField=ReportDateTime~2017/3/5 13:10:12|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=DataSourceFileName~F405 MCU.PcbDoc|ReportField=DataSourceFullPath~E:\兴趣&工作\硬件板子\STM32F405核心板\F405 MCU.PcbDoc
+BEEP||BEEP|1|0
+18pF|无极性电容|C1, C2|2|0
+100nF|无极性电容|C3|1|0
+2.2uF|无极性电容|C4, C5|2|0
+0.1uF|无极性电容|C6, C7, C8, C9, C10|5|0
+10uF|无极性电容|C11|1|0
+22uF||C12, C16, C17, C18, C19|5|0
+0.1uF||C13, C15, C20, C21, C22|5|0
+10uF||C14|1|0
+Header 3|接插件|DBUS|1|0
+Header 4|接插件|Encoder1, Encoder2, SWD, USART1, USART2|5|0
+USB_M|MicroUSB接口|J1|1|0
+SW-PAD|微动开关|KEY, RST|2|0
+0603/LED||LED|1|0
+2LED||LED0|1|0
+Header 7|Header, 7-Pin|OLED|1|0
+Header 9|Header, 9-Pin|P1, P2|2|0
+Header 5|Header, 5-Pin|PWM*4|1|0
+SS8050|NPN贴片三|Q1, Q2|2|0
+10K/0603/5%||R1, R2, R3, R8, R11, R12|6|0
+4.7K/0603/5%||R4, R5, R9, R10|4|0
+1K/0603/1%||R6, R7|2|0
+1K||R13|1|0
+510R/0603/1%||R14, R15, R16, R17|4|0
+SW-SPDT|开?|Swtich|1|0
+STM32F405RGT6||U1|1|0
+AMS1117-|稳压?|U2|1|0
+SPX5205|5转3.3V LDO|U3|1|0
+16M|贴片?|X1|1|0

@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=PC13 Pin=P1-4
+Removed Pin From Net: NetName=PC14 Pin=P1-5
+Removed Pin From Net: NetName=PC15 Pin=P1-6
+Removed Pin From Net: NetName=PB3 Pin=P1-7
+Removed Pin From Net: NetName=PB4 Pin=P1-8
+Removed Pin From Net: NetName=PB5 Pin=P1-9
+Added Pin To Net: NetName=PB3 Pin=P1-4
+Added Pin To Net: NetName=PB4 Pin=P1-5
+Added Pin To Net: NetName=PB5 Pin=P1-6
+Added Pin To Net: NetName=PC13 Pin=P1-7
+Added Pin To Net: NetName=PC14 Pin=P1-8
+Added Pin To Net: NetName=PC15 Pin=P1-9
+Added Room: Name=F405 MCU

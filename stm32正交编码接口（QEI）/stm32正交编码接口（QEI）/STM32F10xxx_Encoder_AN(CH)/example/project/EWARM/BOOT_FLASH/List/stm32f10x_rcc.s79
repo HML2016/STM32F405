@@ -1,0 +1,1521 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:32 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\FWLib\src\stm32f10x_rcc.c           /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\FWLib\src\stm32f10x_rcc.c" -D       /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_rcc.s79                                        /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_rcc
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable100 EQU 0
+??DataTable101 EQU 0
+??DataTable102 EQU 0
+??DataTable103 EQU 0
+??DataTable104 EQU 0
+??DataTable105 EQU 0
+??DataTable106 EQU 0
+??DataTable107 EQU 0
+??DataTable108 EQU 0
+??DataTable11 EQU 0
+??DataTable110 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable18 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable20 EQU 0
+??DataTable21 EQU 0
+??DataTable22 EQU 0
+??DataTable23 EQU 0
+??DataTable24 EQU 0
+??DataTable25 EQU 0
+??DataTable26 EQU 0
+??DataTable27 EQU 0
+??DataTable28 EQU 0
+??DataTable29 EQU 0
+??DataTable3 EQU 0
+??DataTable30 EQU 0
+??DataTable31 EQU 0
+??DataTable32 EQU 0
+??DataTable33 EQU 0
+??DataTable34 EQU 0
+??DataTable35 EQU 0
+??DataTable36 EQU 0
+??DataTable38 EQU 0
+??DataTable39 EQU 0
+??DataTable4 EQU 0
+??DataTable40 EQU 0
+??DataTable41 EQU 0
+??DataTable42 EQU 0
+??DataTable43 EQU 0
+??DataTable45 EQU 0
+??DataTable46 EQU 0
+??DataTable47 EQU 0
+??DataTable48 EQU 0
+??DataTable49 EQU 0
+??DataTable5 EQU 0
+??DataTable50 EQU 0
+??DataTable51 EQU 0
+??DataTable52 EQU 0
+??DataTable53 EQU 0
+??DataTable54 EQU 0
+??DataTable55 EQU 0
+??DataTable56 EQU 0
+??DataTable57 EQU 0
+??DataTable58 EQU 0
+??DataTable59 EQU 0
+??DataTable6 EQU 0
+??DataTable60 EQU 0
+??DataTable61 EQU 0
+??DataTable62 EQU 0
+??DataTable63 EQU 0
+??DataTable64 EQU 0
+??DataTable65 EQU 0
+??DataTable67 EQU 0
+??DataTable68 EQU 0
+??DataTable69 EQU 0
+??DataTable7 EQU 0
+??DataTable70 EQU 0
+??DataTable71 EQU 0
+??DataTable72 EQU 0
+??DataTable73 EQU 0
+??DataTable74 EQU 0
+??DataTable76 EQU 0
+??DataTable77 EQU 0
+??DataTable78 EQU 0
+??DataTable79 EQU 0
+??DataTable8 EQU 0
+??DataTable80 EQU 0
+??DataTable81 EQU 0
+??DataTable82 EQU 0
+??DataTable83 EQU 0
+??DataTable84 EQU 0
+??DataTable85 EQU 0
+??DataTable86 EQU 0
+??DataTable88 EQU 0
+??DataTable89 EQU 0
+??DataTable9 EQU 0
+??DataTable90 EQU 0
+??DataTable91 EQU 0
+??DataTable92 EQU 0
+??DataTable93 EQU 0
+??DataTable95 EQU 0
+??DataTable96 EQU 0
+??DataTable97 EQU 0
+??DataTable98 EQU 0
+??DataTable99 EQU 0
+        MULTWEAK ??assert_failed??rT
+        PUBLIC RCC_ADCCLKConfig
+        PUBLIC RCC_AHBPeriphClockCmd
+        PUBLIC RCC_APB1PeriphClockCmd
+        PUBLIC RCC_APB1PeriphResetCmd
+        PUBLIC RCC_APB2PeriphClockCmd
+        PUBLIC RCC_APB2PeriphResetCmd
+        PUBLIC RCC_AdjustHSICalibrationValue
+        PUBLIC RCC_BackupResetCmd
+        PUBLIC RCC_ClearFlag
+        PUBLIC RCC_ClearITPendingBit
+        PUBLIC RCC_ClockSecuritySystemCmd
+        PUBLIC RCC_DeInit
+        PUBLIC RCC_GetClocksFreq
+        PUBLIC RCC_GetFlagStatus
+        PUBLIC RCC_GetITStatus
+        PUBLIC RCC_GetSYSCLKSource
+        PUBLIC RCC_HCLKConfig
+        PUBLIC RCC_HSEConfig
+        PUBLIC RCC_HSICmd
+        PUBLIC RCC_ITConfig
+        PUBLIC RCC_LSEConfig
+        PUBLIC RCC_LSICmd
+        PUBLIC RCC_MCOConfig
+        PUBLIC RCC_PCLK1Config
+        PUBLIC RCC_PCLK2Config
+        PUBLIC RCC_PLLCmd
+        PUBLIC RCC_PLLConfig
+        PUBLIC RCC_RTCCLKCmd
+        PUBLIC RCC_RTCCLKConfig
+        PUBLIC RCC_SYSCLKConfig
+        PUBLIC RCC_USBCLKConfig
+        PUBLIC RCC_WaitForHSEStartUp
+
+assert_failed       SYMBOL "assert_failed"
+??assert_failed??rT SYMBOL "??rT", assert_failed
+
+        EXTERN RCC
+        EXTERN assert_failed
+
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "C:\\\\David JIANG\\\\ST MCU...">`:
+        DATA
+        DC8 43H, 3AH, 5CH, 44H, 61H, 76H, 69H, 64H
+        DC8 20H, 4AH, 49H, 41H, 4EH, 47H, 5CH, 53H
+        DC8 54H, 20H, 4DH, 43H, 55H, 5CH, 44H, 6FH
+        DC8 63H, 73H, 5CH, 53H, 54H, 4DH, 33H, 32H
+        DC8 5CH, 41H, 4EH, 5FH, 4AH, 49H, 41H, 4EH
+        DC8 47H, 5CH, 54H, 49H, 4DH, 20H, 45H, 6EH
+        DC8 63H, 6FH, 64H, 65H, 72H, 5CH, 65H, 78H
+        DC8 61H, 6DH, 70H, 6CH, 65H, 5CH, 46H, 57H
+        DC8 4CH, 69H, 62H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 73H, 74H, 6DH, 33H, 32H, 66H, 31H, 30H
+        DC8 78H, 5FH, 72H, 63H, 63H, 2EH, 63H, 0
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+APBAHBPrescTable:
+        DATA
+        DC8 0, 0, 0, 0, 1, 2, 3, 4, 1, 2, 3, 4, 6, 7, 8, 9
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+ADCPrescTable:
+        DATA
+        DC8 2, 4, 6, 8
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_DeInit:
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+0
+        STR      R1,[R0, #+12]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+0
+        STR      R1,[R0, #+16]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+20
+        STR      R1,[R0, #+20]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+0
+        STR      R1,[R0, #+24]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+0
+        STR      R1,[R0, #+28]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x1
+        STR      R1,[R0, #+0]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        LDR.N    R2,??RCC_DeInit_0  ;; 0xfffffffff8ff0000
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+4]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        LDR.N    R2,??RCC_DeInit_0+0x4  ;; 0xfffffffffef6ffff
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MVNS     R2,#+262144
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        MVNS     R2,#+8323072
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+4]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+0
+        STR      R1,[R0, #+8]
+        BX       LR               ;; return
+        Nop      
+        DATA
+??RCC_DeInit_0:
+        DC32     0xfffffffff8ff0000
+        DC32     0xfffffffffef6ffff
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_HSEConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_HSEConfig_0
+        CMP      R4,#+65536
+        BEQ.N    ??RCC_HSEConfig_0
+        CMP      R4,#+262144
+        BEQ.N    ??RCC_HSEConfig_0
+        MOVS     R1,#+177
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_HSEConfig_0:
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MVNS     R2,#+65536
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        MVNS     R2,#+262144
+        ANDS     R2,R2,R1
+        STR      R2,[R0, #+0]
+        MOVS     R0,#+65536
+        CMP      R4,R0
+        BEQ.N    ??RCC_HSEConfig_1
+        MOVS     R0,#+262144
+        CMP      R4,R0
+        BEQ.N    ??RCC_HSEConfig_2
+        B.N      ??RCC_HSEConfig_3
+??RCC_HSEConfig_1:
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x10000
+        STR      R1,[R0, #+0]
+        B.N      ??RCC_HSEConfig_3
+??RCC_HSEConfig_2:
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+0]
+        ORRS     R1,R1,#0x50000
+        STR      R1,[R0, #+0]
+??RCC_HSEConfig_3:
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_WaitForHSEStartUp:
+        PUSH     {LR}
+        SUB      SP,SP,#+4
+        MOVS     R0,#+0
+        STR      R0,[SP, #+0]
+        B.N      ??RCC_WaitForHSEStartUp_0
+??RCC_WaitForHSEStartUp_1:
+        LDR      R0,[SP, #+0]
+        ADDS     R0,R0,#+1
+        STR      R0,[SP, #+0]
+??RCC_WaitForHSEStartUp_0:
+        MOVS     R0,#+49
+        BL       RCC_GetFlagStatus
+        CMP      R0,#+0
+        BNE.N    ??RCC_WaitForHSEStartUp_2
+        LDR      R0,[SP, #+0]
+        CMP      R0,#+128
+        BNE.N    ??RCC_WaitForHSEStartUp_1
+??RCC_WaitForHSEStartUp_2:
+        MOVS     R0,#+49
+        BL       RCC_GetFlagStatus
+        CMP      R0,#+0
+        BEQ.N    ??RCC_WaitForHSEStartUp_3
+        MOVS     R0,#+1
+        B.N      ??RCC_WaitForHSEStartUp_4
+??RCC_WaitForHSEStartUp_3:
+        MOVS     R0,#+0
+??RCC_WaitForHSEStartUp_4:
+        ADD      SP,SP,#+4
+        POP      {PC}             ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_AdjustHSICalibrationValue:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+32
+        BCC.N    ??RCC_AdjustHSICalibrationValue_0
+        MOVS     R1,#+248
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_AdjustHSICalibrationValue_0:
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+0]
+        MOVS     R1,#+248
+        BICS     R0,R0,R1
+        ORRS     R0,R0,R4, LSL #+3
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+0]
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_HSICmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_HSICmd_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_HSICmd_0
+        LDR.N    R1,??RCC_HSICmd_1  ;; 0x113
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_HSICmd_0:
+        LDR.N    R0,??RCC_HSICmd_1+0x4  ;; 0x42420000
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_HSICmd_1:
+        DC32     0x113
+        DC32     0x42420000
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_PLLConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_PLLConfig_0
+        CMP      R4,#+65536
+        BEQ.N    ??RCC_PLLConfig_0
+        CMP      R4,#+196608
+        BEQ.N    ??RCC_PLLConfig_0
+        MOVS     R1,#+302
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_PLLConfig_0:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+262144
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+524288
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+786432
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+1048576
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+1310720
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+1572864
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+1835008
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+2097152
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+2359296
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+2621440
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+2883584
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+3145728
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+3407872
+        BEQ.N    ??RCC_PLLConfig_1
+        CMP      R5,#+3670016
+        BEQ.N    ??RCC_PLLConfig_1
+        LDR.N    R1,??RCC_PLLConfig_2  ;; 0x12f
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_PLLConfig_1:
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        MOVS     R1,R0
+        MVNS     R0,#+4128768
+        ANDS     R0,R0,R1
+        ORRS     R5,R5,R4
+        ORRS     R5,R5,R0
+        MOVS     R0,R5
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+4]
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??RCC_PLLConfig_2:
+        DC32     0x12f
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_PLLCmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_PLLCmd_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_PLLCmd_0
+        LDR.N    R1,??RCC_PLLCmd_1  ;; 0x149
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_PLLCmd_0:
+        LDR.N    R0,??RCC_PLLCmd_1+0x4  ;; 0x42420060
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_PLLCmd_1:
+        DC32     0x149
+        DC32     0x42420060
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_SYSCLKConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_SYSCLKConfig_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_SYSCLKConfig_0
+        CMP      R4,#+2
+        BEQ.N    ??RCC_SYSCLKConfig_0
+        MOVS     R1,#+350
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_SYSCLKConfig_0:
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        MOVS     R1,#+3
+        BICS     R0,R0,R1
+        ORRS     R4,R4,R0
+        MOVS     R0,R4
+        LDR.N    R1,??DataTable37  ;; RCC
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+4]
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_GetSYSCLKSource:
+        LDR.N    R0,??DataTable37  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        ANDS     R0,R0,#0xC
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable37:
+        DC32     RCC
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_HCLKConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_HCLKConfig_0
+        CMP      R4,#+128
+        BEQ.N    ??RCC_HCLKConfig_0
+        CMP      R4,#+144
+        BEQ.N    ??RCC_HCLKConfig_0
+        CMP      R4,#+160
+        BEQ.N    ??RCC_HCLKConfig_0
+        CMP      R4,#+176
+        BEQ.N    ??RCC_HCLKConfig_0
+        CMP      R4,#+192
+        BEQ.N    ??RCC_HCLKConfig_0
+        CMP      R4,#+208
+        BEQ.N    ??RCC_HCLKConfig_0
+        CMP      R4,#+224
+        BEQ.N    ??RCC_HCLKConfig_0
+        CMP      R4,#+240
+        BEQ.N    ??RCC_HCLKConfig_0
+        LDR.N    R1,??RCC_HCLKConfig_1  ;; 0x193
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_HCLKConfig_0:
+        LDR.N    R0,??DataTable66  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        MOVS     R1,#+240
+        BICS     R0,R0,R1
+        ORRS     R4,R4,R0
+        MOVS     R0,R4
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+4]
+        POP      {R4,PC}          ;; return
+        DATA
+??RCC_HCLKConfig_1:
+        DC32     0x193
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_PCLK1Config:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_PCLK1Config_0
+        CMP      R4,#+1024
+        BEQ.N    ??RCC_PCLK1Config_0
+        CMP      R4,#+1280
+        BEQ.N    ??RCC_PCLK1Config_0
+        CMP      R4,#+1536
+        BEQ.N    ??RCC_PCLK1Config_0
+        CMP      R4,#+1792
+        BEQ.N    ??RCC_PCLK1Config_0
+        MOVS     R1,#+436
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_PCLK1Config_0:
+        LDR.N    R0,??DataTable66  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        MOVS     R1,R0
+        MVNS     R0,#+1792
+        ANDS     R0,R0,R1
+        ORRS     R4,R4,R0
+        MOVS     R0,R4
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+4]
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_PCLK2Config:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_PCLK2Config_0
+        CMP      R4,#+1024
+        BEQ.N    ??RCC_PCLK2Config_0
+        CMP      R4,#+1280
+        BEQ.N    ??RCC_PCLK2Config_0
+        CMP      R4,#+1536
+        BEQ.N    ??RCC_PCLK2Config_0
+        CMP      R4,#+1792
+        BEQ.N    ??RCC_PCLK2Config_0
+        LDR.N    R1,??RCC_PCLK2Config_1  ;; 0x1d5
+        LDR.N    R0,??DataTable44  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_PCLK2Config_0:
+        LDR.N    R0,??DataTable66  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        MOVS     R1,R0
+        MVNS     R0,#+14336
+        ANDS     R0,R0,R1
+        ORRS     R0,R0,R4, LSL #+3
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+4]
+        POP      {R4,PC}          ;; return
+        DATA
+??RCC_PCLK2Config_1:
+        DC32     0x1d5
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable44:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_ITConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        TST      R4,#0xE0
+        BNE.N    ??RCC_ITConfig_0
+        CMP      R4,#+0
+        BNE.N    ??RCC_ITConfig_1
+??RCC_ITConfig_0:
+        MOVS     R1,#+502
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_ITConfig_1:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_ITConfig_2
+        CMP      R5,#+1
+        BEQ.N    ??RCC_ITConfig_2
+        LDR.N    R1,??RCC_ITConfig_3  ;; 0x1f7
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_ITConfig_2:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_ITConfig_4
+        LDR.N    R0,??RCC_ITConfig_3+0x4  ;; 0x40021009
+        LDR.N    R1,??RCC_ITConfig_3+0x4  ;; 0x40021009
+        LDRB     R1,[R1, #+0]
+        ORRS     R4,R4,R1
+        STRB     R4,[R0, #+0]
+        B.N      ??RCC_ITConfig_5
+??RCC_ITConfig_4:
+        LDR.N    R0,??RCC_ITConfig_3+0x4  ;; 0x40021009
+        LDR.N    R1,??RCC_ITConfig_3+0x4  ;; 0x40021009
+        LDRB     R1,[R1, #+0]
+        BICS     R1,R1,R4
+        STRB     R1,[R0, #+0]
+??RCC_ITConfig_5:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??RCC_ITConfig_3:
+        DC32     0x1f7
+        DC32     0x40021009
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_USBCLKConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_USBCLKConfig_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_USBCLKConfig_0
+        LDR.N    R1,??RCC_USBCLKConfig_1  ;; 0x215
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_USBCLKConfig_0:
+        LDR.N    R0,??RCC_USBCLKConfig_1+0x4  ;; 0x424200d8
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_USBCLKConfig_1:
+        DC32     0x215
+        DC32     0x424200d8
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_ADCCLKConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_ADCCLKConfig_0
+        CMP      R4,#+16384
+        BEQ.N    ??RCC_ADCCLKConfig_0
+        CMP      R4,#+32768
+        BEQ.N    ??RCC_ADCCLKConfig_0
+        CMP      R4,#+49152
+        BEQ.N    ??RCC_ADCCLKConfig_0
+        MOVS     R1,#+556
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_ADCCLKConfig_0:
+        LDR.N    R0,??DataTable66  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+4]
+        MOVS     R1,R0
+        MVNS     R0,#+49152
+        ANDS     R0,R0,R1
+        ORRS     R4,R4,R0
+        MOVS     R0,R4
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        STR      R0,[R1, #+4]
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_LSEConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_LSEConfig_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_LSEConfig_0
+        CMP      R4,#+4
+        BEQ.N    ??RCC_LSEConfig_0
+        LDR.N    R1,??RCC_LSEConfig_1  ;; 0x249
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_LSEConfig_0:
+        LDR.N    R0,??RCC_LSEConfig_1+0x4  ;; 0x40021020
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        LDR.N    R0,??RCC_LSEConfig_1+0x4  ;; 0x40021020
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        CMP      R4,#+1
+        BEQ.N    ??RCC_LSEConfig_2
+        CMP      R4,#+4
+        BEQ.N    ??RCC_LSEConfig_3
+        B.N      ??RCC_LSEConfig_4
+??RCC_LSEConfig_2:
+        LDR.N    R0,??RCC_LSEConfig_1+0x4  ;; 0x40021020
+        MOVS     R1,#+1
+        STRB     R1,[R0, #+0]
+        B.N      ??RCC_LSEConfig_4
+??RCC_LSEConfig_3:
+        LDR.N    R0,??RCC_LSEConfig_1+0x4  ;; 0x40021020
+        MOVS     R1,#+5
+        STRB     R1,[R0, #+0]
+??RCC_LSEConfig_4:
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_LSEConfig_1:
+        DC32     0x249
+        DC32     0x40021020
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_LSICmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_LSICmd_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_LSICmd_0
+        MOVS     R1,#+624
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_LSICmd_0:
+        LDR.N    R0,??RCC_LSICmd_1  ;; 0x42420480
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        DATA
+??RCC_LSICmd_1:
+        DC32     0x42420480
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_RTCCLKConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+256
+        BEQ.N    ??RCC_RTCCLKConfig_0
+        CMP      R4,#+512
+        BEQ.N    ??RCC_RTCCLKConfig_0
+        CMP      R4,#+768
+        BEQ.N    ??RCC_RTCCLKConfig_0
+        LDR.N    R1,??RCC_RTCCLKConfig_1  ;; 0x286
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_RTCCLKConfig_0:
+        LDR.N    R0,??DataTable66  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+32]
+        ORRS     R4,R4,R1
+        STR      R4,[R0, #+32]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_RTCCLKConfig_1:
+        DC32     0x286
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_RTCCLKCmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_RTCCLKCmd_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_RTCCLKCmd_0
+        LDR.N    R1,??RCC_RTCCLKCmd_1  ;; 0x299
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_RTCCLKCmd_0:
+        LDR.N    R0,??RCC_RTCCLKCmd_1+0x4  ;; 0x4242043c
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_RTCCLKCmd_1:
+        DC32     0x299
+        DC32     0x4242043c
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_GetClocksFreq:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,#+0
+        MOVS     R1,#+0
+        MOVS     R2,#+0
+        MOVS     R3,#+0
+        LDR.N    R5,??DataTable66  ;; RCC
+        LDR      R5,[R5, #+0]
+        LDR      R5,[R5, #+4]
+        ANDS     R4,R5,#0xC
+        CMP      R4,#+0
+        BEQ.N    ??RCC_GetClocksFreq_0
+        CMP      R4,#+4
+        BEQ.N    ??RCC_GetClocksFreq_1
+        CMP      R4,#+8
+        BEQ.N    ??RCC_GetClocksFreq_2
+        B.N      ??RCC_GetClocksFreq_3
+??RCC_GetClocksFreq_0:
+        LDR.N    R1,??RCC_GetClocksFreq_4  ;; 0x7a1200
+        STR      R1,[R0, #+0]
+        B.N      ??RCC_GetClocksFreq_5
+??RCC_GetClocksFreq_1:
+        LDR.N    R1,??RCC_GetClocksFreq_4  ;; 0x7a1200
+        STR      R1,[R0, #+0]
+        B.N      ??RCC_GetClocksFreq_5
+??RCC_GetClocksFreq_2:
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        ANDS     R1,R1,#0x3C0000
+        LSRS     R1,R1,#+18
+        ADDS     R1,R1,#+2
+        LDR.N    R2,??DataTable66  ;; RCC
+        LDR      R2,[R2, #+0]
+        LDR      R3,[R2, #+4]
+        MOVS     R2,#+65536
+        ANDS     R2,R2,R3
+        CMP      R2,#+0
+        BNE.N    ??RCC_GetClocksFreq_6
+        LDR.N    R2,??RCC_GetClocksFreq_4+0x4  ;; 0x3d0900
+        MULS     R1,R2,R1
+        STR      R1,[R0, #+0]
+        B.N      ??RCC_GetClocksFreq_5
+??RCC_GetClocksFreq_6:
+        LDR.N    R2,??DataTable66  ;; RCC
+        LDR      R2,[R2, #+0]
+        LDR      R2,[R2, #+4]
+        LSLS     R2,R2,#+14
+        BPL.N    ??RCC_GetClocksFreq_7
+        LDR.N    R2,??RCC_GetClocksFreq_4+0x4  ;; 0x3d0900
+        MULS     R1,R2,R1
+        STR      R1,[R0, #+0]
+        B.N      ??RCC_GetClocksFreq_5
+??RCC_GetClocksFreq_7:
+        LDR.N    R2,??RCC_GetClocksFreq_4  ;; 0x7a1200
+        MULS     R1,R2,R1
+        STR      R1,[R0, #+0]
+        B.N      ??RCC_GetClocksFreq_5
+??RCC_GetClocksFreq_3:
+        LDR.N    R1,??RCC_GetClocksFreq_4  ;; 0x7a1200
+        STR      R1,[R0, #+0]
+??RCC_GetClocksFreq_5:
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        ANDS     R4,R1,#0xF0
+        LSRS     R4,R4,#+4
+        LDR.N    R1,??RCC_GetClocksFreq_4+0x8  ;; APBAHBPrescTable
+        LDRB     R3,[R1, R4]
+        LDR      R1,[R0, #+0]
+        LSRS     R1,R1,R3
+        STR      R1,[R0, #+4]
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        ANDS     R4,R1,#0x700
+        LSRS     R4,R4,#+8
+        LDR.N    R1,??RCC_GetClocksFreq_4+0x8  ;; APBAHBPrescTable
+        LDRB     R3,[R1, R4]
+        LDR      R1,[R0, #+4]
+        LSRS     R1,R1,R3
+        STR      R1,[R0, #+8]
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        ANDS     R4,R1,#0x3800
+        LSRS     R4,R4,#+11
+        LDR.N    R1,??RCC_GetClocksFreq_4+0x8  ;; APBAHBPrescTable
+        LDRB     R3,[R1, R4]
+        LDR      R1,[R0, #+4]
+        LSRS     R1,R1,R3
+        STR      R1,[R0, #+12]
+        LDR.N    R1,??DataTable66  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+4]
+        ANDS     R4,R1,#0xC000
+        LSRS     R4,R4,#+14
+        LDR.N    R1,??RCC_GetClocksFreq_4+0xC  ;; ADCPrescTable
+        LDRB     R3,[R1, R4]
+        LDR      R1,[R0, #+12]
+        UDIV     R1,R1,R3
+        STR      R1,[R0, #+16]
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??RCC_GetClocksFreq_4:
+        DC32     0x7a1200
+        DC32     0x3d0900
+        DC32     APBAHBPrescTable
+        DC32     ADCPrescTable
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable66:
+        DC32     RCC
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_AHBPeriphClockCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        MOVS     R0,R4
+        MOVS     R1,#+21
+        BICS     R0,R0,R1
+        CMP      R0,#+0
+        BNE.N    ??RCC_AHBPeriphClockCmd_0
+        CMP      R4,#+0
+        BNE.N    ??RCC_AHBPeriphClockCmd_1
+??RCC_AHBPeriphClockCmd_0:
+        LDR.N    R1,??RCC_AHBPeriphClockCmd_2  ;; 0x309
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_AHBPeriphClockCmd_1:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_AHBPeriphClockCmd_3
+        CMP      R5,#+1
+        BEQ.N    ??RCC_AHBPeriphClockCmd_3
+        LDR.N    R1,??RCC_AHBPeriphClockCmd_2+0x4  ;; 0x30a
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_AHBPeriphClockCmd_3:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_AHBPeriphClockCmd_4
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+20]
+        ORRS     R4,R4,R1
+        STR      R4,[R0, #+20]
+        B.N      ??RCC_AHBPeriphClockCmd_5
+??RCC_AHBPeriphClockCmd_4:
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+20]
+        BICS     R1,R1,R4
+        STR      R1,[R0, #+20]
+??RCC_AHBPeriphClockCmd_5:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??RCC_AHBPeriphClockCmd_2:
+        DC32     0x309
+        DC32     0x30a
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_APB2PeriphClockCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        LDR.N    R0,??DataTable87  ;; 0xffffffffffffa182
+        ANDS     R0,R0,R4
+        CMP      R0,#+0
+        BNE.N    ??RCC_APB2PeriphClockCmd_0
+        CMP      R4,#+0
+        BNE.N    ??RCC_APB2PeriphClockCmd_1
+??RCC_APB2PeriphClockCmd_0:
+        MOVS     R1,#+808
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_APB2PeriphClockCmd_1:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_APB2PeriphClockCmd_2
+        CMP      R5,#+1
+        BEQ.N    ??RCC_APB2PeriphClockCmd_2
+        LDR.N    R1,??RCC_APB2PeriphClockCmd_3  ;; 0x329
+        LDR.N    R0,??DataTable75  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_APB2PeriphClockCmd_2:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_APB2PeriphClockCmd_4
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+24]
+        ORRS     R4,R4,R1
+        STR      R4,[R0, #+24]
+        B.N      ??RCC_APB2PeriphClockCmd_5
+??RCC_APB2PeriphClockCmd_4:
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+24]
+        BICS     R1,R1,R4
+        STR      R1,[R0, #+24]
+??RCC_APB2PeriphClockCmd_5:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??RCC_APB2PeriphClockCmd_3:
+        DC32     0x329
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable75:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_APB1PeriphClockCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        LDR.N    R0,??DataTable94  ;; 0xffffffffe519b7f8
+        ANDS     R0,R0,R4
+        CMP      R0,#+0
+        BNE.N    ??RCC_APB1PeriphClockCmd_0
+        CMP      R4,#+0
+        BNE.N    ??RCC_APB1PeriphClockCmd_1
+??RCC_APB1PeriphClockCmd_0:
+        MOVS     R1,#+840
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_APB1PeriphClockCmd_1:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_APB1PeriphClockCmd_2
+        CMP      R5,#+1
+        BEQ.N    ??RCC_APB1PeriphClockCmd_2
+        LDR.N    R1,??RCC_APB1PeriphClockCmd_3  ;; 0x349
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_APB1PeriphClockCmd_2:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_APB1PeriphClockCmd_4
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+28]
+        ORRS     R4,R4,R1
+        STR      R4,[R0, #+28]
+        B.N      ??RCC_APB1PeriphClockCmd_5
+??RCC_APB1PeriphClockCmd_4:
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+28]
+        BICS     R1,R1,R4
+        STR      R1,[R0, #+28]
+??RCC_APB1PeriphClockCmd_5:
+        POP      {R4,R5,PC}       ;; return
+        DATA
+??RCC_APB1PeriphClockCmd_3:
+        DC32     0x349
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_APB2PeriphResetCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        LDR.N    R0,??DataTable87  ;; 0xffffffffffffa182
+        ANDS     R0,R0,R4
+        CMP      R0,#+0
+        BNE.N    ??RCC_APB2PeriphResetCmd_0
+        CMP      R4,#+0
+        BNE.N    ??RCC_APB2PeriphResetCmd_1
+??RCC_APB2PeriphResetCmd_0:
+        LDR.N    R1,??RCC_APB2PeriphResetCmd_2  ;; 0x366
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_APB2PeriphResetCmd_1:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_APB2PeriphResetCmd_3
+        CMP      R5,#+1
+        BEQ.N    ??RCC_APB2PeriphResetCmd_3
+        LDR.N    R1,??RCC_APB2PeriphResetCmd_2+0x4  ;; 0x367
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_APB2PeriphResetCmd_3:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_APB2PeriphResetCmd_4
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+12]
+        ORRS     R4,R4,R1
+        STR      R4,[R0, #+12]
+        B.N      ??RCC_APB2PeriphResetCmd_5
+??RCC_APB2PeriphResetCmd_4:
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+12]
+        BICS     R1,R1,R4
+        STR      R1,[R0, #+12]
+??RCC_APB2PeriphResetCmd_5:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??RCC_APB2PeriphResetCmd_2:
+        DC32     0x366
+        DC32     0x367
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable87:
+        DC32     0xffffffffffffa182
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_APB1PeriphResetCmd:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        LDR.N    R0,??DataTable94  ;; 0xffffffffe519b7f8
+        ANDS     R0,R0,R4
+        CMP      R0,#+0
+        BNE.N    ??RCC_APB1PeriphResetCmd_0
+        CMP      R4,#+0
+        BNE.N    ??RCC_APB1PeriphResetCmd_1
+??RCC_APB1PeriphResetCmd_0:
+        LDR.N    R1,??RCC_APB1PeriphResetCmd_2  ;; 0x385
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_APB1PeriphResetCmd_1:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_APB1PeriphResetCmd_3
+        CMP      R5,#+1
+        BEQ.N    ??RCC_APB1PeriphResetCmd_3
+        LDR.N    R1,??RCC_APB1PeriphResetCmd_2+0x4  ;; 0x386
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_APB1PeriphResetCmd_3:
+        CMP      R5,#+0
+        BEQ.N    ??RCC_APB1PeriphResetCmd_4
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+16]
+        ORRS     R4,R4,R1
+        STR      R4,[R0, #+16]
+        B.N      ??RCC_APB1PeriphResetCmd_5
+??RCC_APB1PeriphResetCmd_4:
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+16]
+        BICS     R1,R1,R4
+        STR      R1,[R0, #+16]
+??RCC_APB1PeriphResetCmd_5:
+        POP      {R4,R5,PC}       ;; return
+        Nop      
+        DATA
+??RCC_APB1PeriphResetCmd_2:
+        DC32     0x385
+        DC32     0x386
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable94:
+        DC32     0xffffffffe519b7f8
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_BackupResetCmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_BackupResetCmd_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_BackupResetCmd_0
+        LDR.N    R1,??RCC_BackupResetCmd_1  ;; 0x39d
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_BackupResetCmd_0:
+        LDR.N    R0,??RCC_BackupResetCmd_1+0x4  ;; 0x42420440
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_BackupResetCmd_1:
+        DC32     0x39d
+        DC32     0x42420440
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_ClockSecuritySystemCmd:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_ClockSecuritySystemCmd_0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_ClockSecuritySystemCmd_0
+        LDR.N    R1,??RCC_ClockSecuritySystemCmd_1  ;; 0x3ad
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_ClockSecuritySystemCmd_0:
+        LDR.N    R0,??RCC_ClockSecuritySystemCmd_1+0x4  ;; 0x4242004c
+        STR      R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_ClockSecuritySystemCmd_1:
+        DC32     0x3ad
+        DC32     0x4242004c
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_MCOConfig:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+0
+        BEQ.N    ??RCC_MCOConfig_0
+        CMP      R4,#+5
+        BEQ.N    ??RCC_MCOConfig_0
+        CMP      R4,#+4
+        BEQ.N    ??RCC_MCOConfig_0
+        CMP      R4,#+6
+        BEQ.N    ??RCC_MCOConfig_0
+        CMP      R4,#+7
+        BEQ.N    ??RCC_MCOConfig_0
+        LDR.N    R1,??RCC_MCOConfig_1  ;; 0x3c2
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_MCOConfig_0:
+        LDR.N    R0,??RCC_MCOConfig_1+0x4  ;; 0x40021007
+        STRB     R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_MCOConfig_1:
+        DC32     0x3c2
+        DC32     0x40021007
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_GetFlagStatus:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R1,#+0
+        MOVS     R2,#+0
+        MOVS     R0,#+0
+        CMP      R4,#+32
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+49
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+57
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+65
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+97
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+122
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+123
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+124
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+125
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+126
+        BEQ.N    ??RCC_GetFlagStatus_0
+        CMP      R4,#+127
+        BEQ.N    ??RCC_GetFlagStatus_0
+        LDR.N    R1,??RCC_GetFlagStatus_1  ;; 0x3e2
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_GetFlagStatus_0:
+        MOVS     R1,R4
+        LSLS     R1,R1,#+24       ;; ZeroExtS R1,R1,#+24,#+24
+        LSRS     R1,R1,#+24
+        LSRS     R1,R1,#+5
+        LSLS     R1,R1,#+24       ;; ZeroExtS R1,R1,#+24,#+24
+        LSRS     R1,R1,#+24
+        CMP      R1,#+1
+        BNE.N    ??RCC_GetFlagStatus_2
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R2,[R0, #+0]
+        B.N      ??RCC_GetFlagStatus_3
+??RCC_GetFlagStatus_2:
+        CMP      R1,#+2
+        BNE.N    ??RCC_GetFlagStatus_4
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R2,[R0, #+32]
+        B.N      ??RCC_GetFlagStatus_3
+??RCC_GetFlagStatus_4:
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R2,[R0, #+36]
+??RCC_GetFlagStatus_3:
+        LSLS     R1,R4,#+27       ;; ZeroExtS R1,R4,#+27,#+27
+        LSRS     R1,R1,#+27
+        MOVS     R0,#+1
+        LSLS     R0,R0,R1
+        ANDS     R0,R0,R2
+        CMP      R0,#+0
+        BEQ.N    ??RCC_GetFlagStatus_5
+        MOVS     R0,#+1
+        B.N      ??RCC_GetFlagStatus_6
+??RCC_GetFlagStatus_5:
+        MOVS     R0,#+0
+??RCC_GetFlagStatus_6:
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_GetFlagStatus_1:
+        DC32     0x3e2
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_ClearFlag:
+        LDR.N    R0,??DataTable109  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable109  ;; RCC
+        LDR      R1,[R1, #+0]
+        LDR      R1,[R1, #+36]
+        ORRS     R1,R1,#0x1000000
+        STR      R1,[R0, #+36]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable109:
+        DC32     RCC
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_GetITStatus:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+1
+        BEQ.N    ??RCC_GetITStatus_0
+        CMP      R4,#+2
+        BEQ.N    ??RCC_GetITStatus_0
+        CMP      R4,#+4
+        BEQ.N    ??RCC_GetITStatus_0
+        CMP      R4,#+8
+        BEQ.N    ??RCC_GetITStatus_0
+        CMP      R4,#+16
+        BEQ.N    ??RCC_GetITStatus_0
+        CMP      R4,#+128
+        BEQ.N    ??RCC_GetITStatus_0
+        LDR.N    R1,??RCC_GetITStatus_1  ;; 0x427
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_GetITStatus_0:
+        LDR.N    R0,??DataTable111  ;; RCC
+        LDR      R0,[R0, #+0]
+        LDR      R0,[R0, #+8]
+        TST      R0,R4
+        BEQ.N    ??RCC_GetITStatus_2
+        MOVS     R0,#+1
+        B.N      ??RCC_GetITStatus_3
+??RCC_GetITStatus_2:
+        MOVS     R0,#+0
+??RCC_GetITStatus_3:
+        POP      {R4,PC}          ;; return
+        DATA
+??RCC_GetITStatus_1:
+        DC32     0x427
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable111:
+        DC32     RCC
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_ClearITPendingBit:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        TST      R4,#0x60
+        BNE.N    ??RCC_ClearITPendingBit_0
+        CMP      R4,#+0
+        BNE.N    ??RCC_ClearITPendingBit_1
+??RCC_ClearITPendingBit_0:
+        MOVS     R1,#+1096
+        LDR.N    R0,??DataTable112  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RCC_ClearITPendingBit_1:
+        LDR.N    R0,??RCC_ClearITPendingBit_2  ;; 0x4002100a
+        STRB     R4,[R0, #+0]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RCC_ClearITPendingBit_2:
+        DC32     0x4002100a
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable112:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??assert_failed??rT:
+        LDR.N    R3,??Subroutine0_0  ;; assert_failed
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     assert_failed
+
+        END
+// 
+// 2 308 bytes in segment CODE
+//   108 bytes in segment DATA_C
+// 
+// 2 300 bytes of CODE  memory (+ 8 bytes shared)
+//   108 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

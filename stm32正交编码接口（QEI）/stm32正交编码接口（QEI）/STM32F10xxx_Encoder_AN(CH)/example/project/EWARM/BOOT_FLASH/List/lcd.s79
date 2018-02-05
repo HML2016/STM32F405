@@ -1,0 +1,436 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:29 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\source\lcd.c                /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\source\lcd.c" -D            /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\lcd.s /
+//                       79                                                  /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME lcd
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        EXTERN ??div32_t
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+        MULTWEAK ??rT??div32_t
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC convert
+        PUBLIC digit
+        PUBLIC frame
+        PUBLIC int2char
+        PUBLIC letter
+        PUBLIC number
+        PUBLIC sign
+        PUBLIC text
+        PUBLIC write_char
+        PUBLIC write_string
+
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+frame:
+        DS8 8
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+digit:
+        DS8 8
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(2)
+text:
+        DS8 4
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant {61440, 3840, 240, 15}>`:
+        DATA
+        DC16 61440, 3840, 240, 15
+
+        RSEG DATA_C:CONST:SORT:NOROOT(0)
+`?<Constant {12, 8, 4}>`:
+        DATA
+        DC8 12, 8, 4
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant {15, 240, 3840, 61440}>`:
+        DATA
+        DC16 15, 240, 3840, 61440
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+letter:
+        DATA
+        DC16 18928, 504, 16664, 2296, 16760, 16752, 16856, 2544, 24586, 2184
+        DC16 1332, 280, 3984, 2964, 18840, 18800, 18844, 18804, 16872, 24578
+        DC16 2456, 1297, 10650, 1541, 1537, 17417
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+number:
+        DATA
+        DC16 18840, 2176, 18552, 18664, 2528, 16872, 16888, 18560, 18936, 18920
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+sign:
+        DATA
+        DC16 8290, 96
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+convert:
+        PUSH     {R4-R6}
+        SUB      SP,SP,#+12
+        MOVS     R2,#+0
+        ADD      R3,SP,#+4
+        LDR.N    R4,??convert_0   ;; `?<Constant {61440, 3840, 240, 15}>`
+        LDR      R5,[R4, #0]
+        STR      R5,[R3, #+0]
+        LDR      R5,[R4, #+4]
+        STR      R5,[R3, #+4]
+        MOV      R3,SP
+        LDR.N    R4,??convert_0+0x4  ;; `?<Constant {12, 8, 4}>`
+        LDRB     R5,[R4, #0]
+        STRB     R5,[R3, #+0]
+        LDRB     R5,[R4, #+1]
+        STRB     R5,[R3, #+1]
+        LDRB     R5,[R4, #+2]
+        STRB     R5,[R3, #+2]
+        LDRB     R3,[R0, #+0]
+        CMP      R3,#+91
+        BCS.N    ??convert_1
+        MOVS     R3,#+1
+        LDRB     R4,[R0, #+0]
+        CMP      R4,#+65
+        BCC.N    ??convert_1
+        LSLS     R3,R3,#+31
+        BPL.N    ??convert_1
+        LDRB     R0,[R0, #+0]
+        MOVS     R2,#+2
+        LDR.N    R3,??convert_0+0x8  ;; letter
+        MLA      R0,R0,R2,R3
+        SUBS     R0,R0,#+130
+        LDRH     R2,[R0, #+0]
+        B.N      ??convert_2
+??convert_1:
+        LDRB     R3,[R0, #+0]
+        CMP      R3,#+58
+        BCS.N    ??convert_3
+        MOVS     R3,#+1
+        LDRB     R4,[R0, #+0]
+        CMP      R4,#+48
+        BCC.N    ??convert_3
+        LSLS     R3,R3,#+31
+        BPL.N    ??convert_3
+        LDRB     R0,[R0, #+0]
+        MOVS     R2,#+2
+        LDR.N    R3,??convert_0+0xC  ;; number
+        MLA      R0,R0,R2,R3
+        SUBS     R0,R0,#+96
+        LDRH     R2,[R0, #+0]
+        B.N      ??convert_2
+??convert_3:
+        LDRB     R3,[R0, #+0]
+        CMP      R3,#+32
+        BNE.N    ??convert_4
+        MOVS     R2,#+0
+        B.N      ??convert_2
+??convert_4:
+        LDRB     R3,[R0, #+0]
+        CMP      R3,#+43
+        BNE.N    ??convert_5
+        LDR.N    R0,??convert_0+0x10  ;; sign
+        LDRH     R2,[R0, #+0]
+        B.N      ??convert_2
+??convert_5:
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+45
+        BNE.N    ??convert_2
+        LDR.N    R0,??convert_0+0x14  ;; sign + 2
+        LDRH     R2,[R0, #+0]
+??convert_2:
+        CMP      R1,#+1
+        BNE.N    ??convert_6
+        ORRS     R2,R2,#0x8000
+??convert_6:
+        MOVS     R0,#+0
+        B.N      ??convert_7
+??convert_8:
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R1,#+2
+        MULS     R1,R0,R1
+        ADD      R3,SP,#+4
+        LDRH     R1,[R3, R1]
+        ANDS     R1,R1,R2
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOVS     R3,#+2
+        MULS     R3,R0,R3
+        LDR.N    R4,??DataTable7  ;; digit
+        LSLS     R1,R1,#+16       ;; ZeroExtS R1,R1,#+16,#+16
+        LSRS     R1,R1,#+16
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        MOV      R5,SP
+        LDRB     R5,[R5, R0]
+        ASRS     R1,R1,R5
+        STRH     R1,[R4, R3]
+        ADDS     R0,R0,#+1
+??convert_7:
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        CMP      R0,#+3
+        BCC.N    ??convert_8
+        LDR.N    R0,??convert_0+0x18  ;; digit + 6
+        LDRH     R1,[SP, #+10]
+        ANDS     R1,R1,R2
+        STRH     R1,[R0, #+0]
+        ADD      SP,SP,#+12
+        POP      {R4-R6}
+        BX       LR               ;; return
+        DATA
+??convert_0:
+        DC32     `?<Constant {61440, 3840, 240, 15}>`
+        DC32     `?<Constant {12, 8, 4}>`
+        DC32     letter
+        DC32     number
+        DC32     sign
+        DC32     sign + 2
+        DC32     digit + 6
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+write_char:
+        PUSH     {R4-R6,LR}
+        SUB      SP,SP,#+8
+        MOVS     R4,R2
+        MOV      R2,SP
+        LDR.N    R3,??write_char_0  ;; `?<Constant {15, 240, 3840, 61440}>`
+        LDR      R5,[R3, #0]
+        STR      R5,[R2, #+0]
+        LDR      R5,[R3, #+4]
+        STR      R5,[R2, #+4]
+        BL       convert
+        CMP      R4,#+1
+        BNE.N    ??write_char_1
+        MOVS     R0,#+0
+        B.N      ??write_char_2
+??write_char_3:
+        MOVS     R1,#+2
+        MULS     R1,R0,R1
+        LDR.N    R2,??DataTable7  ;; digit
+        MOVS     R3,#+2
+        MULS     R3,R0,R3
+        LDR.N    R5,??DataTable7  ;; digit
+        LDRH     R3,[R5, R3]
+        LSLS     R3,R3,#+4
+        STRH     R3,[R2, R1]
+        ADDS     R0,R0,#+1
+??write_char_2:
+        CMP      R0,#+4
+        BLT.N    ??write_char_3
+??write_char_1:
+        CMP      R4,#+2
+        BNE.N    ??write_char_4
+        MOVS     R0,#+0
+        B.N      ??write_char_5
+??write_char_6:
+        MOVS     R1,#+2
+        MULS     R1,R0,R1
+        LDR.N    R2,??DataTable7  ;; digit
+        MOVS     R3,#+2
+        MULS     R3,R0,R3
+        LDR.N    R5,??DataTable7  ;; digit
+        LDRH     R3,[R5, R3]
+        LSLS     R3,R3,#+8
+        STRH     R3,[R2, R1]
+        ADDS     R0,R0,#+1
+??write_char_5:
+        CMP      R0,#+4
+        BLT.N    ??write_char_6
+??write_char_4:
+        CMP      R4,#+3
+        BNE.N    ??write_char_7
+        MOVS     R0,#+0
+        B.N      ??write_char_8
+??write_char_9:
+        MOVS     R1,#+2
+        MULS     R1,R0,R1
+        LDR.N    R2,??DataTable7  ;; digit
+        MOVS     R3,#+2
+        MULS     R3,R0,R3
+        LDR.N    R5,??DataTable7  ;; digit
+        LDRH     R3,[R5, R3]
+        LSLS     R3,R3,#+12
+        STRH     R3,[R2, R1]
+        ADDS     R0,R0,#+1
+??write_char_8:
+        CMP      R0,#+4
+        BLT.N    ??write_char_9
+??write_char_7:
+        MOVS     R0,#+0
+        B.N      ??write_char_10
+??write_char_11:
+        MOVS     R1,#+2
+        MULS     R1,R0,R1
+        LDR.N    R2,??write_char_0+0x4  ;; frame
+        MOVS     R3,#+2
+        MULS     R3,R0,R3
+        LDR.N    R5,??write_char_0+0x4  ;; frame
+        LDRH     R3,[R5, R3]
+        LSLS     R4,R4,#+24       ;; ZeroExtS R4,R4,#+24,#+24
+        LSRS     R4,R4,#+24
+        MOVS     R5,#+2
+        MULS     R5,R4,R5
+        MOV      R6,SP
+        LDRH     R5,[R6, R5]
+        BICS     R3,R3,R5
+        MOVS     R5,#+2
+        MULS     R5,R0,R5
+        LDR.N    R6,??DataTable7  ;; digit
+        LDRH     R5,[R6, R5]
+        ORRS     R5,R5,R3
+        STRH     R5,[R2, R1]
+        ADDS     R0,R0,#+1
+??write_char_10:
+        CMP      R0,#+4
+        BLT.N    ??write_char_11
+        ADD      SP,SP,#+8
+        POP      {R4-R6,PC}       ;; return
+        DATA
+??write_char_0:
+        DC32     `?<Constant {15, 240, 3840, 61440}>`
+        DC32     frame
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable7:
+        DC32     digit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+write_string:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,#+0
+        B.N      ??write_string_0
+??write_string_1:
+        MOVS     R2,R5
+        LSLS     R2,R2,#+24       ;; ZeroExtS R2,R2,#+24,#+24
+        LSRS     R2,R2,#+24
+        MOVS     R1,#+0
+        ADDS     R0,R4,R5
+        BL       write_char
+        ADDS     R5,R5,#+1
+??write_string_0:
+        CMP      R5,#+4
+        BLT.N    ??write_string_1
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+int2char:
+        PUSH     {R4,LR}
+        MOVS     R3,#+1000
+        MOVS     R2,#+0
+        B.N      ??int2char_0
+??int2char_1:
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        LSLS     R3,R3,#+16       ;; ZeroExtS R3,R3,#+16,#+16
+        LSRS     R3,R3,#+16
+        SDIV     R1,R0,R3
+        LSLS     R2,R2,#+24       ;; ZeroExtS R2,R2,#+24,#+24
+        LSRS     R2,R2,#+24
+        LDR.N    R4,??int2char_2  ;; text
+        ADDS     R1,R1,#+48
+        STRB     R1,[R4, R2]
+        LSLS     R0,R0,#+16       ;; ZeroExtS R0,R0,#+16,#+16
+        LSRS     R0,R0,#+16
+        LSLS     R3,R3,#+16       ;; ZeroExtS R3,R3,#+16,#+16
+        LSRS     R3,R3,#+16
+        MOVS     R1,R3
+        _BLF     ??div32_t,??rT??div32_t
+        LSLS     R3,R3,#+16       ;; ZeroExtS R3,R3,#+16,#+16
+        LSRS     R3,R3,#+16
+        MOVS     R1,#+10
+        SDIV     R3,R3,R1
+        ADDS     R2,R2,#+1
+??int2char_0:
+        LSLS     R2,R2,#+24       ;; ZeroExtS R2,R2,#+24,#+24
+        LSRS     R2,R2,#+24
+        CMP      R2,#+4
+        BCC.N    ??int2char_1
+        LDR.N    R0,??int2char_2  ;; text
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??int2char_2:
+        DC32     text
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??rT??div32_t:
+        PUSH     {R3}
+        LDR.N    R3,??Subroutine0_0  ;; ??div32_t
+        MOV      R12,R3
+        POP      {R3}
+        BX       R12
+        Nop      
+        DATA
+??Subroutine0_0:
+        DC32     ??div32_t
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+// 
+// 546 bytes in segment CODE
+//  95 bytes in segment DATA_C
+//  20 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 530 bytes of CODE  memory (+ 28 bytes shared)
+//  95 bytes of CONST memory
+//  20 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

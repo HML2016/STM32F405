@@ -1,0 +1,11 @@
+Output: Simple BOM
+Type  : SimpleBOM
+From  : Variant [[No Variations]] of Project [STM32F4 MCU.PrjPcb]
+   Generated File[F405 MCU.BOM]
+   Generated File[F405 MCU.CSV]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 12:43:31 On 2017/4/15

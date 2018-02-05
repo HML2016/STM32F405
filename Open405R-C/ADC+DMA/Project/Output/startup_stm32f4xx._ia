@@ -1,0 +1,5 @@
+--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork 
+-I "D:\Program Files\keil\ARM\RV31\INC" 
+-I "D:\Program Files\keil\ARM\CMSIS\Include" 
+-I "D:\Program Files\keil\ARM\Inc\ST\STM32F4xx" 
+--list ".\Listing\startup_stm32f4xx.lst" --xref -o ".\Output\startup_stm32f4xx.o" --depend ".\Output\startup_stm32f4xx.d" "..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f4xx.s"

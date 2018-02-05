@@ -1,0 +1,504 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:32 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\FWLib\src\stm32f10x_rtc.c           /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\FWLib\src\stm32f10x_rtc.c" -D       /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_rtc.s79                                        /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_rtc
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable10 EQU 0
+??DataTable11 EQU 0
+??DataTable12 EQU 0
+??DataTable13 EQU 0
+??DataTable14 EQU 0
+??DataTable15 EQU 0
+??DataTable16 EQU 0
+??DataTable17 EQU 0
+??DataTable18 EQU 0
+??DataTable19 EQU 0
+??DataTable2 EQU 0
+??DataTable20 EQU 0
+??DataTable21 EQU 0
+??DataTable22 EQU 0
+??DataTable23 EQU 0
+??DataTable24 EQU 0
+??DataTable25 EQU 0
+??DataTable26 EQU 0
+??DataTable27 EQU 0
+??DataTable28 EQU 0
+??DataTable29 EQU 0
+??DataTable3 EQU 0
+??DataTable30 EQU 0
+??DataTable31 EQU 0
+??DataTable32 EQU 0
+??DataTable33 EQU 0
+??DataTable34 EQU 0
+??DataTable35 EQU 0
+??DataTable38 EQU 0
+??DataTable4 EQU 0
+??DataTable5 EQU 0
+??DataTable6 EQU 0
+??DataTable7 EQU 0
+??DataTable8 EQU 0
+??DataTable9 EQU 0
+        MULTWEAK ??assert_failed??rT
+        PUBLIC RTC_ClearFlag
+        PUBLIC RTC_ClearITPendingBit
+        PUBLIC RTC_EnterConfigMode
+        PUBLIC RTC_ExitConfigMode
+        PUBLIC RTC_GetCounter
+        PUBLIC RTC_GetDivider
+        PUBLIC RTC_GetFlagStatus
+        PUBLIC RTC_GetITStatus
+        PUBLIC RTC_GetPrescaler
+        PUBLIC RTC_ITConfig
+        PUBLIC RTC_SetAlarm
+        PUBLIC RTC_SetCounter
+        PUBLIC RTC_SetPrescaler
+        PUBLIC RTC_WaitForLastTask
+        PUBLIC RTC_WaitForSynchro
+
+assert_failed       SYMBOL "assert_failed"
+??assert_failed??rT SYMBOL "??rT", assert_failed
+
+        EXTERN RTC
+        EXTERN assert_failed
+
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_ITConfig:
+        PUSH     {R4,R5,LR}
+        MOVS     R4,R0
+        MOVS     R5,R1
+        LDR.N    R0,??DataTable36  ;; 0xfff8
+        TST      R4,R0
+        BNE.N    ??RTC_ITConfig_0
+        CMP      R4,#+0
+        BNE.N    ??RTC_ITConfig_1
+??RTC_ITConfig_0:
+        MOVS     R1,#+54
+        LDR.N    R0,??DataTable37  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RTC_ITConfig_1:
+        CMP      R5,#+0
+        BEQ.N    ??RTC_ITConfig_2
+        CMP      R5,#+1
+        BEQ.N    ??RTC_ITConfig_2
+        MOVS     R1,#+55
+        LDR.N    R0,??DataTable37  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RTC_ITConfig_2:
+        CMP      R5,#+0
+        BEQ.N    ??RTC_ITConfig_3
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+0]
+        ORRS     R4,R4,R1
+        STRH     R4,[R0, #+0]
+        B.N      ??RTC_ITConfig_4
+??RTC_ITConfig_3:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+0]
+        BICS     R1,R1,R4
+        STRH     R1,[R0, #+0]
+??RTC_ITConfig_4:
+        POP      {R4,R5,PC}       ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_EnterConfigMode:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+4]
+        ORRS     R1,R1,#0x10
+        STRH     R1,[R0, #+4]
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_ExitConfigMode:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+4]
+        LDR.N    R2,??RTC_ExitConfigMode_0  ;; 0xffef
+        ANDS     R2,R2,R1
+        STRH     R2,[R0, #+4]
+        BX       LR               ;; return
+        Nop      
+        DATA
+??RTC_ExitConfigMode_0:
+        DC32     0xffef
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_GetCounter:
+        MOVS     R0,#+0
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+28]
+        MOVS     R0,R1
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+24]
+        LSLS     R1,R1,#+16
+        ORRS     R0,R0,R1
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_SetCounter:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        BL       RTC_EnterConfigMode
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        MOVS     R1,R4
+        LSRS     R1,R1,#+16
+        STRH     R1,[R0, #+24]
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        STRH     R4,[R0, #+28]
+        BL       RTC_ExitConfigMode
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_GetPrescaler:
+        MOVS     R0,#+0
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+8]
+        LSLS     R1,R1,#+28       ;; ZeroExtS R1,R1,#+28,#+28
+        LSRS     R1,R1,#+28
+        LSLS     R1,R1,#+16
+        MOVS     R0,R1
+        MOVS     R1,R0
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+12]
+        ORRS     R0,R0,R1
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_SetPrescaler:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        CMP      R4,#+1048576
+        BCC.N    ??RTC_SetPrescaler_0
+        MOVS     R1,#+154
+        LDR.N    R0,??DataTable37  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RTC_SetPrescaler_0:
+        BL       RTC_EnterConfigMode
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        ANDS     R1,R4,#0xF0000
+        LSRS     R1,R1,#+16
+        STRH     R1,[R0, #+8]
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        STRH     R4,[R0, #+12]
+        BL       RTC_ExitConfigMode
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_SetAlarm:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        BL       RTC_EnterConfigMode
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        MOVS     R1,R4
+        LSRS     R1,R1,#+16
+        STRH     R1,[R0, #+32]
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        STRH     R4,[R0, #+36]
+        BL       RTC_ExitConfigMode
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_GetDivider:
+        MOVS     R0,#+0
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+16]
+        LSLS     R1,R1,#+28       ;; ZeroExtS R1,R1,#+28,#+28
+        LSRS     R1,R1,#+28
+        LSLS     R1,R1,#+16
+        MOVS     R0,R1
+        MOVS     R1,R0
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+20]
+        ORRS     R0,R0,R1
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_WaitForLastTask:
+??RTC_WaitForLastTask_0:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        LSLS     R0,R0,#+26
+        BPL.N    ??RTC_WaitForLastTask_0
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_WaitForSynchro:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+4]
+        LDR.N    R2,??RTC_WaitForSynchro_0  ;; 0xfff7
+        ANDS     R2,R2,R1
+        STRH     R2,[R0, #+4]
+??RTC_WaitForSynchro_1:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        LSLS     R0,R0,#+28
+        BPL.N    ??RTC_WaitForSynchro_1
+        BX       LR               ;; return
+        DATA
+??RTC_WaitForSynchro_0:
+        DC32     0xfff7
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_GetFlagStatus:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+32
+        BEQ.N    ??RTC_GetFlagStatus_0
+        CMP      R4,#+8
+        BEQ.N    ??RTC_GetFlagStatus_0
+        CMP      R4,#+4
+        BEQ.N    ??RTC_GetFlagStatus_0
+        CMP      R4,#+2
+        BEQ.N    ??RTC_GetFlagStatus_0
+        CMP      R4,#+1
+        BEQ.N    ??RTC_GetFlagStatus_0
+        LDR.N    R1,??RTC_GetFlagStatus_1  ;; 0x101
+        LDR.N    R0,??DataTable37  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RTC_GetFlagStatus_0:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        TST      R0,R4
+        BEQ.N    ??RTC_GetFlagStatus_2
+        MOVS     R0,#+1
+        B.N      ??RTC_GetFlagStatus_3
+??RTC_GetFlagStatus_2:
+        MOVS     R0,#+0
+??RTC_GetFlagStatus_3:
+        POP      {R4,PC}          ;; return
+        DATA
+??RTC_GetFlagStatus_1:
+        DC32     0x101
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_ClearFlag:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        LDR.N    R0,??RTC_ClearFlag_0  ;; 0xfff0
+        TST      R4,R0
+        BNE.N    ??RTC_ClearFlag_1
+        CMP      R4,#+0
+        BNE.N    ??RTC_ClearFlag_2
+??RTC_ClearFlag_1:
+        MOVS     R1,#+286
+        LDR.N    R0,??DataTable37  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RTC_ClearFlag_2:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+4]
+        BICS     R1,R1,R4
+        STRH     R1,[R0, #+4]
+        POP      {R4,PC}          ;; return
+        DATA
+??RTC_ClearFlag_0:
+        DC32     0xfff0
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_GetITStatus:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        MOVS     R0,#+0
+        CMP      R4,#+4
+        BEQ.N    ??RTC_GetITStatus_0
+        CMP      R4,#+2
+        BEQ.N    ??RTC_GetITStatus_0
+        CMP      R4,#+1
+        BEQ.N    ??RTC_GetITStatus_0
+        MOVS     R1,#+308
+        LDR.N    R0,??DataTable37  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RTC_GetITStatus_0:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDRH     R0,[R0, #+4]
+        TST      R0,R4
+        BEQ.N    ??RTC_GetITStatus_1
+        MOVS     R0,#+1
+        B.N      ??RTC_GetITStatus_2
+??RTC_GetITStatus_1:
+        MOVS     R0,#+0
+??RTC_GetITStatus_2:
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+0]
+        TST      R1,R4
+        BEQ.N    ??RTC_GetITStatus_3
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        CMP      R0,#+0
+        BEQ.N    ??RTC_GetITStatus_3
+        MOVS     R0,#+1
+        B.N      ??RTC_GetITStatus_4
+??RTC_GetITStatus_3:
+        MOVS     R0,#+0
+??RTC_GetITStatus_4:
+        LSLS     R0,R0,#+24       ;; ZeroExtS R0,R0,#+24,#+24
+        LSRS     R0,R0,#+24
+        POP      {R4,PC}          ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_ClearITPendingBit:
+        PUSH     {R4,LR}
+        MOVS     R4,R0
+        LDR.N    R0,??DataTable36  ;; 0xfff8
+        TST      R4,R0
+        BNE.N    ??RTC_ClearITPendingBit_0
+        CMP      R4,#+0
+        BNE.N    ??RTC_ClearITPendingBit_1
+??RTC_ClearITPendingBit_0:
+        LDR.N    R1,??RTC_ClearITPendingBit_2  ;; 0x151
+        LDR.N    R0,??DataTable37  ;; `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+        _BLF     assert_failed,??assert_failed??rT
+??RTC_ClearITPendingBit_1:
+        LDR.N    R0,??DataTable39  ;; RTC
+        LDR      R0,[R0, #+0]
+        LDR.N    R1,??DataTable39  ;; RTC
+        LDR      R1,[R1, #+0]
+        LDRH     R1,[R1, #+4]
+        BICS     R1,R1,R4
+        STRH     R1,[R0, #+4]
+        POP      {R4,PC}          ;; return
+        Nop      
+        DATA
+??RTC_ClearITPendingBit_2:
+        DC32     0x151
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable36:
+        DC32     0xfff8
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable37:
+        DC32     `?<Constant "C:\\\\David JIANG\\\\ST MCU...">`
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable39:
+        DC32     RTC
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??assert_failed??rT:
+        LDR.N    R3,??Subroutine0_0  ;; assert_failed
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     assert_failed
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+`?<Constant "C:\\\\David JIANG\\\\ST MCU...">`:
+        DATA
+        DC8 43H, 3AH, 5CH, 44H, 61H, 76H, 69H, 64H
+        DC8 20H, 4AH, 49H, 41H, 4EH, 47H, 5CH, 53H
+        DC8 54H, 20H, 4DH, 43H, 55H, 5CH, 44H, 6FH
+        DC8 63H, 73H, 5CH, 53H, 54H, 4DH, 33H, 32H
+        DC8 5CH, 41H, 4EH, 5FH, 4AH, 49H, 41H, 4EH
+        DC8 47H, 5CH, 54H, 49H, 4DH, 20H, 45H, 6EH
+        DC8 63H, 6FH, 64H, 65H, 72H, 5CH, 65H, 78H
+        DC8 61H, 6DH, 70H, 6CH, 65H, 5CH, 46H, 57H
+        DC8 4CH, 69H, 62H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 73H, 74H, 6DH, 33H, 32H, 66H, 31H, 30H
+        DC8 78H, 5FH, 72H, 74H, 63H, 2EH, 63H, 0
+
+        END
+// 
+// 584 bytes in segment CODE
+//  88 bytes in segment DATA_C
+// 
+// 576 bytes of CODE  memory (+ 8 bytes shared)
+//  88 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,35 @@
+Bill of Material for 
+On 2017/4/15 at 12:43:31
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 0.1uF               0603             5    C13, C15, C20, C21, C22                           
+ 0.1uF               CAP-0603         5    C6, C7, C8, C9, C10          无极性电容                
+ 0603/LED            0603             1    LED                                               
+ 100nF               CAP-0603         1    C3                           无极性电容                
+ 10K/0603/5%         0603             6    R1, R2, R3, R8, R11, R12                          
+ 10uF                0603             1    C14                                               
+ 10uF                CAP-0603         1    C11                          无极性电容                
+ 16M                 X-3225           1    X1                           贴片晶振                 
+ 18pF                CAP-0603         2    C1, C2                       无极性电容                
+ 1K/0603/1%          0603             2    R6, R7                                            
+ 1K                  0603             1    R13                                               
+ 2.2uF               CAP-0603         2    C4, C5                       无极性电容                
+ 22uF/0805/16V       0805             5    C12, C16, C17, C18, C19                           
+ 2LED                LED-2-1206       1    LED0                                              
+ 4.7K/0603/5%        0603             4    R4, R5, R9, R10                                   
+ 510R/0603/1%        0603             4    R14, R15, R16, R17                                
+ AMS1117-            SOT-89-3         1    U2                           稳压芯片                 
+ BEEP                BELL-5           1    BEEP                                              
+ Header 3            HDR3X1_A         1    DBUS                         接插件                  
+ Header 4            HDR4X1_A         5    Encoder1, Encoder2, SWD      接插件                  
+                                           USART1, USART2
+ Header 5            HDR1X5           1    PWM*4                        Header, 5-Pin        
+ Header 7            HDR1X7           1    OLED                         Header, 7-Pin        
+ Header 9            HDR1X9           2    P1, P2                       Header, 9-Pin        
+ SPX5205             SPX5205M5-3.3V    1    U3                           5转3.3V LDO           
+ SS8050              SOT-23           2    Q1, Q2                       NPN贴片三极管             
+ STM32F405RGT6       STM32F405RGT6 - duplicate    1    U1                                                
+ SW-PAD              SW_PAD1          2    KEY, RST                     微动开关                 
+ SW-SPDT             MSK-12D19        1    Swtich                       开关                   
+ USB_M               USB-MICRO        1    J1                           MicroUSB接口           

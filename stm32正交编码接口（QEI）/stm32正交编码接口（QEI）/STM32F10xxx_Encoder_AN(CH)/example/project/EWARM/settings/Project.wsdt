@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>Project/BOOT_FLASH</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>272</Column0><Column1>17</Column1><Column2>27</Column2><Column3>6326712</Column3></ColumnWidths>
+      <PreferedWindows><Position>1</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></Workspace>
+    <Find-in-Files><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ColumnWidth0>432</ColumnWidth0><ColumnWidth1>50</ColumnWidth1><ColumnWidth2>1158</ColumnWidth2></Find-in-Files><Build><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>340</ColumnWidth1><ColumnWidth2>512</ColumnWidth2><ColumnWidth3>53</ColumnWidth3></Build><TerminalIO/><CodeCoveragePlugin/><Debug-Log><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Build</Factory></Window></Windows></PreferedWindows></Debug-Log><Disassembly><MixedMode>1</MixedMode><CodeCovEnabled>0</CodeCovEnabled><CodeCovShow>0</CodeCovShow></Disassembly></Static>
+    <Windows>
+      
+    <Wnd0><Tabs><Tab><Identity>TabID-32209-16813</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>Project</ExpandedNode><ExpandedNode>Project/EWARM</ExpandedNode><ExpandedNode>Project/User</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd0></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM Encoder\example\project\source\main.c</Filename><XPos>0</XPos><YPos>70</YPos><SelStart>3144</SelStart><SelEnd>3144</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM Encoder\example\project\source\lcd.c</Filename><XPos>0</XPos><YPos>144</YPos><SelStart>4975</SelStart><SelEnd>4975</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM Encoder\example\project\source\stm32f10x_encoder.c</Filename><XPos>0</XPos><YPos>299</YPos><SelStart>9943</SelStart><SelEnd>9943</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM Encoder\example\project\source\stm32f10x_it.c</Filename><XPos>0</XPos><YPos>436</YPos><SelStart>16738</SelStart><SelEnd>16738</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM Encoder\example\project\source\stm32f10x_Timebase.c</Filename><XPos>0</XPos><YPos>60</YPos><SelStart>4106</SelStart><SelEnd>4106</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-003be910><key>iaridepm.enu1</key></Toolbar-003be910></Sizes></Row0><Row1><Sizes/></Row1></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>901</Bottom><Right>336</Right><x>-2</x><y>-2</y><xscreen>250</xscreen><yscreen>274</yscreen><sizeHorzCX>195313</sizeHorzCX><sizeHorzCY>289030</sizeHorzCY><sizeVertCX>264063</sizeVertCX><sizeVertCY>952532</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes/></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

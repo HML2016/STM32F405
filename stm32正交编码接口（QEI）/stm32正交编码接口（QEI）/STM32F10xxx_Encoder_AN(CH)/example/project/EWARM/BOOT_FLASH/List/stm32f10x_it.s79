@@ -1,0 +1,637 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:31 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\source\stm32f10x_it.c       /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\source\stm32f10x_it.c" -D   /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\stm32 /
+//                       f10x_it.s79                                         /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME stm32f10x_it
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+        MULTWEAK ??GPIO_Init??rT
+        MULTWEAK ??GPIO_ResetBits??rT
+        MULTWEAK ??GPIO_SetBits??rT
+        MULTWEAK ??GPIO_Write??rT
+        MULTWEAK ??TIM_ClearITPendingBit??rT
+        MULTWEAK ??TIM_GetITStatus??rT
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC ADC_IRQHandler
+        PUBLIC BusFaultException
+        PUBLIC CAN_RX1_IRQHandler
+        PUBLIC CAN_SCE_IRQHandler
+        PUBLIC DMAChannel1_IRQHandler
+        PUBLIC DMAChannel2_IRQHandler
+        PUBLIC DMAChannel3_IRQHandler
+        PUBLIC DMAChannel4_IRQHandler
+        PUBLIC DMAChannel5_IRQHandler
+        PUBLIC DMAChannel6_IRQHandler
+        PUBLIC DMAChannel7_IRQHandler
+        PUBLIC DebugMonitor
+        PUBLIC EXTI0_IRQHandler
+        PUBLIC EXTI15_10_IRQHandler
+        PUBLIC EXTI1_IRQHandler
+        PUBLIC EXTI2_IRQHandler
+        PUBLIC EXTI3_IRQHandler
+        PUBLIC EXTI4_IRQHandler
+        PUBLIC EXTI9_5_IRQHandler
+        PUBLIC FLASH_IRQHandler
+        PUBLIC HardFaultException
+        PUBLIC I2C1_ER_IRQHandler
+        PUBLIC I2C1_EV_IRQHandler
+        PUBLIC I2C2_ER_IRQHandler
+        PUBLIC I2C2_EV_IRQHandler
+        PUBLIC MemManageException
+        PUBLIC NMIException
+        PUBLIC PVD_IRQHandler
+        PUBLIC PendSVC
+        PUBLIC RCC_IRQHandler
+        PUBLIC RTCAlarm_IRQHandler
+        PUBLIC RTC_IRQHandler
+        PUBLIC SPI1_IRQHandler
+        PUBLIC SPI2_IRQHandler
+        PUBLIC SVCHandler
+        PUBLIC TAMPER_IRQHandler
+        PUBLIC TIM1_BRK_IRQHandler
+        PUBLIC TIM1_CC_IRQHandler
+        PUBLIC TIM1_TRG_COM_IRQHandler
+        PUBLIC TIM1_UP_IRQHandler
+        PUBLIC TIM2_IRQHandler
+        PUBLIC TIM4_IRQHandler
+        PUBLIC USART1_IRQHandler
+        PUBLIC USART2_IRQHandler
+        PUBLIC USART3_IRQHandler
+        PUBLIC USBWakeUp_IRQHandler
+        PUBLIC USB_HP_CAN_TX_IRQHandler
+        PUBLIC USB_LP_CAN_RX0_IRQHandler
+        PUBLIC UsageFaultException
+        PUBLIC WWDG_IRQHandler
+        PUBLIC com
+        PUBLIC lcdcr
+        PUBLIC var
+
+GPIO_Init           SYMBOL "GPIO_Init"
+GPIO_ResetBits      SYMBOL "GPIO_ResetBits"
+GPIO_SetBits        SYMBOL "GPIO_SetBits"
+GPIO_Write          SYMBOL "GPIO_Write"
+TIM_ClearITPendingBit SYMBOL "TIM_ClearITPendingBit"
+TIM_GetITStatus     SYMBOL "TIM_GetITStatus"
+??GPIO_Init??rT     SYMBOL "??rT", GPIO_Init
+??GPIO_ResetBits??rT SYMBOL "??rT", GPIO_ResetBits
+??GPIO_SetBits??rT  SYMBOL "??rT", GPIO_SetBits
+??GPIO_Write??rT    SYMBOL "??rT", GPIO_Write
+??TIM_ClearITPendingBit??rT SYMBOL "??rT", TIM_ClearITPendingBit
+??TIM_GetITStatus??rT SYMBOL "??rT", TIM_GetITStatus
+
+        EXTERN GPIOC
+        EXTERN GPIOE
+        EXTERN GPIO_Init
+        EXTERN GPIO_ResetBits
+        EXTERN GPIO_SetBits
+        EXTERN GPIO_Write
+        EXTERN TIM2
+        EXTERN TIM_ClearITPendingBit
+        EXTERN TIM_GetITStatus
+        EXTERN frame
+
+
+        RSEG DATA_C:CONST:SORT:NOROOT(2)
+com:
+        DATA
+        DC16 2048, 1024, 512, 256
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+var:
+        DS8 1
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+lcdcr:
+        DS8 1
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+NMIException:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+HardFaultException:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+MemManageException:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+BusFaultException:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+UsageFaultException:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+DebugMonitor:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SVCHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+PendSVC:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+WWDG_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+PVD_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TAMPER_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTC_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+FLASH_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+EXTI0_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+EXTI1_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+EXTI2_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+EXTI3_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+EXTI4_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+DMAChannel1_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+DMAChannel2_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+DMAChannel3_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+DMAChannel4_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+DMAChannel5_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+DMAChannel6_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+DMAChannel7_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+ADC_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+USB_HP_CAN_TX_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+USB_LP_CAN_RX0_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_RX1_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+CAN_SCE_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+EXTI9_5_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TIM1_BRK_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TIM1_UP_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TIM1_TRG_COM_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TIM1_CC_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TIM2_IRQHandler:
+        PUSH     {LR}
+        SUB      SP,SP,#+4
+        MOVS     R1,#+2
+        LDR.N    R0,??TIM2_IRQHandler_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_GetITStatus,??TIM_GetITStatus??rT
+        CMP      R0,#+0
+        BEQ.W    ??TIM2_IRQHandler_1
+        MOVS     R1,#+2
+        LDR.N    R0,??TIM2_IRQHandler_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_ClearITPendingBit,??TIM_ClearITPendingBit??rT
+        LDR.N    R0,??TIM2_IRQHandler_0+0x4  ;; var
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+0
+        BNE.N    ??TIM2_IRQHandler_2
+        LDR.N    R0,??TIM2_IRQHandler_0+0x4  ;; var
+        LDR.N    R1,??TIM2_IRQHandler_0+0x4  ;; var
+        LDRB     R1,[R1, #+0]
+        ADDS     R1,R1,#+1
+        STRB     R1,[R0, #+0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0x8  ;; ??Seg_Old
+        LDR.N    R1,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        LDRB     R1,[R1, #+0]
+        MOVS     R2,#+2
+        MULS     R1,R2,R1
+        LDR.N    R2,??TIM2_IRQHandler_0+0x10  ;; frame
+        LDRH     R1,[R2, R1]
+        STRH     R1,[R0, #+0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0x8  ;; ??Seg_Old
+        LDRH     R1,[R0, #+0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0x14  ;; GPIOE
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Write,??GPIO_Write??rT
+        MOVS     R0,#+3840
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+4
+        STRB     R0,[SP, #+3]
+        MOVS     R0,#+3
+        STRB     R0,[SP, #+2]
+        MOV      R1,SP
+        LDR.N    R0,??TIM2_IRQHandler_0+0x18  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        LDR.N    R0,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        LDRB     R0,[R0, #+0]
+        MOVS     R1,#+2
+        MULS     R0,R1,R0
+        LDR.N    R1,??TIM2_IRQHandler_0+0x1C  ;; com
+        LDRH     R1,[R1, R0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0x18  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+        LDR.N    R0,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        LDRB     R0,[R0, #+0]
+        MOVS     R1,#+2
+        MULS     R0,R1,R0
+        LDR.N    R1,??TIM2_IRQHandler_0+0x1C  ;; com
+        LDRH     R0,[R1, R0]
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+16
+        STRB     R0,[SP, #+3]
+        MOV      R1,SP
+        LDR.N    R0,??TIM2_IRQHandler_0+0x18  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        B.N      ??TIM2_IRQHandler_3
+??TIM2_IRQHandler_2:
+        LDR.N    R0,??TIM2_IRQHandler_0+0x4  ;; var
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0x8  ;; ??Seg_Old
+        LDR.N    R1,??TIM2_IRQHandler_0+0x8  ;; ??Seg_Old
+        LDRH     R1,[R1, #+0]
+        MVNS     R2,R1
+        STRH     R2,[R0, #+0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0x8  ;; ??Seg_Old
+        LDRH     R1,[R0, #+0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0x14  ;; GPIOE
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Write,??GPIO_Write??rT
+        MOVS     R0,#+3840
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+4
+        STRB     R0,[SP, #+3]
+        MOVS     R0,#+3
+        STRB     R0,[SP, #+2]
+        MOV      R1,SP
+        LDR.N    R0,??TIM2_IRQHandler_0+0x18  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        LDR.N    R0,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        LDRB     R0,[R0, #+0]
+        MOVS     R1,#+2
+        MULS     R0,R1,R0
+        LDR.N    R1,??TIM2_IRQHandler_0+0x1C  ;; com
+        LDRH     R1,[R1, R0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0x18  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_SetBits,??GPIO_SetBits??rT
+        LDR.N    R0,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        LDRB     R0,[R0, #+0]
+        MOVS     R1,#+2
+        MULS     R0,R1,R0
+        LDR.N    R1,??TIM2_IRQHandler_0+0x1C  ;; com
+        LDRH     R0,[R1, R0]
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+16
+        STRB     R0,[SP, #+3]
+        MOV      R1,SP
+        LDR.N    R0,??TIM2_IRQHandler_0+0x18  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        LDR.N    R0,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        LDR.N    R1,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        LDRB     R1,[R1, #+0]
+        ADDS     R1,R1,#+1
+        STRB     R1,[R0, #+0]
+        LDR.N    R0,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+4
+        BCC.N    ??TIM2_IRQHandler_3
+        LDR.N    R0,??TIM2_IRQHandler_0+0xC  ;; lcdcr
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        B.N      ??TIM2_IRQHandler_3
+??TIM2_IRQHandler_1:
+        MOVS     R1,#+1
+        LDR.N    R0,??TIM2_IRQHandler_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_GetITStatus,??TIM_GetITStatus??rT
+        CMP      R0,#+0
+        BEQ.N    ??TIM2_IRQHandler_3
+        MOVS     R1,#+1
+        LDR.N    R0,??TIM2_IRQHandler_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_ClearITPendingBit,??TIM_ClearITPendingBit??rT
+        MOVS     R1,#+0
+        LDR.N    R0,??TIM2_IRQHandler_0+0x14  ;; GPIOE
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Write,??GPIO_Write??rT
+        MOVS     R1,#+3840
+        LDR.N    R0,??TIM2_IRQHandler_0+0x18  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_ResetBits,??GPIO_ResetBits??rT
+        MOVS     R0,#+3840
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+16
+        STRB     R0,[SP, #+3]
+        MOVS     R0,#+3
+        STRB     R0,[SP, #+2]
+        MOV      R1,SP
+        LDR.N    R0,??TIM2_IRQHandler_0+0x18  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+??TIM2_IRQHandler_3:
+        ADD      SP,SP,#+4
+        POP      {PC}             ;; return
+        DATA
+??TIM2_IRQHandler_0:
+        DC32     TIM2
+        DC32     var
+        DC32     ??Seg_Old
+        DC32     lcdcr
+        DC32     frame
+        DC32     GPIOE
+        DC32     GPIOC
+        DC32     com
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(1)
+??Seg_Old:
+        DS8 2
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+TIM4_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C1_EV_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C1_ER_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C2_EV_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+I2C2_ER_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI1_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+SPI2_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+USART1_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+USART2_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+USART3_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+EXTI15_10_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RTCAlarm_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+USBWakeUp_IRQHandler:
+        BX       LR               ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_GetITStatus??rT:
+        LDR.N    R3,??Subroutine0_0  ;; TIM_GetITStatus
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     TIM_GetITStatus
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_ClearITPendingBit??rT:
+        LDR.N    R3,??Subroutine1_0  ;; TIM_ClearITPendingBit
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     TIM_ClearITPendingBit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_Write??rT:
+        LDR.N    R3,??Subroutine2_0  ;; GPIO_Write
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     GPIO_Write
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_Init??rT:
+        LDR.N    R3,??Subroutine3_0  ;; GPIO_Init
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     GPIO_Init
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_ResetBits??rT:
+        LDR.N    R3,??Subroutine4_0  ;; GPIO_ResetBits
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     GPIO_ResetBits
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_SetBits??rT:
+        LDR.N    R3,??Subroutine5_0  ;; GPIO_SetBits
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     GPIO_SetBits
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+// 
+// 554 bytes in segment CODE
+//   8 bytes in segment DATA_C
+//   4 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 506 bytes of CODE  memory (+ 60 bytes shared)
+//   8 bytes of CONST memory
+//   4 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

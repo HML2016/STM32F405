@@ -1,0 +1,7 @@
+Added Pin To Net: NetName=GRE(PA2) Pin=R6-2
+Added Pin To Net: NetName=GRE(PA2) Pin=U1-16
+Added Net: Name=GRE(PA2)
+Added Pin To Net: NetName=RED(PA1) Pin=R7-2
+Added Pin To Net: NetName=RED(PA1) Pin=U1-15
+Added Net: Name=RED(PA1)
+Added Room: Name=F405 MCU

@@ -1,0 +1,13 @@
+------------------------------------------------------------
+Single Pin Net Report for F405 MCU.SchDoc
+-- 2017/3/5
+-- 12:27:59
+------------------------------------------------------------
+
+Net PA5 has only one pin (Pin U1-21)
+Net PA15 has only one pin (Pin U1-50)
+Net PB0 has only one pin (Pin U1-26)
+Net PB1 has only one pin (Pin U1-27)
+Net PC4 has only one pin (Pin U1-24)
+Net PC5 has only one pin (Pin U1-25)
+Net PD2 has only one pin (Pin U1-54)

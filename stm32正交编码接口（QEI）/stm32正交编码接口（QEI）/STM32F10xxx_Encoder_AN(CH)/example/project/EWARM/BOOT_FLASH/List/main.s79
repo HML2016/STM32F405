@@ -1,0 +1,847 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR ARM ANSI C/C++ Compiler V4.42A/W32              15/May/2008  12:06:29 /
+// Copyright 1999-2005 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Cpu mode        =  thumb                                               /
+//    Endian          =  little                                              /
+//    Stack alignment =  4                                                   /
+//    Source file     =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\source\main.c               /
+//    Command line    =  "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\source\main.c" -D           /
+//                       VECT_TAB_FLASH -lcN "C:\David JIANG\ST              /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\"     /
+//                       -lb "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM  /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\" -o  /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\Obj\" -z3  /
+//                       --no_cse --no_unroll --no_inline --no_code_motion   /
+//                       --no_tbaa --no_clustering --no_scheduling --debug   /
+//                       --cpu_mode thumb --endian little --cpu cortex-M3    /
+//                       --stack_align 4 --require_prototypes --fpu None     /
+//                       --dlib_config "C:\Program Files\IAR                 /
+//                       Systems\Embedded Workbench                          /
+//                       4.0\arm\LIB\dl7mptnnl8f.h" -I "C:\David JIANG\ST    /
+//                       MCU\Docs\STM32\AN_JIANG\TIM                         /
+//                       Encoder\example\project\EWARM\" -I "C:\David        /
+//                       JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM                /
+//                       Encoder\example\project\EWARM\..\include\" -I       /
+//                       "C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM      /
+//                       Encoder\example\project\EWARM\..\..\FWLib\inc\" -I  /
+//                       "C:\Program Files\IAR Systems\Embedded Workbench    /
+//                       4.0\arm\INC\"                                       /
+//    List file       =  C:\David JIANG\ST MCU\Docs\STM32\AN_JIANG\TIM       /
+//                       Encoder\example\project\EWARM\BOOT_FLASH\List\main. /
+//                       s79                                                 /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME main
+
+        RSEG CSTACK:DATA:NOROOT(2)
+
+??DataTable0 EQU 0
+??DataTable1 EQU 0
+??DataTable2 EQU 0
+??DataTable3 EQU 0
+        MULTWEAK ??ENC_Init??rT
+        MULTWEAK ??FLASH_PrefetchBufferCmd??rT
+        MULTWEAK ??FLASH_SetLatency??rT
+        MULTWEAK ??GPIO_Init??rT
+        MULTWEAK ??GPIO_ReadInputDataBit??rT
+        MULTWEAK ??GPIO_StructInit??rT
+        MULTWEAK ??LCD_Display??rT
+        MULTWEAK ??NVIC_Init??rT
+        MULTWEAK ??NVIC_PriorityGroupConfig??rT
+        MULTWEAK ??NVIC_SetVectorTable??rT
+        MULTWEAK ??RCC_ADCCLKConfig??rT
+        MULTWEAK ??RCC_APB1PeriphClockCmd??rT
+        MULTWEAK ??RCC_APB2PeriphClockCmd??rT
+        MULTWEAK ??RCC_GetFlagStatus??rT
+        MULTWEAK ??RCC_GetSYSCLKSource??rT
+        MULTWEAK ??RCC_HCLKConfig??rT
+        MULTWEAK ??RCC_HSEConfig??rT
+        MULTWEAK ??RCC_PCLK1Config??rT
+        MULTWEAK ??RCC_PCLK2Config??rT
+        MULTWEAK ??RCC_PLLCmd??rT
+        MULTWEAK ??RCC_PLLConfig??rT
+        MULTWEAK ??RCC_SYSCLKConfig??rT
+        MULTWEAK ??RCC_WaitForHSEStartUp??rT
+        MULTWEAK ??TB_DisplayDelay_IsElapsed??rT
+        MULTWEAK ??TB_Init??rT
+        MULTWEAK ??TB_Set_DisplayDelay_500us??rT
+        MULTWEAK ??TIM_ARRPreloadConfig??rT
+        MULTWEAK ??TIM_Cmd??rT
+        MULTWEAK ??TIM_ITConfig??rT
+        MULTWEAK ??TIM_OC1PreloadConfig??rT
+        MULTWEAK ??TIM_OCInit??rT
+        MULTWEAK ??TIM_TimeBaseInit??rT
+        MULTWEAK ??TIM_UpdateRequestConfig??rT
+        MULTWEAK ??debug??rT
+        PUBWEAK ?init?tab?DATA_Z
+        PUBLIC GPIO_Configuration
+        PUBLIC KEYS_Init
+        PUBLIC KEYS_Read
+        PUBLIC LcdShow_Init
+        PUBLIC NVIC_Configuration
+        PUBLIC RCC_Configuration
+        PUBLIC assert_failed
+        PUBLIC main
+
+ENC_Init            SYMBOL "ENC_Init"
+FLASH_PrefetchBufferCmd SYMBOL "FLASH_PrefetchBufferCmd"
+FLASH_SetLatency    SYMBOL "FLASH_SetLatency"
+GPIO_Init           SYMBOL "GPIO_Init"
+GPIO_ReadInputDataBit SYMBOL "GPIO_ReadInputDataBit"
+GPIO_StructInit     SYMBOL "GPIO_StructInit"
+LCD_Display         SYMBOL "LCD_Display"
+NVIC_Init           SYMBOL "NVIC_Init"
+NVIC_PriorityGroupConfig SYMBOL "NVIC_PriorityGroupConfig"
+NVIC_SetVectorTable SYMBOL "NVIC_SetVectorTable"
+RCC_ADCCLKConfig    SYMBOL "RCC_ADCCLKConfig"
+RCC_APB1PeriphClockCmd SYMBOL "RCC_APB1PeriphClockCmd"
+RCC_APB2PeriphClockCmd SYMBOL "RCC_APB2PeriphClockCmd"
+RCC_GetFlagStatus   SYMBOL "RCC_GetFlagStatus"
+RCC_GetSYSCLKSource SYMBOL "RCC_GetSYSCLKSource"
+RCC_HCLKConfig      SYMBOL "RCC_HCLKConfig"
+RCC_HSEConfig       SYMBOL "RCC_HSEConfig"
+RCC_PCLK1Config     SYMBOL "RCC_PCLK1Config"
+RCC_PCLK2Config     SYMBOL "RCC_PCLK2Config"
+RCC_PLLCmd          SYMBOL "RCC_PLLCmd"
+RCC_PLLConfig       SYMBOL "RCC_PLLConfig"
+RCC_SYSCLKConfig    SYMBOL "RCC_SYSCLKConfig"
+RCC_WaitForHSEStartUp SYMBOL "RCC_WaitForHSEStartUp"
+TB_DisplayDelay_IsElapsed SYMBOL "TB_DisplayDelay_IsElapsed"
+TB_Init             SYMBOL "TB_Init"
+TB_Set_DisplayDelay_500us SYMBOL "TB_Set_DisplayDelay_500us"
+TIM_ARRPreloadConfig SYMBOL "TIM_ARRPreloadConfig"
+TIM_Cmd             SYMBOL "TIM_Cmd"
+TIM_ITConfig        SYMBOL "TIM_ITConfig"
+TIM_OC1PreloadConfig SYMBOL "TIM_OC1PreloadConfig"
+TIM_OCInit          SYMBOL "TIM_OCInit"
+TIM_TimeBaseInit    SYMBOL "TIM_TimeBaseInit"
+TIM_UpdateRequestConfig SYMBOL "TIM_UpdateRequestConfig"
+debug               SYMBOL "debug"
+??ENC_Init??rT      SYMBOL "??rT", ENC_Init
+??FLASH_PrefetchBufferCmd??rT SYMBOL "??rT", FLASH_PrefetchBufferCmd
+??FLASH_SetLatency??rT SYMBOL "??rT", FLASH_SetLatency
+??GPIO_Init??rT     SYMBOL "??rT", GPIO_Init
+??GPIO_ReadInputDataBit??rT SYMBOL "??rT", GPIO_ReadInputDataBit
+??GPIO_StructInit??rT SYMBOL "??rT", GPIO_StructInit
+??LCD_Display??rT   SYMBOL "??rT", LCD_Display
+??NVIC_Init??rT     SYMBOL "??rT", NVIC_Init
+??NVIC_PriorityGroupConfig??rT SYMBOL "??rT", NVIC_PriorityGroupConfig
+??NVIC_SetVectorTable??rT SYMBOL "??rT", NVIC_SetVectorTable
+??RCC_ADCCLKConfig??rT SYMBOL "??rT", RCC_ADCCLKConfig
+??RCC_APB1PeriphClockCmd??rT SYMBOL "??rT", RCC_APB1PeriphClockCmd
+??RCC_APB2PeriphClockCmd??rT SYMBOL "??rT", RCC_APB2PeriphClockCmd
+??RCC_GetFlagStatus??rT SYMBOL "??rT", RCC_GetFlagStatus
+??RCC_GetSYSCLKSource??rT SYMBOL "??rT", RCC_GetSYSCLKSource
+??RCC_HCLKConfig??rT SYMBOL "??rT", RCC_HCLKConfig
+??RCC_HSEConfig??rT SYMBOL "??rT", RCC_HSEConfig
+??RCC_PCLK1Config??rT SYMBOL "??rT", RCC_PCLK1Config
+??RCC_PCLK2Config??rT SYMBOL "??rT", RCC_PCLK2Config
+??RCC_PLLCmd??rT    SYMBOL "??rT", RCC_PLLCmd
+??RCC_PLLConfig??rT SYMBOL "??rT", RCC_PLLConfig
+??RCC_SYSCLKConfig??rT SYMBOL "??rT", RCC_SYSCLKConfig
+??RCC_WaitForHSEStartUp??rT SYMBOL "??rT", RCC_WaitForHSEStartUp
+??TB_DisplayDelay_IsElapsed??rT SYMBOL "??rT", TB_DisplayDelay_IsElapsed
+??TB_Init??rT       SYMBOL "??rT", TB_Init
+??TB_Set_DisplayDelay_500us??rT SYMBOL "??rT", TB_Set_DisplayDelay_500us
+??TIM_ARRPreloadConfig??rT SYMBOL "??rT", TIM_ARRPreloadConfig
+??TIM_Cmd??rT       SYMBOL "??rT", TIM_Cmd
+??TIM_ITConfig??rT  SYMBOL "??rT", TIM_ITConfig
+??TIM_OC1PreloadConfig??rT SYMBOL "??rT", TIM_OC1PreloadConfig
+??TIM_OCInit??rT    SYMBOL "??rT", TIM_OCInit
+??TIM_TimeBaseInit??rT SYMBOL "??rT", TIM_TimeBaseInit
+??TIM_UpdateRequestConfig??rT SYMBOL "??rT", TIM_UpdateRequestConfig
+??debug??rT         SYMBOL "??rT", debug
+
+        EXTERN ENC_Init
+        EXTERN FLASH_PrefetchBufferCmd
+        EXTERN FLASH_SetLatency
+        EXTERN GPIOC
+        EXTERN GPIOD
+        EXTERN GPIOE
+        EXTERN GPIO_Init
+        EXTERN GPIO_ReadInputDataBit
+        EXTERN GPIO_StructInit
+        EXTERN LCD_Display
+        EXTERN NVIC_Init
+        EXTERN NVIC_PriorityGroupConfig
+        EXTERN NVIC_SetVectorTable
+        EXTERN RCC_ADCCLKConfig
+        EXTERN RCC_APB1PeriphClockCmd
+        EXTERN RCC_APB2PeriphClockCmd
+        EXTERN RCC_GetFlagStatus
+        EXTERN RCC_GetSYSCLKSource
+        EXTERN RCC_HCLKConfig
+        EXTERN RCC_HSEConfig
+        EXTERN RCC_PCLK1Config
+        EXTERN RCC_PCLK2Config
+        EXTERN RCC_PLLCmd
+        EXTERN RCC_PLLConfig
+        EXTERN RCC_SYSCLKConfig
+        EXTERN RCC_WaitForHSEStartUp
+        EXTERN TB_DisplayDelay_IsElapsed
+        EXTERN TB_Init
+        EXTERN TB_Set_DisplayDelay_500us
+        EXTERN TIM2
+        EXTERN TIM_ARRPreloadConfig
+        EXTERN TIM_Cmd
+        EXTERN TIM_ITConfig
+        EXTERN TIM_OC1PreloadConfig
+        EXTERN TIM_OCInit
+        EXTERN TIM_TimeBaseInit
+        EXTERN TIM_UpdateRequestConfig
+        EXTERN debug
+
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+DisplayStatus:
+        DS8 1
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+bKey:
+        DS8 1
+
+        RSEG DATA_Z:DATA:SORT:NOROOT(0)
+bPrevious_key:
+        DS8 1
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+main:
+        PUSH     {LR}
+        _BLF     debug,??debug??rT
+        BL       RCC_Configuration
+        BL       GPIO_Configuration
+        BL       NVIC_Configuration
+        _BLF     TB_Init,??TB_Init??rT
+        _BLF     ENC_Init,??ENC_Init??rT
+        BL       LcdShow_Init
+        BL       KEYS_Init
+        B.N      ??main_0
+??main_1:
+        LDR.N    R0,??main_2      ;; DisplayStatus
+        LDR.N    R1,??main_2      ;; DisplayStatus
+        LDRB     R1,[R1, #+0]
+        ADDS     R1,R1,#+1
+        STRB     R1,[R0, #+0]
+??main_3:
+        _BLF     TB_DisplayDelay_IsElapsed,??TB_DisplayDelay_IsElapsed??rT
+        CMP      R0,#+1
+        BNE.N    ??main_0
+        MOVS     R0,#+100
+        _BLF     TB_Set_DisplayDelay_500us,??TB_Set_DisplayDelay_500us??rT
+        LDR.N    R0,??main_2      ;; DisplayStatus
+        LDRB     R0,[R0, #+0]
+        _BLF     LCD_Display,??LCD_Display??rT
+??main_0:
+        BL       KEYS_Read
+        LDR.N    R1,??main_2+0x4  ;; bKey
+        STRB     R0,[R1, #+0]
+        LDR.N    R0,??main_2+0x4  ;; bKey
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+1
+        BNE.N    ??main_3
+        LDR.N    R0,??main_2      ;; DisplayStatus
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+2
+        BNE.N    ??main_1
+        LDR.N    R0,??main_2      ;; DisplayStatus
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        B.N      ??main_3
+        DATA
+??main_2:
+        DC32     DisplayStatus
+        DC32     bKey
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+RCC_Configuration:
+        PUSH     {LR}
+        MOVS     R0,#+65536
+        _BLF     RCC_HSEConfig,??RCC_HSEConfig??rT
+        _BLF     RCC_WaitForHSEStartUp,??RCC_WaitForHSEStartUp??rT
+        CMP      R0,#+1
+        BNE.N    ??RCC_Configuration_0
+        MOVS     R0,#+0
+        _BLF     RCC_HCLKConfig,??RCC_HCLKConfig??rT
+        MOVS     R0,#+0
+        _BLF     RCC_PCLK2Config,??RCC_PCLK2Config??rT
+        MOVS     R0,#+1024
+        _BLF     RCC_PCLK1Config,??RCC_PCLK1Config??rT
+        MOVS     R0,#+32768
+        _BLF     RCC_ADCCLKConfig,??RCC_ADCCLKConfig??rT
+        MOVS     R0,#+2
+        _BLF     FLASH_SetLatency,??FLASH_SetLatency??rT
+        MOVS     R0,#+16
+        _BLF     FLASH_PrefetchBufferCmd,??FLASH_PrefetchBufferCmd??rT
+        MOVS     R1,#+1835008
+        MOVS     R0,#+65536
+        _BLF     RCC_PLLConfig,??RCC_PLLConfig??rT
+        MOVS     R0,#+1
+        _BLF     RCC_PLLCmd,??RCC_PLLCmd??rT
+??RCC_Configuration_1:
+        MOVS     R0,#+57
+        _BLF     RCC_GetFlagStatus,??RCC_GetFlagStatus??rT
+        CMP      R0,#+0
+        BEQ.N    ??RCC_Configuration_1
+        MOVS     R0,#+2
+        _BLF     RCC_SYSCLKConfig,??RCC_SYSCLKConfig??rT
+??RCC_Configuration_2:
+        _BLF     RCC_GetSYSCLKSource,??RCC_GetSYSCLKSource??rT
+        CMP      R0,#+8
+        BNE.N    ??RCC_Configuration_2
+??RCC_Configuration_0:
+        MOVS     R1,#+1
+        MOVS     R0,#+125
+        _BLF     RCC_APB2PeriphClockCmd,??RCC_APB2PeriphClockCmd??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+1
+        _BLF     RCC_APB1PeriphClockCmd,??RCC_APB1PeriphClockCmd??rT
+        MOVS     R1,#+1
+        MOVS     R0,#+33554432
+        _BLF     RCC_APB1PeriphClockCmd,??RCC_APB1PeriphClockCmd??rT
+        POP      {PC}             ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+GPIO_Configuration:
+        PUSH     {LR}
+        SUB      SP,SP,#+4
+        MOVS     R0,#+4080
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+16
+        STRB     R0,[SP, #+3]
+        MOVS     R0,#+3
+        STRB     R0,[SP, #+2]
+        MOV      R1,SP
+        LDR.N    R0,??GPIO_Configuration_0  ;; GPIOC
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        LDR.N    R0,??GPIO_Configuration_0+0x4  ;; 0xf818
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+4
+        STRB     R0,[SP, #+3]
+        MOV      R1,SP
+        LDR.N    R0,??DataTable4  ;; GPIOD
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        LDR.N    R0,??GPIO_Configuration_0+0x8  ;; 0xffff
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+16
+        STRB     R0,[SP, #+3]
+        MOVS     R0,#+3
+        STRB     R0,[SP, #+2]
+        MOV      R1,SP
+        LDR.N    R0,??GPIO_Configuration_0+0xC  ;; GPIOE
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        ADD      SP,SP,#+4
+        POP      {PC}             ;; return
+        DATA
+??GPIO_Configuration_0:
+        DC32     GPIOC
+        DC32     0xf818
+        DC32     0xffff
+        DC32     GPIOE
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+NVIC_Configuration:
+        PUSH     {LR}
+        SUB      SP,SP,#+4
+        MOVS     R1,#+0
+        MOVS     R0,#+134217728
+        _BLF     NVIC_SetVectorTable,??NVIC_SetVectorTable??rT
+        MOVS     R0,#+1280
+        _BLF     NVIC_PriorityGroupConfig,??NVIC_PriorityGroupConfig??rT
+        MOVS     R0,#+28
+        STRB     R0,[SP, #+0]
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+1]
+        MOVS     R0,#+0
+        STRB     R0,[SP, #+2]
+        MOVS     R0,#+1
+        STRB     R0,[SP, #+3]
+        MOV      R0,SP
+        _BLF     NVIC_Init,??NVIC_Init??rT
+        ADD      SP,SP,#+4
+        POP      {PC}             ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+LcdShow_Init:
+        PUSH     {LR}
+        SUB      SP,SP,#+16
+        MOVS     R0,#+8000
+        STRH     R0,[SP, #+8]
+        MOVS     R0,#+17
+        STRH     R0,[SP, #+10]
+        MOVS     R0,#+0
+        STRH     R0,[SP, #+12]
+        MOVS     R0,#+0
+        STRH     R0,[SP, #+14]
+        ADD      R1,SP,#+8
+        LDR.N    R0,??LcdShow_Init_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_TimeBaseInit,??TIM_TimeBaseInit??rT
+        MOVS     R1,#+0
+        LDR.N    R0,??LcdShow_Init_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_ARRPreloadConfig,??TIM_ARRPreloadConfig??rT
+        MOVS     R1,#+1
+        LDR.N    R0,??LcdShow_Init_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_UpdateRequestConfig,??TIM_UpdateRequestConfig??rT
+        MOVS     R0,#+0
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+0
+        STRH     R0,[SP, #+2]
+        MOVS     R0,#+4000
+        STRH     R0,[SP, #+4]
+        MOVS     R0,#+0
+        STRH     R0,[SP, #+6]
+        MOV      R1,SP
+        LDR.N    R0,??LcdShow_Init_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_OCInit,??TIM_OCInit??rT
+        MOVS     R1,#+0
+        LDR.N    R0,??LcdShow_Init_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_OC1PreloadConfig,??TIM_OC1PreloadConfig??rT
+        MOVS     R2,#+1
+        MOVS     R1,#+3
+        LDR.N    R0,??LcdShow_Init_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_ITConfig,??TIM_ITConfig??rT
+        MOVS     R1,#+1
+        LDR.N    R0,??LcdShow_Init_0  ;; TIM2
+        LDR      R0,[R0, #+0]
+        _BLF     TIM_Cmd,??TIM_Cmd??rT
+        ADD      SP,SP,#+16
+        POP      {PC}             ;; return
+        DATA
+??LcdShow_Init_0:
+        DC32     TIM2
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+KEYS_Init:
+        PUSH     {LR}
+        SUB      SP,SP,#+4
+        MOVS     R1,#+1
+        MOVS     R0,#+32
+        _BLF     RCC_APB2PeriphClockCmd,??RCC_APB2PeriphClockCmd??rT
+        MOV      R0,SP
+        _BLF     GPIO_StructInit,??GPIO_StructInit??rT
+        MOVS     R0,#+8
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+4
+        STRB     R0,[SP, #+3]
+        MOV      R1,SP
+        LDR.N    R0,??DataTable4  ;; GPIOD
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        MOVS     R0,#+16
+        STRH     R0,[SP, #+0]
+        MOVS     R0,#+4
+        STRB     R0,[SP, #+3]
+        MOV      R1,SP
+        LDR.N    R0,??DataTable4  ;; GPIOD
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_Init,??GPIO_Init??rT
+        ADD      SP,SP,#+4
+        POP      {PC}             ;; return
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+KEYS_Read:
+        PUSH     {LR}
+        MOVS     R1,#+8
+        LDR.N    R0,??DataTable4  ;; GPIOD
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_ReadInputDataBit,??GPIO_ReadInputDataBit??rT
+        CMP      R0,#+0
+        BNE.N    ??KEYS_Read_0
+        LDR.N    R0,??KEYS_Read_1  ;; bPrevious_key
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+1
+        BNE.N    ??KEYS_Read_2
+        MOVS     R0,#+3
+        B.N      ??KEYS_Read_3
+??KEYS_Read_2:
+        LDR.N    R0,??KEYS_Read_1  ;; bPrevious_key
+        MOVS     R1,#+1
+        STRB     R1,[R0, #+0]
+        MOVS     R0,#+1
+        B.N      ??KEYS_Read_3
+??KEYS_Read_0:
+        MOVS     R1,#+16
+        LDR.N    R0,??DataTable4  ;; GPIOD
+        LDR      R0,[R0, #+0]
+        _BLF     GPIO_ReadInputDataBit,??GPIO_ReadInputDataBit??rT
+        CMP      R0,#+0
+        BNE.N    ??KEYS_Read_4
+        LDR.N    R0,??KEYS_Read_1  ;; bPrevious_key
+        LDRB     R0,[R0, #+0]
+        CMP      R0,#+2
+        BNE.N    ??KEYS_Read_5
+        MOVS     R0,#+3
+        B.N      ??KEYS_Read_3
+??KEYS_Read_5:
+        LDR.N    R0,??KEYS_Read_1  ;; bPrevious_key
+        MOVS     R1,#+2
+        STRB     R1,[R0, #+0]
+        MOVS     R0,#+2
+        B.N      ??KEYS_Read_3
+??KEYS_Read_4:
+        LDR.N    R0,??KEYS_Read_1  ;; bPrevious_key
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+        MOVS     R0,#+0
+??KEYS_Read_3:
+        POP      {PC}             ;; return
+        DATA
+??KEYS_Read_1:
+        DC32     bPrevious_key
+
+        RSEG CODE:CODE:NOROOT(2)
+        DATA
+??DataTable4:
+        DC32     GPIOD
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+assert_failed:
+??assert_failed_0:
+        B.N      ??assert_failed_0
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??debug??rT:
+        LDR.N    R3,??Subroutine0_0  ;; debug
+        BX       R3
+        DATA
+??Subroutine0_0:
+        DC32     debug
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TB_Init??rT:
+        LDR.N    R3,??Subroutine1_0  ;; TB_Init
+        BX       R3
+        DATA
+??Subroutine1_0:
+        DC32     TB_Init
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??ENC_Init??rT:
+        LDR.N    R3,??Subroutine2_0  ;; ENC_Init
+        BX       R3
+        DATA
+??Subroutine2_0:
+        DC32     ENC_Init
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TB_DisplayDelay_IsElapsed??rT:
+        LDR.N    R3,??Subroutine3_0  ;; TB_DisplayDelay_IsElapsed
+        BX       R3
+        DATA
+??Subroutine3_0:
+        DC32     TB_DisplayDelay_IsElapsed
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TB_Set_DisplayDelay_500us??rT:
+        LDR.N    R3,??Subroutine4_0  ;; TB_Set_DisplayDelay_500us
+        BX       R3
+        DATA
+??Subroutine4_0:
+        DC32     TB_Set_DisplayDelay_500us
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??LCD_Display??rT:
+        LDR.N    R3,??Subroutine5_0  ;; LCD_Display
+        BX       R3
+        DATA
+??Subroutine5_0:
+        DC32     LCD_Display
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_HSEConfig??rT:
+        LDR.N    R3,??Subroutine6_0  ;; RCC_HSEConfig
+        BX       R3
+        DATA
+??Subroutine6_0:
+        DC32     RCC_HSEConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_WaitForHSEStartUp??rT:
+        LDR.N    R3,??Subroutine7_0  ;; RCC_WaitForHSEStartUp
+        BX       R3
+        DATA
+??Subroutine7_0:
+        DC32     RCC_WaitForHSEStartUp
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_HCLKConfig??rT:
+        LDR.N    R3,??Subroutine8_0  ;; RCC_HCLKConfig
+        BX       R3
+        DATA
+??Subroutine8_0:
+        DC32     RCC_HCLKConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_PCLK2Config??rT:
+        LDR.N    R3,??Subroutine9_0  ;; RCC_PCLK2Config
+        BX       R3
+        DATA
+??Subroutine9_0:
+        DC32     RCC_PCLK2Config
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_PCLK1Config??rT:
+        LDR.N    R3,??Subroutine10_0  ;; RCC_PCLK1Config
+        BX       R3
+        DATA
+??Subroutine10_0:
+        DC32     RCC_PCLK1Config
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_ADCCLKConfig??rT:
+        LDR.N    R3,??Subroutine11_0  ;; RCC_ADCCLKConfig
+        BX       R3
+        DATA
+??Subroutine11_0:
+        DC32     RCC_ADCCLKConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??FLASH_SetLatency??rT:
+        LDR.N    R3,??Subroutine12_0  ;; FLASH_SetLatency
+        BX       R3
+        DATA
+??Subroutine12_0:
+        DC32     FLASH_SetLatency
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??FLASH_PrefetchBufferCmd??rT:
+        LDR.N    R3,??Subroutine13_0  ;; FLASH_PrefetchBufferCmd
+        BX       R3
+        DATA
+??Subroutine13_0:
+        DC32     FLASH_PrefetchBufferCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_PLLConfig??rT:
+        LDR.N    R3,??Subroutine14_0  ;; RCC_PLLConfig
+        BX       R3
+        DATA
+??Subroutine14_0:
+        DC32     RCC_PLLConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_PLLCmd??rT:
+        LDR.N    R3,??Subroutine15_0  ;; RCC_PLLCmd
+        BX       R3
+        DATA
+??Subroutine15_0:
+        DC32     RCC_PLLCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_GetFlagStatus??rT:
+        LDR.N    R3,??Subroutine16_0  ;; RCC_GetFlagStatus
+        BX       R3
+        DATA
+??Subroutine16_0:
+        DC32     RCC_GetFlagStatus
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_SYSCLKConfig??rT:
+        LDR.N    R3,??Subroutine17_0  ;; RCC_SYSCLKConfig
+        BX       R3
+        DATA
+??Subroutine17_0:
+        DC32     RCC_SYSCLKConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_GetSYSCLKSource??rT:
+        LDR.N    R3,??Subroutine18_0  ;; RCC_GetSYSCLKSource
+        BX       R3
+        DATA
+??Subroutine18_0:
+        DC32     RCC_GetSYSCLKSource
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB2PeriphClockCmd??rT:
+        LDR.N    R3,??Subroutine19_0  ;; RCC_APB2PeriphClockCmd
+        BX       R3
+        DATA
+??Subroutine19_0:
+        DC32     RCC_APB2PeriphClockCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??RCC_APB1PeriphClockCmd??rT:
+        LDR.N    R3,??Subroutine20_0  ;; RCC_APB1PeriphClockCmd
+        BX       R3
+        DATA
+??Subroutine20_0:
+        DC32     RCC_APB1PeriphClockCmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_Init??rT:
+        LDR.N    R3,??Subroutine21_0  ;; GPIO_Init
+        BX       R3
+        DATA
+??Subroutine21_0:
+        DC32     GPIO_Init
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??NVIC_SetVectorTable??rT:
+        LDR.N    R3,??Subroutine22_0  ;; NVIC_SetVectorTable
+        BX       R3
+        DATA
+??Subroutine22_0:
+        DC32     NVIC_SetVectorTable
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??NVIC_PriorityGroupConfig??rT:
+        LDR.N    R3,??Subroutine23_0  ;; NVIC_PriorityGroupConfig
+        BX       R3
+        DATA
+??Subroutine23_0:
+        DC32     NVIC_PriorityGroupConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??NVIC_Init??rT:
+        LDR.N    R3,??Subroutine24_0  ;; NVIC_Init
+        BX       R3
+        DATA
+??Subroutine24_0:
+        DC32     NVIC_Init
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_TimeBaseInit??rT:
+        LDR.N    R3,??Subroutine25_0  ;; TIM_TimeBaseInit
+        BX       R3
+        DATA
+??Subroutine25_0:
+        DC32     TIM_TimeBaseInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_ARRPreloadConfig??rT:
+        LDR.N    R3,??Subroutine26_0  ;; TIM_ARRPreloadConfig
+        BX       R3
+        DATA
+??Subroutine26_0:
+        DC32     TIM_ARRPreloadConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_UpdateRequestConfig??rT:
+        LDR.N    R3,??Subroutine27_0  ;; TIM_UpdateRequestConfig
+        BX       R3
+        DATA
+??Subroutine27_0:
+        DC32     TIM_UpdateRequestConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_OCInit??rT:
+        LDR.N    R3,??Subroutine28_0  ;; TIM_OCInit
+        BX       R3
+        DATA
+??Subroutine28_0:
+        DC32     TIM_OCInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_OC1PreloadConfig??rT:
+        LDR.N    R3,??Subroutine29_0  ;; TIM_OC1PreloadConfig
+        BX       R3
+        DATA
+??Subroutine29_0:
+        DC32     TIM_OC1PreloadConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_ITConfig??rT:
+        LDR.N    R3,??Subroutine30_0  ;; TIM_ITConfig
+        BX       R3
+        DATA
+??Subroutine30_0:
+        DC32     TIM_ITConfig
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??TIM_Cmd??rT:
+        LDR.N    R3,??Subroutine31_0  ;; TIM_Cmd
+        BX       R3
+        DATA
+??Subroutine31_0:
+        DC32     TIM_Cmd
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_StructInit??rT:
+        LDR.N    R3,??Subroutine32_0  ;; GPIO_StructInit
+        BX       R3
+        DATA
+??Subroutine32_0:
+        DC32     GPIO_StructInit
+
+        RSEG CODE:CODE:NOROOT(2)
+        THUMB
+??GPIO_ReadInputDataBit??rT:
+        LDR.N    R3,??Subroutine33_0  ;; GPIO_ReadInputDataBit
+        BX       R3
+        DATA
+??Subroutine33_0:
+        DC32     GPIO_ReadInputDataBit
+
+        RSEG INITTAB:CODE:ROOT(2)
+        DATA
+?init?tab?DATA_Z:
+        DCD      sfe(DATA_Z) - sfb(DATA_Z), sfb(DATA_Z), sfb(DATA_Z)
+
+        END
+// 
+// 964 bytes in segment CODE
+//   3 bytes in segment DATA_Z
+//  12 bytes in segment INITTAB
+// 
+// 692 bytes of CODE memory (+ 284 bytes shared)
+//   3 bytes of DATA memory
+//
+//Errors: none
+//Warnings: none
